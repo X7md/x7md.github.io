@@ -2,7 +2,7 @@
 //let { type = 'button' } = Astro.props;
 ---
 <header class="relative py-3 z-10">
-		<nav class="x-container">
+		<nav class="x-container" v-scope="{ openMenu: false }">
 				<a class="flex items-center" href="/">
 					<div class="inline-flex items-start" dir="ltr">
 					<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
@@ -45,7 +45,7 @@
 						[{title: "عني", link: "/about-me"},
 					{title: "المواضيع", link: "/tags"},   
 					{title: "تواصل معي", link: "/connect"}].map(e => (
-						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out" href={e.link} >{e.title}</a> ))
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href={e.link} >{e.title}</a> ))
 					}
 					</div>
 				</div>
