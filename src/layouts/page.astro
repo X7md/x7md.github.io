@@ -8,21 +8,15 @@ import Navbar from '../components/Navbar.astro';
 
 <html lang="ar" dir="rtl">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>x7md</title>
-		<link rel="stylesheet" type="text/css" href="/fonts/font.css">
-		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
-		<!--PreLoad Fonts-->
-		<!-- <link rel="preload" href="/fonts/Vazir-Black.woff2" as="font" type="font/woff2" crossorigin> -->
-		<!-- <link rel="preload" href="/fonts/Vazir-Bold.woff2" as="font" type="font/woff2" crossorigin> -->
-		<!-- <link rel="preload" href="/fonts/Vazir-Regular.woff2" as="font" type="font/woff2" crossorigin> -->
-		<!-- <link rel="preload" href="/fonts/Vazir-Light.woff2" as="font" type="font/woff2" crossorigin> -->
-		<!-- <link rel="preload" href="/fonts/Vazir-Medium.woff2" as="font" type="font/woff2" crossorigin> -->
-		<!-- <link rel="preload" href="/fonts/Vazir-Thin.woff2" as="font" type="font/woff2" crossorigin> -->
-
-		<script src="https://unpkg.com/petite-vue" defer init></script>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>x7md</title>
+	<link rel="stylesheet" type="text/css" href="/fonts/font.css">
+		<style global>
+		@import "../styles/global.css";
+		</style>
+	<script src="https://unpkg.com/petite-vue" defer init></script>
 	</head>
 
 	<body>
