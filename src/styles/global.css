@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-extrabold text-[#be95b7]
+  @apply font-extrabold text-[#be95b7] py-2
 }
 
 h1 {
@@ -35,7 +35,7 @@ h4, h5, h6 {
   @apply text-xl;
 }
 p, span {
-  @apply font-medium text-xl text-[#BE95B7];
+  @apply font-medium text-xl text-[#BE95B7] leading-8;
 }
 .container {
   @apply max-w-[940px]
