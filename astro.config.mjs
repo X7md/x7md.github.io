@@ -12,6 +12,9 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 	renderers: ['@astrojs/renderer-preact'],
 	devOptions: {
 		hostname: "0.0.0.0"
+	},
+	buildOptions: {
+		site: "https://www.x7md.net/"
 	}
 	}
 );
