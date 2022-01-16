@@ -1,0 +1,40 @@
+---
+// Component Imports
+import Navbar from '../components/Navbar.astro';
+const {content} = Astro.props;
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="ar" dir="rtl">
+	<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content={content.title}>
+	{content.des && <meta property="og:description" content={content.des}>}
+	<meta property="og:image" content={content.image}>
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content={content.title}>
+	{content.des && <meta property="twitter:description"  content={content.des}>}
+	<meta property="twitter:image" content={content.image}>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>x7md</title>
+	<link rel="stylesheet" type="text/css" href="/fonts/font.css">
+		<style global>
+		@import "../styles/global.css";
+		</style>
+	<script src="https://unpkg.com/petite-vue" defer init></script>
+	</head>
+	<body>
+	<main>
+		<Navbar />
+		<img class="header-blog" src={content.image} />
+		<div class="container mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
+			<slot></slot>
+		</div>
+	</main>
+	</body>
+</html>

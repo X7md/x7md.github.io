@@ -58,3 +58,9 @@
     font-weight: 100;
     font-style: normal;
 }
+
+html h1, h2, h3, h4, h5, h6, p, code, pre, span {
+    padding-top: .65rem;
+    padding-bottom: .65rem;
+    line-height: 2.5rem;
+}
