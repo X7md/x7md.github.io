@@ -11,7 +11,7 @@
 }
 
 body {
-    @apply bg-[#1E0930]
+    @apply bg-white;
 }
 
 .x-container {
@@ -19,7 +19,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply font-extrabold text-[#be95b7] py-2
+  @apply font-extrabold text-[#300D43] py-2
 }
 
 h1 {
@@ -35,7 +35,7 @@ h4, h5, h6 {
   @apply text-xl;
 }
 p, span {
-  @apply font-medium text-xl text-[#BE95B7] leading-8;
+  @apply font-medium text-xl text-[#300D43] leading-8;
 }
 .container {
   @apply max-w-[940px]
@@ -45,4 +45,18 @@ p, span {
   width: 100%;
   object-fit: cover;
   object-position: center center;
+}
+.card {
+  @apply max-w-xl m-2;
+}
+.card img {
+  @apply rounded-t-xl;
+  width: auto;
+  height: auto;
+}
+.card .card-info {
+  @apply p-3 shadow-md;
+}
+.card .card-info > h1 {
+  @apply text-2xl;
 }

@@ -1,7 +1,9 @@
 ---
 title: "التدوين الاولى"
 layout: ../../layouts/blog.astro
-image: /images/test.png
+image: /images/test2.png
+link: /blog/post1
+tags: ["جافاسكربت", ""]
 ---
 # تجربة
 ## تجربة
