@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Navbar from '../components/Navbar.astro';
+import Banner from '../components/Banner.astro';
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -15,12 +16,14 @@ import Navbar from '../components/Navbar.astro';
 		<style global>
 		@import "../styles/global.css";
 		</style>
+	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script src="https://unpkg.com/petite-vue" defer init></script>
 	</head>
 
 	<body>
 		<main>
 			<Navbar />
+			<Banner />
             <slot></slot>
 		</main>
 	</body>
