@@ -1,6 +1,7 @@
 ---
 // Component Imports
 import Navbar from '../components/Navbar.astro';
+import Banner from '../components/Banner.astro';
 const {content} = Astro.props;
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -12,26 +13,27 @@ const {content} = Astro.props;
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta property="og:type" content="article">
 	<meta property="og:title" content={content.title}>
-	{content.des && <meta property="og:description" content={content.des}>}
+	{content.des && <meta property="og:description" content={content.des} />}
 	<meta property="og:image" content={content.image}>
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:title" content={content.title}>
-	{content.des && <meta property="twitter:description"  content={content.des}>}
+	{content.des && <meta property="twitter:description"  content={content.des} />}
+	<style global>
+		@import "../styles/global.css";
+	</style>
 	<meta property="twitter:image" content={content.image}>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<title>x7md</title>
 	<link rel="stylesheet" type="text/css" href="/fonts/font.css">
-		<style global>
-		@import "../styles/global.css";
-		</style>
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
 	</head>
 	<body>
 	<main>
 		<Navbar />
+		<Banner />
 		<img class="header-blog" src={content.image} />
 		<div class="container mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
 			<slot></slot>

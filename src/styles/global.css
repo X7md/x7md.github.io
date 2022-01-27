@@ -32,7 +32,7 @@ h3 {
   @apply text-2xl;
 }
 h4, h5, h6 {
-  @apply text-xl;
+  @apply text-xl text-green-500;
 }
 p, span {
   @apply font-medium text-xl text-[#300D43] leading-8;
