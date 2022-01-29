@@ -17,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="/fonts/font.css">
 	<script defer="" src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer="" init=""></script>
-	<link rel="stylesheet" href="../../assets/404.916a8117.css"></head>
+	<link rel="stylesheet" href="../../assets/tags.0dd0a450.css"></head>
 	<body>
 	<main>
 		
@@ -65,7 +65,7 @@
 		</nav>
 </header>
 		
-<div class="bg-[#DFDFDF]" v-scope="{open: false}" @vue:mounted="open = Cookies.get('closebanner')" v-bind:hidden="open">
+<div v-cloak="" class="bg-[#DFDFDF]" v-scope="{open: false}" @vue:mounted="open = Cookies.get('closebanner')" v-bind:hidden="open">
   <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between flex-wrap">
       <div class="w-0 flex-1 flex items-center">
@@ -75,7 +75,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
           </svg>
         </span>
-        <p class="p-0 mr-3 font-medium text-[#461155] truncate">
+        <p class="p-0 mr-3 font-medium text-[#461155] truncate leading-none">
           <span class="text-base p-0">
             الموقع لا يزال تحت التطوير...<br>
           </span>
@@ -85,7 +85,7 @@
         </p>
       </div>
       <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-        <button v-cloak="" type="button" @click="Cookies.set('closebanner', 'true'); open = 'true'" class="-mr-1 flex p-2 rounded-md hover:bg-[#ffffff] focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+        <button type="button" @click="Cookies.set('closebanner', 'true'); open = 'true'" class="-mr-1 flex p-2 rounded-md hover:bg-[#ffffff] focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
           <!-- Heroicon name: outline/x -->
           <svg class="h-6 w-6 text-[#461155]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
