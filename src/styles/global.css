@@ -32,7 +32,7 @@ h3 {
   @apply text-2xl;
 }
 h4, h5, h6 {
-  @apply text-xl text-green-500;
+  @apply text-xl text-black;
 }
 p, span {
   @apply font-medium text-xl text-[#300D43] leading-8;
@@ -46,13 +46,16 @@ p, span {
   object-fit: cover;
   object-position: center center;
 }
+img.tag-card {
+  aspect-ratio: 43 / 18;
+}
 .card {
-  @apply max-w-xl m-2;
+  @apply max-w-xl m-2 w-full h-full;
 }
 .card img {
   @apply rounded-t-xl;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
 }
 .card .card-info {
   @apply p-3 shadow-md;
