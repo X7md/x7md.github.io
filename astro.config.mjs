@@ -15,6 +15,16 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 	},
 	buildOptions: {
 		site: "https://www.x7md.net/"
+	},
+	markdownOptions: {
+		render: [
+		  '@astrojs/markdown-remark',
+		  {
+			rehypePlugins: [
+				import('rehype-figure')
+			],
+		  },
+		],
+	  },
 	}
-	}
-);
+)
