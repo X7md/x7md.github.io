@@ -21,8 +21,11 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 		  '@astrojs/markdown-remark',
 		  {
 			rehypePlugins: [
-				import('rehype-figure')
-			],
+				['rehype-slug'],
+				['rehype-autolink-headings', {behavior: "wrap"}],
+				['rehype-figure-for-img'],
+			]
+			
 		  },
 		],
 	  },
