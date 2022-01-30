@@ -18,16 +18,15 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 	},
 	markdownOptions: {
 		render: [
-		  '@astrojs/markdown-remark',
-		  {
-			rehypePlugins: [
-				['rehype-slug'],
-				['rehype-autolink-headings', {behavior: "wrap"}],
-				['rehype-figure-for-img'],
-			]
-			
-		  },
+		'@astrojs/markdown-remark',
+		{
+		rehypePlugins: [
+			['rehype-slug'],
+			['rehype-autolink-headings', {behavior: "wrap"}],
+			['rehype-figure-for-img'],
+		]
+		},
 		],
-	  },
-	}
+	},
+}
 )
