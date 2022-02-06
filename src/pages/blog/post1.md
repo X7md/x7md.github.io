@@ -3,7 +3,8 @@ title: "التدوين الاولى"
 layout: ../../layouts/blog.astro
 image: /images/test2.png
 link: /blog/post1
-tags: ["جافاسكربت", ""]
+draft: true
+tags: ["Termux", "Command_Line", "Android"]
 ---
 # تجربة
 ## تجربة

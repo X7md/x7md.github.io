@@ -24,6 +24,7 @@ export default /** @type {import('astro').AstroUserConfig} */ ({
 			['rehype-slug'],
 			['rehype-autolink-headings', {behavior: "wrap"}],
 			['rehype-figure-for-img'],
+			['rehype-code-ltr'],
 		]
 		},
 		],
