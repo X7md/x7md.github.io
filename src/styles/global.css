@@ -63,9 +63,15 @@ img.tag-card {
 .card .card-info > h1 {
   @apply text-2xl;
 }
-code {
+code.inline-code {
   @apply bg-[#f8f9fa] text-[#000000] border border-solid border-[#d2d3d7] p-2 whitespace-nowrap;
 }
 b, strong {
   @apply font-black;
+}
+blockquote {
+  text-align: left;
+  direction: ltr;
+  padding: 10px;
+  border: solid 1px #cecece;
 }
