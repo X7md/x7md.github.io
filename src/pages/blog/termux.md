@@ -1,7 +1,7 @@
 ---
 title: "تجربتي مع  ترمكس"
 layout: ../../layouts/blog.astro
-image: /images/termux-thm.png
+image: /images/termux-thm.jpg
 link: /blog/termux
 tags: ["Termux", "Command_Line", "Android"]
 draft: false
