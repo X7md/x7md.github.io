@@ -63,8 +63,10 @@ img.tag-card {
 .card .card-info > h1 {
   @apply text-2xl;
 }
-code.inline-code {
-  @apply bg-[#f8f9fa] text-[#000000] border border-solid border-[#d2d3d7] p-2 whitespace-nowrap;
+code {
+  @apply bg-[#f8f9fa] text-[#000000] border border-solid border-[#d2d3d7] whitespace-nowrap text-left inline-block;
+  padding: 0 0.5em;
+  direction: ltr;
 }
 b, strong {
   @apply font-black;

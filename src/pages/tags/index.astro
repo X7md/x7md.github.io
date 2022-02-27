@@ -9,7 +9,8 @@ const data =  Astro.fetchContent('../blog/*.md');
         </div>
         <section class="flex flex-row flex-wrap items-center justify-center rounded">
             {
-                data.slice(0, 5).map((post)=> (
+                // ilter podst tht's not draft.
+                data.filter(e => !e.draft).map((post)=> (
                     <div class="card">
                     <a href={post.url}>
                     <img width="3440" height="1440" class="tag-card" src={post.image} />
