@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-    font-family: Vazir;
+    font-family: 'Vazirmatn RD';
     -webkit-tap-highlight-color: transparent;
 }
 [v-cloak] {
@@ -16,6 +16,12 @@ body {
 
 .x-container {
     @apply mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 max-w-screen-lg lg:p-0
+}
+
+html, h1, h2, h3, h4, h5, h6, p, code, pre, span {
+  padding-top: .65rem;
+  padding-bottom: .65rem;
+  line-height: 2.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
