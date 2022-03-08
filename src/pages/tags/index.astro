@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/page.astro'
+// @ts-nocheck
 const data =  Astro.fetchContent('../blog/*.md');
 ---
 <BaseLayout>
@@ -9,8 +10,8 @@ const data =  Astro.fetchContent('../blog/*.md');
         </div>
         <section class="flex flex-row flex-wrap items-center justify-center rounded">
             {
-                // ilter podst tht's not draft.
-                data.filter(e => !e.draft).map((post)=> (
+            
+                 data.filter(e => !e.draft).map((post)=> (
                     <div class="card">
                     <a href={post.url}>
                     <img width="3440" height="1440" class="tag-card" src={post.image} />
