@@ -3,6 +3,9 @@ title: "تجربتي مع  ترمكس"
 layout: ../../layouts/blog.astro
 image: /images/termux-thm.jpg
 link: /blog/termux
+date: '2022/02/18'
+dateModified: '2022/03/10'
+desc: 'تجربتي الشخصية مع برنامج ترمكس'
 tags: ["Termux", "Command_Line", "Android"]
 draft: false
 ---

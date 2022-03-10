@@ -2,7 +2,15 @@
 // Component Imports
 import Navbar from '../components/Navbar.astro';
 import Banner from '../components/Banner.astro';
+import structuredData from '../utility/JSONid.js';
 const {content} = Astro.props;
+let postData = {
+	title: content.title,
+	imageName: content.image,
+	datePublished: content.date,
+	dateModified: content.dateModified
+}
+let richResults = structuredData(postData);
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -19,7 +27,11 @@ const {content} = Astro.props;
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:title" content={content.title} />
-	{content.des && <meta property="twitter:description"  content={content.des} />}
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	{content.desc && (<Fragment>
+	<meta property="twitter:description" content={content.des} />
+	<meta name="description" content={content.des} />
+	</Fragment>)}
 	<style global>
 		@import "./../styles/global.css";
 		.blog-content img {
@@ -45,5 +57,7 @@ const {content} = Astro.props;
 			<slot></slot>
 		</div>
 	</main>
+	<!--Rich Results-->
+<script type="application/ld+json" set:html={richResults}></script>
 	</body>
 </html>
