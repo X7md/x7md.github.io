@@ -8,26 +8,14 @@
 
 // @ts-check
 export default /** @type {import('astro').AstroUserConfig} */ ({
-	// Enable the Preact renderer to support Preact JSX components.
-	renderers: ['@astrojs/renderer-preact'],
-	devOptions: {
-		hostname: "0.0.0.0"
-	},
-	buildOptions: {
-		site: "https://www.x7md.net/"
-	},
-	markdownOptions: {
-		render: [
-		'@astrojs/markdown-remark',
-		{
+	site: "https://www.x7md.net/",
+	markdown: {
 		rehypePlugins: [
 			['rehype-slug'],
 			['rehype-autolink-headings', {behavior: "wrap"}],
 			['rehype-figure-for-img'],
 			/*['rehype-code-ltr'] don't need anymore. ,*/
-		]
-		},
-		],
+		], 
 	},
 }
 )

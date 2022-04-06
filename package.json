@@ -9,14 +9,15 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.2",
     "autoprefixer": "^10.4.0",
     "gh-pages": "^3.2.3",
-    "tailwindcss": "^3.0.5"
+    "tailwindcss": "^3.0.23"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^0.6.0",
-    "astro": "^0.23.7",
+    "@astrojs/markdown-remark": "^0.8.1",
+    "astro": "^1.0.0-beta.2",
+    "i": "^0.3.7",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-code-ltr": "^0.0.1",
     "rehype-figure-for-img": "^0.0.4",

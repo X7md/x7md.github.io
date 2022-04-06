@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/page.astro'
 // @ts-nocheck
-const data =  Astro.fetchContent('../blog/*.md');
+const data =  Astro.glob('../blog/*.md');
 ---
 <BaseLayout>
     <>
