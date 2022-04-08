@@ -3,6 +3,7 @@
 import Navbar from '../components/Navbar.astro';
 import Banner from '../components/Banner.astro';
 import structuredData from '../utility/JSONid.js';
+import "./../styles/global.css";
 const {content} = Astro.props;
 let postData = {
 	title: content.title,
@@ -28,12 +29,13 @@ let richResults = structuredData(postData);
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:title" content={content.title} />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	{content.desc && (<Fragment>
+	{content.desc && (
+	<Fragment>
 	<meta property="twitter:description" content={content.des} />
 	<meta name="description" content={content.des} />
-	</Fragment>)}
-	<style global>
-		@import "./../styles/global.css";
+	</Fragment>
+	)}
+	<style is:global>
 		.blog-content img {
 			@apply my-4;
 		}

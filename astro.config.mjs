@@ -1,21 +1,20 @@
-// Full Astro Configuration API Documentation:
-// https://docs.astro.build/reference/configuration-reference
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-
-// @ts-check
-export default /** @type {import('astro').AstroUserConfig} */ ({
-	site: "https://www.x7md.net/",
+// https://astro.build/config
+export default defineConfig({
+	integrations: [tailwind({
+		config: { applyBaseStyles: true },
+	  })],
+	site: 'https://git.x7md.net/',
 	markdown: {
+		// Example: Include all drafts in your final build
+		drafts: false,
 		rehypePlugins: [
 			['rehype-slug'],
 			['rehype-autolink-headings', {behavior: "wrap"}],
 			['rehype-figure-for-img'],
 			/*['rehype-code-ltr'] don't need anymore. ,*/
-		], 
-	},
-}
-)
+		]
+	  }
+});
