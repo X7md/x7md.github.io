@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
 * {
     font-family: 'Vazirmatn RD';
     -webkit-tap-highlight-color: transparent;
@@ -84,5 +83,4 @@ h4, h5, h6 {
 }
 p, span {
   @apply font-medium text-base text-[#300D43] leading-8;
-}
 }
