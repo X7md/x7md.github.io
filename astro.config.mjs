@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
 	integrations: [tailwind({
-		config: { applyBaseStyles: true },
+		config: { applyBaseStyles: false },
 	  })],
 	site: 'https://git.x7md.net/',
 	markdown: {

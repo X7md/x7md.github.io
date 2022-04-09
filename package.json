@@ -15,6 +15,7 @@
     "autoprefixer": "^10.4.4",
     "canvas-confetti": "^1.5.1",
     "postcss": "^8.4.12",
+    "postcss-import": "^14.1.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-figure-for-img": "^0.0.4",
     "rehype-slug": "^5.0.1",
