@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host",
+    "start": "astro dev --host",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview --host"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.1.0",

@@ -41,9 +41,9 @@ img.tag-card {
   @apply text-2xl;
 }
 code {
-  @apply bg-[#f8f9fa] text-[#000000] border border-solid border-[#d2d3d7] whitespace-nowrap text-left inline-block;
-  padding: 0 0.5em;
+  @apply bg-[#f8f9fa] text-[#000000] px-1 border border-solid border-[#d2d3d7] whitespace-nowrap text-left;
   direction: ltr;
+  unicode-bidi: isolate;
 }
 b, strong {
   @apply font-black;
@@ -62,7 +62,7 @@ blockquote {
 h1, h2, h3, h4, h5, h6, p, code, pre, span {
   padding-top: .65rem;
   padding-bottom: .65rem;
-  line-height: 2.5rem;
+  line-height: 3rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
