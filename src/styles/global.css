@@ -113,3 +113,7 @@ button:hover {
 .d-block {
   display: block;
 }
+
+.blog-content a {
+  @apply text-blue-500;
+}
