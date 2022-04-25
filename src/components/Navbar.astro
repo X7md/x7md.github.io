@@ -1,7 +1,7 @@
 ---
 //let { type = 'button' } = Astro.props;
 ---
-<header class="relative py-3 z-10">
+<div class="relative py-3 z-10">
 		<nav class="x-container" v-scope="{ openMenu: false }">
 				<a class="flex items-center" href="/">
 					<div class="inline-flex items-start" dir="ltr">
@@ -17,7 +17,7 @@
 
 				<div class="hidden lg:flex md:mr-10 items-center justify-start">
 					{[{title: "عني", link: "/about-me"},
-					{title: "المواضيع", link: "/tags"},   
+					{title: "التدوينات", link: "/posts"},   
 					{title: "تواصل معي", link: "/connect"}].map(e => (
 						<a href={e.link} class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">{e.title}</a>
 					))}
@@ -42,8 +42,8 @@
 				</div>
 					<div class="px-2 pt-4 pb-3">
 					{
-						[{title: "عني", link: "/about-me"},
-					{title: "المواضيع", link: "/tags"},   
+					[{title: "عني", link: "/about-me"},
+					{title: "التدوينات", link: "/posts"},   
 					{title: "تواصل معي", link: "/connect"}].map(e => (
 						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href={e.link} >{e.title}</a> ))
 					}
@@ -52,4 +52,4 @@
 				</div>
 				</div>
 		</nav>
-</header>
+</div>

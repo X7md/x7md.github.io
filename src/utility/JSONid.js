@@ -13,7 +13,7 @@ function JSONid(data){
         "author": {
             "@type": "Person",
             "name": "حمد بنقالي",
-            "url": "https://ar.wikipedia.org/wiki/user:X7md"
+            "url": "https://git.x7md.net/about-me"
         },
         "publisher": {
             "@type": "Person",
