@@ -115,5 +115,5 @@ button:hover {
 }
 
 .blog-content a {
-  @apply text-blue-500;
+  @apply text-blue-500 break-words;
 }

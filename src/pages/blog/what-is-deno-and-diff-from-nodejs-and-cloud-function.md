@@ -107,7 +107,7 @@ log("Hamad");`}>
 
 [Deno (Golang  Repository)](https://github.com/denoland/deno/tree/golang)
 
-[Deno (Golang  Repository)](https://github.com/ry/deno/commits/ry_master?after=e247deb844e0c7c0ff96955166ac37ed481e6f37+505&branch=ry_master)[after=e247deb844e0c7c0ff96955166ac37ed481e6f37+505&branch=ry_master](https://github.com/ry/deno/commits/ry_master?after=e247deb844e0c7c0ff96955166ac37ed481e6f37+505&branch=ry_master)
+[Deno (Golang  commit)](https://github.com/ry/deno/commits/ry_master?after=e247deb844e0c7c0ff96955166ac37ed481e6f37+505&branch=ry_master)
 
 [Deno to Rust](https://github.com/denoland/deno/issues/205)
 
