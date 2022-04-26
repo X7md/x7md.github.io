@@ -1,5 +1,3 @@
-# hello
-
 User-agent: *
 Allow: /
 
