@@ -1,2 +1,6 @@
+# hello
+
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://astro.build/sitemap.xml
