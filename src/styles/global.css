@@ -117,3 +117,7 @@ button:hover {
 .blog-content a {
   @apply text-blue-500 break-words;
 }
+
+pre {
+  @apply whitespace-pre-line break-words;
+}
