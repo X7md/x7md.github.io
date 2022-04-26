@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://astro.build/sitemap.xml
+Sitemap: https://git.x7md.net/sitemap.xml
