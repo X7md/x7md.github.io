@@ -7,10 +7,10 @@
 	<title>x7md</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+	<meta name="description" content="مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية">
 	<script src="https://unpkg.com/petite-vue" defer init></script>
-	<link rel="stylesheet" href="/assets/asset.2b37cba0.css"></link>
+	<link rel="stylesheet" href="/assets/asset.8d76d235.css"></link>
 </head>
-
 	<body>
 		<main>
 			<div class="relative py-3 z-10">
@@ -23,13 +23,19 @@
 					</div>
 				</a>
 
-				<div class="-mr-2 flex items-center lg:hidden">
+				<div class="mr-2 flex items-center lg:hidden">
 					<button @click="openMenu = true" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-[#BFBFBF] focus:outline-none focus:bg-[#BFBFBF] focus:text-gray-500 transition duration-150 ease-in-out"><svg stroke="#A75E99" fill="none" viewBox="0 0 24 24" class="h-6 w-6"><title>Menu | Deno</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg></button>
 				</div>
 
-				<div class="hidden lg:flex md:mr-10 items-center justify-start">
-					<a href="/about-me" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">عني</a><a href="/posts" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">التدوينات</a><a href="/connect" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">تواصل معي</a>
-				</div>
+				<ul class="list-none hidden lg:flex md:mr-10 items-center justify-start">
+					<li>
+						<a href="/about-me" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">عني</a>
+					</li><li>
+						<a href="/posts" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">التدوينات</a>
+					</li><li>
+						<a href="/connect" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">تواصل معي</a>
+					</li>
+				</ul>
 
 				<div v-cloak v-if="openMenu" class="absolute top-0 inset-x-0 p-2 lg:hidden">
 				<div class="rounded-lg shadow-md">
@@ -42,21 +48,27 @@
 					
 					</div>
 				</a>
-				<div class="-mr-2">
+				<div class="mr-2">
 					<button @click="openMenu = false" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-[#A75E99] hover:bg-[#260B3A] focus:outline-none focus:bg-[#260B3A] transition duration-150 ease-in-out">
 					<svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
 					</button>
 				</div>
 				</div>
-					<div class="px-2 pt-4 pb-3">
-					<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/about-me">عني</a><a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/posts">التدوينات</a><a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/connect">تواصل معي</a>
-					</div>
+					<ul class="list-none px-2 pt-4 pb-3">
+					<li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/about-me">عني</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/posts">التدوينات</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/connect">تواصل معي</a>
+					</li>
+					</ul>
 				</div>
 				</div>
 				</div>
 		</nav>
 </div>
-			<div v-cloak class="bg-[#DFDFDF]" v-scope="{open: false}" @vue:mounted="open = Cookies.get('closebanner')" v-bind:hidden="open">
+			<div data-nosnippet v-cloak class="bg-[#DFDFDF]" v-scope="{open: false}" @vue:mounted="open = Cookies.get('closebanner')" v-bind:hidden="open">
   <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between flex-wrap">
       <div class="w-0 flex-1 flex items-center">
@@ -159,6 +171,6 @@
 				</li>
 			</ul>
 		</section>
-	</header><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"حمد محمد عبدالستار بنقالي","familyName":"بنقالي","birthDate":"2004-08-21T21:00:00.000Z","hasOccupation":[{"@type":"Role","hasOccupation":{"@type":"Occupation","name":"Developer","sameAs":"https://www.wikidata.org/wiki/Q5482740"}}],"url":"http://git.x7md.net","sameAs":["https://ar.wikipedia.org/wiki/user:X7md","https://uqu.edu.sa/Profile/s443003821","https://profile.satr.codes/user/x7md","https://twitter.com/x7mdNet","https://www.linkedin.com/in/x7md","https://t.me/x7mdNet"]}</script>
+	</header><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"حمد محمد عبدالستار بنقالي","familyName":"بنقالي","birthDate":"2004-08-21T21:00:00.000Z","hasOccupation":[{"@type":"Role","hasOccupation":{"@type":"Occupation","name":"Developer","sameAs":"https://www.wikidata.org/wiki/Q5482740"}}],"url":"http://git.x7md.net","sameAs":["https://developers.google.com/profile/u/x7md","https://ar.wikipedia.org/wiki/user:X7md","https://uqu.edu.sa/Profile/s443003821","https://profile.satr.codes/user/x7md","https://twitter.com/x7mdNet","https://www.linkedin.com/in/x7md","https://t.me/x7mdNet"]}</script>
 		</main>
 	</body></html>
