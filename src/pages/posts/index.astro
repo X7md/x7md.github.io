@@ -1,7 +1,10 @@
 ---
+// @ts-nocheck
 import BaseLayout from '../../layouts/page.astro';
 import Card from  "../../components/Card.astro";
-const data =  await Astro.glob('../blog/*.md');
+const data_ =  await Astro.glob('../blog/*.md');
+const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date)) 
+console.log(JSON.stringify(data.map(e => e.frontmatter.date)))
 ---
 <BaseLayout>
     <>
@@ -11,7 +14,7 @@ const data =  await Astro.glob('../blog/*.md');
         <section class="flex flex-row flex-wrap items-center justify-center rounded">
             {
             
-                 data.filter(post => !post.frontmatter.draft).reverse().map((post)=> {
+                 data.filter(post => !post.frontmatter.draft).map((post)=> {
                     return (
                         <Card
                         postURL={post.url}
