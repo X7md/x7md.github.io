@@ -13,6 +13,10 @@
     display: none;
 }
 
+body, html {
+  min-height: 100vh;
+}
+
 body {
     @apply bg-white;
 }
@@ -120,4 +124,8 @@ button:hover {
 
 pre {
   @apply whitespace-pre-line break-words;
+}
+
+footer svg {
+  @apply mx-2;
 }
