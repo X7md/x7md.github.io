@@ -1,5 +1,6 @@
 ---
-import BaseLayout from '../../layouts/page.astro'
+import BaseLayout from '../../layouts/page.astro';
+import Card from  "../../components/Card.astro";
 const data =  await Astro.glob('../blog/*.md');
 ---
 <BaseLayout>
@@ -11,14 +12,12 @@ const data =  await Astro.glob('../blog/*.md');
             {
             
                  data.filter(post => !post.frontmatter.draft).reverse().map((post)=> {
-                    return (<div class="card">
-                    <a href={post.url}>
-                    <img width="3440" height="1440" class="tag-card" src={post.frontmatter.image} />
-                        <div class="card-info">
-                        <h1>{post.frontmatter.title}</h1>
-                        </div>
-                    </a>
-                    </div>)
+                    return (
+                        <Card
+                        postURL={post.url}
+                        postTitle={post.frontmatter.title}
+                        postImage={post.frontmatter.image} />
+                    )
                  })
             }
         </section>

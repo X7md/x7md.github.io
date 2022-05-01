@@ -21,6 +21,10 @@ body {
     @apply bg-white;
 }
 
+main {
+  min-height: calc(100vh - 15rem)
+}
+
 .container {
   @apply max-w-[940px]
 }

@@ -1,0 +1,11 @@
+---
+const { postTitle, postURL, postImage } = Astro.props;
+---
+<div class="card">
+    <a href={postURL}>
+    <img width="3440" height="1440" class="tag-card" src={postImage} />
+    <div class="card-info">
+    <h1>{postTitle}</h1>
+    </div>
+    </a>
+</div>
