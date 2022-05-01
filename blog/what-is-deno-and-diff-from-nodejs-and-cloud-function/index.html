@@ -12,7 +12,7 @@
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:title" content="ما هو Deno ؟وعلاقته بحوسبة الحافة؟">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="/assets/asset.8d76d235.css"></link>
+	<link rel="stylesheet" href="/assets/asset.6cc0741a.css"></link>
 </head><meta property="twitter:description"><meta name="description">
 	<meta property="twitter:image" content="/images/what-is-deno.png">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -22,7 +22,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
 	
 	
-	<main>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
 				<a class="flex items-center" href="/">
@@ -108,8 +107,9 @@
     </div>
   </div>
 </div>
+	<main>
 		<img class="header-blog" src="/images/what-is-deno.png">
-		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-20 flex flex-col">
+		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
 			<p>في الآونة الاخيرة ظهرت لدينا  <strong>بيئة</strong>  <strong>تشغيل</strong> <strong>جافاسربت (JavaScript Runtime Environment)</strong> تسمى Deno وقد تم تصميمها من نفس الشخص الذي أبتكر NodeJS، المبرمج العظيم ومهندس البرمجيات  <strong>ريان داهل (Ryan Dahl)</strong>.</p><h1 id="ما-هو-دينو-deno">ما هو دينو (Deno)؟</h1><p>في 2018 صرح ريان بمؤتمر  <strong>JSConf EU</strong>  عن وجهة نظره الحالية في NodeJS في لقاء كان تحت اسم ”<strong>عشر أخطاء ندمت أني أتقرفتها بشأن NodeJS</strong>” ذكر فيه بعض الأخطاء ومفاهيم برمجية خاطئة حصلت في فترة تطوير NodeJS والتي لا يمكن إصلاحها الآن! كون العديد من البرمجيات المبنية على NodeJS لا زالت تستند عليها وتستخدمها.</p><p>في الفقرة الأخيرة من اللقاء قام ريان بعرض Deno على العلن، وقام بمشاركة رابط مشروع غتهاب مع الحضور في المؤتمر وقام بتعريف Deno على أنه “Secure TypeScript Runtime” أي (مُشغل تايبسكربت آمن)، أشار ريان بأنه أعاد برمجة وهيكلة مشغل جافاسكربت جديد ليصلح الأشياء التي ندم عليها في NodeJS على حد قوله.</p><p>ولخص مميزات وفروقات Deno عن Node في:</p><p><strong>1- الحماية</strong></p><p>على عكس NodeJS الذي يسمح بتشغيل الكود البرمجي وحصوله على كافة الصلاحيات بشكل مباشر  <em>كالوصول إلى ملفات النظام</em>،  <em>والوصول إلى الشبكة</em>  وغير ذلك… لا يعطي Deno تلك الصلاحيات بشكل مباشر، ويعتبر  <strong>معزول بشكل افتراضي (Sandboxed Environment By Default)</strong> حيث يتبادل Deno الرسائل مع محرك جافاسكربت (V8 Engine) في بيئة معزولة، وعلى المبرمج أن يحدد أي الصلاحيات يجب أن تُعطى للبرنامج (الكود البرمجي) عند تشغيله على Deno.</p><p>يعزز هذا الحماية في حال تشغيل أكواد مكتبات طرف ثالث بحيث لا تحصل على كل الصلاحيات أو صلاحيات لا تحتاجها.</p><p><strong>2- الإعتماد على نظام الوعود</strong></p><p>ذكر ريان في اللقاء أنه قام في عام 2009 بإضافة نظام الوعود (promises) إلى NodeJS ولكن قام بإزالته في 2010، وبعد تبني مفهوم الوعود في جافاسكربت ومعايرتها في إصدارات ES2015 والأحدث، عبر ريان أن قراره كان غير سليم… وجعل Deno يستخدم هذا المفهوم منذ البداية.</p><p>يمكن هذا المبرمجين من استخدام مفهوم (async/await) بشكل فعال.</p><p><strong>3- تبسيط نظام الوحدات</strong></p><p>نظام الوحدات في NodeJS يعتبر معقد نسبيًا فعندما تم إبتكار NodeJS لم يكن هناك نظام وحدات مُوحد في جافاسكربت- في الوقت الحالي يوجد نظام وحدات ES Moudle- في ذلك الوقت اضطر فريق NodeJS إلى أبتكار نظامهم الخاص الذي سموه CommonJS وقد حصل سمعة سيئة خاصة مع مجلد  <strong>node_module وملف packges.json</strong> ومع كل تعقيدات إدارة الحزم وحجمها الكبير.</p><p>وبما أن Deno أتى بعد أبتكار نظام وحدات ES Module فهو يستخدم نفس الفكرة والمفهوم الموجود في المتصفحات.</p><p>مثال على نظام وحدات جافاسكربت المعياري:</p><code>
 <pre>import { log } form &quot;utility&quot;;  
 log(“Hamad”);</pre>
@@ -128,5 +128,34 @@ log(“Hamad”);</pre>
 		</div>
 	</main>
 	<!--Rich Results-->
+	<footer class="mt-2 bg-gray-50">
+  <div class="max-w-screen-xl px-4 py-2 mx-auto">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <div class="flex mt-3 space-x-6 text-gray-500">
+
+          <a class="hover:opacity-75" href="https://twitter.com/x7mdNet" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Twitter </span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+            </svg>
+          </a>
+
+          <a class="hover:opacity-75" href="https://github.com/x7md" target="_blank" rel="noreferrer">
+            <span class="sr-only"> GitHub </span>
+
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-2 text-xs text-gray-500">
+      <s>&copy;</s> حمد بنقالي 2021 - 2022<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
+    </p>
+  </div>
+</footer>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"headline":"ما هو Deno ؟وعلاقته بحوسبة الحافة؟","image":"/images/what-is-deno.png","datePublished":"2022/04/26","dateModified":"2022/04/26","author":{"@type":"Person","name":"حمد بنقالي","url":"https://git.x7md.net/about-me"},"publisher":{"@type":"Person","name":"x7md"}}</script>
 	</html>
