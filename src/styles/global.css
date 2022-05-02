@@ -38,7 +38,7 @@ img.tag-card {
   aspect-ratio: 43 / 18;
 }
 .card {
-  @apply max-w-xl m-2 w-full h-full;
+  @apply transition-all duration-100 ease-in-out max-w-xl m-2 w-full h-full;
 }
 .card img {
   @apply rounded-t-xl;
@@ -46,7 +46,7 @@ img.tag-card {
   height: 100%;
 }
 .card .card-info {
-  @apply p-3 shadow-md;
+  @apply p-3 drop-shadow-md;
 }
 .card .card-info > h1 {
   @apply text-2xl;
