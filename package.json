@@ -14,5 +14,9 @@
     "postcss-windicss": "^1.0.0",
     "vite-plugin-windicss": "^1.5.1",
     "windicss": "^3.2.1"
+  },
+  "dependencies": {
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-figure-for-img": "^0.0.4"
   }
 }

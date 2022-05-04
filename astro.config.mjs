@@ -19,5 +19,11 @@ export default defineConfig(
     plugins: [WindiCSS()]
   },
   site: 'https://git.x7md.net/',
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  markdown: {
+    rehypePlugins: [
+      ['rehype-autolink-headings', { behavior: 'prepend'}],
+      ['rehype-figure-for-img', {}]
+    ]
+  }
 });

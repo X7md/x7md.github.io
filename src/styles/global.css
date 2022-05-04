@@ -96,11 +96,12 @@ p, span {
   @apply font-medium text-base text-[#300D43] leading-8;
 }
 
-.blog-content img {
-  @apply my-4;
+figure {
+  @apply text-center m-auto text-sm max-w-96;
 }
+
 .blog-content img {
-  @apply my-4;
+  @apply inline-block my-4 max-w-96;
 }
 
 .btn {
@@ -123,7 +124,7 @@ button:hover {
 }
 
 .blog-content a {
-  @apply text-blue-500 break-words;
+  @apply text-blue-500 break-words hover:text-purple-900;
 }
 
 pre {
