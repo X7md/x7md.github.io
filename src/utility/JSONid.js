@@ -4,7 +4,8 @@ function JSONid(data){
         "@type": "Article",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://google.com/article"
+            "@id": "https://google.com/article",
+            "url":data.link
         },
         "headline": data.title,
         "image": data.imageName,
@@ -18,8 +19,11 @@ function JSONid(data){
         "publisher": {
             "@type": "Person",
             "name": "x7md"
-            }
         }
+        }
+    if (data["sameAs"]){
+        JSONid["sameAs"] = data["sameAs"];
+    }
     return JSON.stringify(JSONid);
 }
 export default JSONid;

@@ -7,6 +7,7 @@ date: '2022/02/18'
 dateModified: '2022/03/10'
 desc: 'تجربتي الشخصية مع برنامج ترمكس'
 draft: false
+sameAs: "https://www.wikidata.org/wiki/Q60572759"
 tags: ["Termux", "Command_Line", "Android"]
 ---
 # تجربتي مع ترمكس

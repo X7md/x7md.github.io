@@ -4,6 +4,7 @@ layout: ../../layouts/blog.astro
 image: /images/what-is-deno.png
 link: /blog/what-is-deno-and-diff-from-nodejs-and-cloud-function
 date: '2022/04/26'
+sameAs: "https://www.wikidata.org/wiki/Q65070939"
 dateModified: '2022/04/26'
 desc: 'في هذه التدوينة أتناول موضوع دينو وعلاقته مع الحوسبة السحابية على الحافة، والفرق بين دينو و نود جي أس'
 tags: ["Deno", "NodeJS", "JavaScript", "JS", "Cloud", "Cloud Function"]

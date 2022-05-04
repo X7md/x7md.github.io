@@ -7,8 +7,10 @@ import structuredData from '../utility/JSONid.js';
 import "./../styles/global.css";
 const {content} = Astro.props;
 let postData = {
+	link: new URL(content.link, "https://git.x7md.net/").href,
 	title: content.title,
 	imageName: content.image,
+	sameAs: content.sameAs,
 	datePublished: content.date,
 	dateModified: content.dateModified
 }
