@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="القصة وراء مكتبة رياكت">
+	
+	<meta property="og:image" content="/images/the-story-of-reactjs.png">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="القصة وراء مكتبة رياكت">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="/assets/asset.16faa73c.css"></link>
+</head><meta property="twitter:description"><meta name="description">
+	<meta property="twitter:image" content="/images/the-story-of-reactjs.png">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<title>x7md</title>
+	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
+	
+	
+		<div class="relative py-3 z-10">
+		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
+				<a class="flex items-center" href="/">
+					<div class="inline-flex items-start" dir="ltr">
+					<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
+					<path fill="#93237B" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg><span data-nosnippet class="text-xl m-auto lg:py-2 py-1 text-[#93237B] leading-[3.25rem] font-bold">/x7md</span>
+					
+					</div>
+				</a>
+
+				<div class="mr-2 flex items-center lg:hidden">
+					<button @click="openMenu = true" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-[#BFBFBF] focus:outline-none focus:bg-[#BFBFBF] focus:text-gray-500 transition duration-150 ease-in-out"><svg stroke="#A75E99" fill="none" viewBox="0 0 24 24" class="h-6 w-6"><title>Menu | Deno</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg></button>
+				</div>
+
+				<ul class="list-none hidden lg:flex md:mr-10 items-center justify-start">
+					<li>
+						<a href="/about-me" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">عني</a>
+					</li><li>
+						<a href="/posts" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">التدوينات</a>
+					</li><li>
+						<a href="/connect" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">تواصل معي</a>
+					</li>
+				</ul>
+
+				<div v-cloak v-if="openMenu" class="absolute top-0 inset-x-0 p-2 lg:hidden">
+				<div class="rounded-lg shadow-md">
+				<div class="rounded-lg bg-[#260B3A] shadow-xs overflow-hidden">
+				<div class="px-5 pt-4 flex items-center justify-between">
+				<a class="flex items-center" href="/">
+					<div class="inline-flex items-start" dir="ltr">
+					<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
+					<path fill="#fff" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg><span class="text-xl m-auto lg:py-2 py-1 text-white leading-[3.25rem] font-bold">/x7md</span>
+					
+					</div>
+				</a>
+				<div class="mr-2">
+					<button @click="openMenu = false" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-[#A75E99] hover:bg-[#260B3A] focus:outline-none focus:bg-[#260B3A] transition duration-150 ease-in-out">
+					<svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+					</button>
+				</div>
+				</div>
+					<ul class="list-none px-2 pt-4 pb-3">
+					<li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/about-me">عني</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/posts">التدوينات</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/connect">تواصل معي</a>
+					</li>
+					</ul>
+				</div>
+				</div>
+				</div>
+		</nav>
+</div>
+		<div data-nosnippet v-cloak class="bg-[#DFDFDF]" v-scope="{open: false}" @vue:mounted="open = Cookies.get('closebanner')" v-bind:hidden="open">
+  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between flex-wrap">
+      <div class="w-0 flex-1 flex items-center">
+        <span class="flex p-2 rounded-lg bg-[#BFBFBF]">
+          <!-- Heroicon name: outline/speakerphone -->
+          <svg class="h-6 w-6 text-[#461155]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+          </svg>
+        </span>
+        <p class="p-0 mr-3 font-medium text-[#461155] truncate leading-none">
+          <span class="text-base p-0">
+            الموقع لا يزال تحت التطوير...<br>
+          </span>
+          <span class="text-sm p-0">
+            شكرًا لصبرك...
+          </span>
+        </p>
+      </div>
+      <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
+        <button type="button" @click="Cookies.set('closebanner', 'true'); open = 'true'" class="-mr-1 flex p-2 rounded-md hover:bg-[#ffffff] focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6 text-[#461155]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+	<main>
+		<img class="header-blog" src="/images/the-story-of-reactjs.png">
+		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
+			<p>أثناء محاولتي لتطوير مقالة رياكت في ويكيبيديا العربية، اتضطرت للرجوع قليلًا إلى تاريخ رياكت، كيف بدأت ولماذا اختراعتها فيسبوك ومن الشخص الذي اختراعها... كانت قصة مثيرة... عن تلك المشاكل التي كانت تواجه مطوري الويب آنذاك والحل الذي أتت به رياكت.</p><h2 id="نبذة-سريعة-عن-رياكت">نبذة سريعة عن رياكت</h2><p>رياكت هي مكتبة جافاسكربت، متخصصة بالواجهات المستخدم التفاعلية (Interactive UI) تُستخدم بشكل شائع في الكثير من المواقع وحتى في تطوير تطبيقات الهواتف. تم إتاحة المكتبة كمشروع مفتوح المصدر في عام 2013، وكما تم العمل على تطوير تقنية رياكت نتيف في 2015 وإتاحتها كمشروع مفتوح المصدر كذلك. مضت 9 سنوات -لحظة كتابة هذه التدوينة- على الإطلاق الرسمي لرياكت أي قرابة عقد من الزمان، خلالها تطورت المكتبة نفسها وطورت معها حتى طرق التفكير والبرمجة في واجهات المستخدم.</p><h2 id="القصة">القصة</h2><p>لتدرك الهدف والفائدة من رياكت عليك أن تدرك كيف وصلنا إلى هذه النقطة وكيف أصبحت رياكت بهذا الحجم والشهرة.</p><h3 id="البدايات">البدايات</h3><p>تبدأ القصة عام 2011 في داخل شركة فيسبوك -شركة ميتا حاليًا- أحد المُطورين ويُدعى جوردان والكي (Jordan Walke) هو وزملائه بالعمل كانوا مدركين لمشكلة "تعقيد بناء التطبيقات الويب"، خصوصًا فيما يتعلق بواجهات المستخدم (UI) عندما تصبح واجهة المستخدم أكبر وأعقد مع مرور الوقت واستمرار التطوير عليها، فيُصبح من الصعب إدارتها والتعديل عليها وصيانتها.</p><p>مكتبات التعامل مع واجهة المستخدم في <strong>ذلك الوقت</strong> لم تكن تقدم <strong>الحل المناسب</strong> بحسب وجهة نظر جوردان فهي بحاجة لكثير من التفاصيل، وكلما كبر المشروع أكثر فأكثر تجعل المبرمج يفكر في أمور أخرى أكثر من تفكيره في واجهة المستخدم ذاتها، أحد أهم هذه الأمور هو التفكير في التغييرات التي يلزُم أن تتم على العناصر في الصفحة (Dom Mutation) عندما يتفاعل المستخدم أحد المكونات في الواجهة.</p><p>أرد جوردان شيئًا مختلفًا، شيئًا أقل تعقيدًا من وجهة نظره، لذلك قرر العمل فكرة وعرضها على زملاءه في العمل بفيسبوك وذلك بإنشاء مكتبة <a href="https://github.com/jordwalke/FaxJs/commit/660c868589b653a627d64506b8f6f7e3b3620c02">FaxJS</a> كنموذج مبدئي (قبل أن يتم تسمية المشروع React)، وفكرتها هي أن تساعد على إنشاء العناصر التفاعلية بطريقة برمجية تصريحية (Declarative) وعبر جوردان عن فكرته بأنها "طريقة لإنشاء مُكونات تصريحية (Declarative Components)" أي مفهومة وواضحة، على خلاف الطريقة الأمرية (imperative) التي تتطلب ذكر تفاصيل كثيرة، وبدلًا من أن ينشغل بالك بكل التفاصيل، ليس عليك إلا قول ما تريد فعله "تصريحه".
+وحتى لا تتعقد الأمور ويتشتت التفكير في البيانات وتغيراتها، أرد جوردان وأصدقائه أيضًا أن يتم تتبع كل تلك التغيرات (Dom Mutation) وتصيرها في العناصر بطريقة سهلة دون التفكير في تفاصيلها، وفي وقتٍ لاحق قام الفريق أيضًا بتوفير طريقة كتابة اختيارية لعناصر الواجهة سُميت (JSX) تُساعد على وصف شكل المكون بسهولة وقد أستلهمت من Ecmascript For Xml و XHP.</p><p>قدم توم أوكينو (Tom Occhino) هو وجوردان والكي (Jordan Walke) مكتبة رياكت للعيان في حدث JSConf US 2013 التي عمل عليها هو وفريق من موظفي فيسبوك وقد تم جعلها مشروعًا مفتوح المصدر قبل العرض بـ نصف ساعة.</p><p></p><figure><img src="/images/react/React-JSConf2013-JSX.png" alt="صورة لطريقة كتابة JSX من العرض التقديمي الأول لرياكت في عام 2013 والذي قدمه جوردان في JSConf US."><figcaption>صورة لطريقة كتابة JSX من العرض التقديمي الأول لرياكت في عام 2013 والذي قدمه جوردان في JSConf US.</figcaption></figure><figure><img src="/images/react/React-JSConf2013-Function-Make-Element.png" alt="صورة للكود ذاته ولن بدون JSX. مأخؤذة من عرض جوردان التقديمي JSConf US 2013."><figcaption>صورة للكود ذاته ولن بدون JSX. مأخؤذة من عرض جوردان التقديمي JSConf US 2013.</figcaption></figure><p>أشر جوردان في العرض أن الهدف من رياكت لا يقتصر فقط بتقديم طريقة سهلة لوصف العناصر (عناصر HTML) برمجيًا، بل أيضًا توفير إمكانية لإعادة استخدامها كمكون مخصص (Custom Component)، بطريقة مُبسطة ومُجردة بكل سهولة.</p><p></p><figure><img src="/images/react/React-JSconf2013-ReactComponent.png" alt="مكون رياكت (React Component) قابل لإعادة الإستخدام في الأعلى طريقة تعريف المكون، بينما في الأسفل طريقة إعادة استخدام المكون، من عرض جوردان JSConf US 2013."><figcaption>مكون رياكت (React Component) قابل لإعادة الإستخدام في الأعلى طريقة تعريف المكون، بينما في الأسفل طريقة إعادة استخدام المكون، من عرض جوردان JSConf US 2013.</figcaption></figure><p>طريقة القولبة (templating) في JSX مرنة جدًا، لست فقط تستطيع تمرير النصوص بين المكونات، بل حتى تمرير بعض العمليات البرمجية على هيئة دوال (Functions).
+</p><figure><img src="/images/react/React-JSconf2013-ReactComponentPassFunc.png" alt="جوردان يوضح للحضور إمكانية تمرير دالة للمكون واستخدماها مع الأحداث حيث استخدمها مع الحدث &quot;onClick&quot;, الصورة مأخوذة من JSConf US 2013."><figcaption>جوردان يوضح للحضور إمكانية تمرير دالة للمكون واستخدماها مع الأحداث حيث استخدمها مع الحدث "onClick", الصورة مأخوذة من JSConf US 2013.</figcaption></figure><p>يتيح JSX ايضًا تنفيذ تعبيرات جافاسكربت في داخل القالب نفسه، ويتم تطبيق تلك التغيرات دومًا عند تغير حالة المكون.
+</p><figure><img src="/images/react/React-JSconf2013-JSXWithJSExpression.png" alt="يوضح جوردان، إمكانية وضع تعبير جافاسكربتي داخل القالب وقد قام بتطبيق وظيفة toUpperCase التي تجعل اﻷحرف الإنجليزية كبيرة، صورة من عرض جوردان JSConf US 2013."><figcaption>يوضح جوردان، إمكانية وضع تعبير جافاسكربتي داخل القالب وقد قام بتطبيق وظيفة toUpperCase التي تجعل اﻷحرف الإنجليزية كبيرة، صورة من عرض جوردان JSConf US 2013.</figcaption></figure><p>وبهذه الطريقة سوف تحصل على "مكون" يؤدي وظيفة معينة، هذا المكون تستطيع إعادة أستخدامه مرارًا وتكرارًا في أجزاء مختلفة من واجهة المستخدم.</p><p>رياكت لا تجعلك تفكر في البيانات في الجهتين (two-way data binding) من منظور MVC بل تفكر في البيانات من منطلق أوحادي الإتجاه (one-directional data binding) حيث لا تلقي رياكت أي أهتمام بالتغييرات (Mutation) التي سوف تطرأ على الحالة في المكون وعندما تتغير حالة البيانات تقوم رياكت بإعادة توليد المكون من جديد بالكامل.</p><p>تبدو فكرة سخيفة نوعًا ما وليست ذات كفاءة وهذا ما قاله توم أوكينو (Tom Occhino) للحضور أثناء بداية العرض واستعراض رياكت، وشرح لهم أن أتت رياكت بحل وهو عمل نسخة من المستند الحالي (DOM) وإجراء التغيرات فيها ومن ثم مقارنة تلك التغيرات مع المستند الفعلي وتطبيق ما تم تغيره وهذا ما يسمى بـ VDOM (Virtual DOM). وأشار توم أيضًا إلى أنه قد تم استخدام رياكت بالفعل في مشاريع داخلية في فيسبوك على موقع فيسبوك الرسمي، وعلى منصة انستجرام قبل الإطلاق الرسمي للمكتبة بحاولي 18 شهرًا... و وجدوا أنها قدمت لهم حلًا رائعًا يمكن الإعتماد عليه لذلك قرروا جعلها مشروع مفتوح المصدر ومشاركة ما توصلوا إليه مع جميع المطورين الآخرين.</p><h3 id="ردة-الفعل">ردة الفعل</h3><p>عندما تأتي بفكرة جديدة خارجة عن المعتاد، سترى أن العديد لن يتفق معك، وهذا ما حدث تمامًا مع رياكت العديد من التعليقات الناس الذين عبرو أنهم لم يحبوا الطريقة التي جاءت بها رياكت بدمج المنطق البرمجي (Logic) مع القالب المرئي (Display template) معًا حيث عبر الكثير عن عدم إعجابهم بفكرة JSX وأشار بيّت هات (Pete Hunt) -أحد العاملين في فريق رياكت- في عرضٍ تقديمي له على JSConf EU 2013 -لقاء حدث بعد عدة أشهر من اللقاء الاولى الذي أطلقت فيه رياكت- إلى سوء فهم حصل من الناس حيث أنهم تعودوا على فصل إهتمامتهم على أساس أنها قوالب وليست مُكونات، لذلك لم يعجبوا بهذا النمط من التصميم.</p><p>وأيضًا وضح بيّت أنه حين التعامل مع واجهة المستخدم على أساس أنها مكونات فإنه يسهل إمكانية إجراء بعض الإختبارات المؤتمة عليها تحديدًا (Units Test) بكل سهولة وسلاسة، كما يسهل إمكانية إعادة استخدام المكونات وتعديلها حيث تصب تركيزك على قطعة واحدة من الكود وتكون منفصلة عن باقي الكود.</p><p>أحد الإشكاليات التي تصورها الناس بسبب طريقة رياكت في دمج المنطق البرمجي مع الواجهة المرئية هي سهولة خلط الكود وإنشاء ما يسمى بـ(Spaghetti code) الكود الملغوص -المتداخل- حيث سيصبح من الصعب إدارة الكود بسبب كل تلك الاشياء المتشابكة والمتداخلة، وكانت إجابة بيّت هي أن لا تكتب كود متداخل (Spaghetti code) بكل بساطة، وحاول إبقاء المكونات صغيرة قدر الإمكان وذلك بالتركيز على وضع المنطق البرمجي الذي تحتاجه المكونات في الواجهة المرئية فقط، وليس وضع اشياء قد لا تكون لها علاقة بالواجهة بشكل مباشر مثل جلب البيانات من الشبكة (Fetching Data) وعمليات التحقق (Validation) حيث يجب أن لا يوضع هذا النوع من المنطق البرمجي في داخل المكونات التي تبني واجهة المستخدم.</p><p>أثارت رياكت أيضًا مخاوف لدى بعض الأشخاص، لأنها تقوم بتوليد المكونات على المتصفح وهذا قد يسبب نوع من الثغرات تُسمى XSS، وكانت إجابة بيّت أن فريق رياكت قام بإنشاء مكتبة ReactDOM وهي مكتبة تقوم بتوليد عناصر HTML بطريقة سهلة ومع الأخذ بعين الإعتبار تجنب المخاطر الأمنية، وأيَضًا أشار إلى أنه عند كتابة JSX فإنه يتم ترجمتها إلى دوال عادية في ReactDOM وهي التي تقوم بتشكيل العناصر.</p><p>رأى بعض الناس أن توليد العناصر في المتصفح فكرة سيئة للـ SEO حيث أن زواحف الويب (Web Crawlers) قد لا تعرف محتوى الصفحة، رد بيّت على هذا الكلام بأنه يمكن الآن إنشاء نسخة من مستند الـ DOM الإفتراضي على الخوادم (Web Servers) وذلك عن طريق NodeJS ومن ثم إرسالها إلى المستخدم وستقوم رياكت فقط بضبط مُستمعات الأحداث (Event listener) عند تحميل الصفحة ومن ثم تمكين المستخدم من التفاعل مع الصفحة بشكل عادي دون انتظار توليد العناصر على الصفحة.</p><h2 id="المستقبل-رياكت-نيتف">المستقبل، رياكت نيتف</h2><p>أحد المشاكل الداخلية في فيسبوك كانت تطوير تطبيقات منصة فيسبوك للهواتف، في ذلك الوقت كان فيسبوك مجرد موقع ويب، ومع ظهور الهواتف المحمولة كان على فريق فيسبوك بناء تطبيقات للهواتف الذكية حتى لا يتم فقد الناس الذين يستخدمون هواتفهم الذكية.</p><h3 id="المشكلة">المشكلة</h3><p>حاول المطورون في فيسبوك إنشاء تطبيقات هواتف بالمفهوم الهجين (Hybrid App) بمعنى تشغيل صفحة ويب في داخل WebView، ولكن هذا النمط من البرمجة لم ينجح معهم، وفي حدث React.js Conf 2015 صرح توم أوكينو قائلًا: "يرجع السبب لأن بناء تطبيقات الويب (Web App)، وجعلها تحاكي عمل تطبيقات الهواتف الأصلية (Native)، يُقدم تجربة مستخدم سلبية." تملك تطبيقات الهواتف طابعًا فريدًا يصعب على تطبيقات الويب تقليده، وقد يكون تقليده على الويب أشبه بالمستحيل ويرجع لذلك لإمكانية استغلال كامل قدرات الجهاز في التطبيقات الأصلية (Native) ما يقدم تجربة مستخدم سلسلة ومرنة مقارنة بالويب الذي لديه وصول محدود لموارد الجهاز.</p><p>ومع كل هذه الامكانيات التي تقدمها تطبيقات اﻷصلية إلا أنها تضيف العديد من التعقيدات في مراحل التطوير، فتطوير تطبيقات الهواتف باستخدام التقنيات الأصلية، أمر متعب ومُجهد.
+ليس ذلك فقط بل أن نفس المشكلة التعقيد التي جاءت رياكت لحلها موجودة بشكل مشابه في تطبيقات الهواتف الذكية الاصلية (Native).</p><p>رياكت بإمكانها احتواء أي نظام عرض (View System) ليس فقط مستند DOM، وهنا ظهرت الفكرة... ماذا لو تم أخذ نفس المفهوم الذي تستخدمه رياكت تمامًا في الويب ولكن بدلًا من التعامل مع عناصر DOM يتم التعامل مع المكونات الأصلية (Native Components) على مستوى نظام التشغيل؟</p><h3 id="الحل">الحل</h3><p>وهذا ما تم فعله، قام فريق رياكت بأبتكار تقنية جديدة سميت رياكت نيتف (React Native) وهي تستخدم نفس مفهوم رياكت على الويب، ولكن يكمن الفرق الجوهري في تعاملها مع المكونات الأصلية في نظام التشغيل بدلًا من عناصر HTML على المتصفح. قام توم اوكينو باستعراض تطبيق مكتوب باستخدام رياكت نيتف مباشرًا أمام الجمهور في حدث React.js Conf 2015 ووضح للجمهور قوة رياكت نيتف وأدائها، كما علق توم مازحًا "أشعر أني الآن أبدو وكأنني ستيف جوبز".</p><h3 id="تطورات-رياكت-والشهرة">تطورات رياكت، والشهرة</h3><p>مع مرور الوقت شيئًا فـشيئًا أصبحت رياكت تقنية شهيرة في عالم جافاسكربت والعديد من الأشخاص والشركات تستخدمها، لاحظ الفريق الذي يعمل على تطوير وصيانة مكتبة رياكت هذا الأمر، وفي 2016 ثم إطلاق <a href="https://create-react-app.dev/">مشروع Create React App</a> الشهير وهو عبارة عن سكربت بسيط يقوم بتجهيز بيئة  عمل أساسية لمشاريع رياكت جديد من خلال مدير حزم جافاسكربت (NPM)، فكل ما عليك هو فتح سطر الأوامر وكتابة اﻷمر <code>npx create-react-app</code> وسيتم تجهيز مشروع رياكت مع كافة الإعدادات الإفتراضية المستحسنة مضبوطة مسبقًا لـكل من مُجمع الوحدات (المحزم) WebPack و المترجم babel-js لتسهيل عملية تطوير تطبيقات الويب باستخدام مكتبة رياكت دون الغوص والضياع في تفاصيل إعداد وتجهيز بيئة عمل المشروع.</p><h3 id="خلاصة-الموضوع">خلاصة الموضوع</h3><p>جاءت مكتبة رياكت كحل لمشاكل كانت تواجه مطوري الويب في فيسبوك، تلك المشاكل جاءت بحلول ليست إعتيادية وهذا يوضح أهمية التجربة العملية في مجال البرمجة والحاسب بشكل عام، فكرة رياكت تبدو نظريًا مكلفة من ناحية الأداء، ولكن مع بعض الحلول التي طبقها الفريق الذي عمل وراءها حصلوا على طريقة سهلة مكنتهم من تسريع وتيرة عملهم وتبسيطها والحفاظ على الأداء.</p><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ما هي مكتبة رياكت؟","acceptedAnswer":{"@type":"Answer","text":"مكتبة جافاسكربت، متخصصة بالواجهات المستخدم التفاعلية، تُستخدم بشكل شائع في الكثير من المواقع وحتى في تطوير تطبيقات الهواتف."}},{"@type":"Question","name":"متى تم إطلاق مكتبة رياكت؟","acceptedAnswer":{"@type":"Answer","text":"في عام 2013، في حدث JSConf US الولايات المتحدة الأمريكية."}},{"@type":"Question","name":"من الشخص الذي أبتكر مكتبة رياكت؟","acceptedAnswer":{"@type":"Answer","text":"مهندس البرمجيات جوردان والكي، حينما كان موظفًا في شركة فيسبوك."}},{"@type":"Question","name":"ما الفرق بين رياكت نيتف ورياكت جي اس؟","acceptedAnswer":{"@type":"Answer","text":"كلاهم يعملان باستخدام جافاسكربت، وبمفهوم مشابه ولكن في رياكت نيتف بدلًا من أن يتم ترجمة الناتج إلى DOM يتم ترجمتها إلى مكونات أصلية موجودة في نظام التشغيل."}},{"@type":"Question","name":"ماذا كان اسم مكتبة رياكت اثناء مرحلة تطويرها المبدئي؟","acceptedAnswer":{"@type":"Answer","text":"كانت تُسمى FaxJS."}},{"@type":"Question","name":"متى تم إطلاق رياكت نيتف؟","acceptedAnswer":{"@type":"Answer","text":"تم إطلاق رياكت نيتف في 2015، خلال مؤتمر React.js Confg"}}]}</script>
+		</div>
+	</main>
+	<!--Rich Results-->
+	<footer class="mt-2 bg-gray-50">
+  <div class="max-w-screen-xl px-4 py-2 mx-auto">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <div class="flex mt-3 space-x-6 text-gray-500">
+
+          <a class="hover:opacity-75" href="https://twitter.com/x7mdNet" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Twitter </span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+            </svg>
+          </a>
+
+          <a class="hover:opacity-75" href="https://github.com/x7md" target="_blank" rel="noreferrer">
+            <span class="sr-only"> GitHub </span>
+
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-2 text-xs text-gray-500">
+      <s>&copy;</s> حمد بنقالي 2021 - 2022<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
+    </p>
+  </div>
+</footer>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article","url":"https://git.x7md.net/blog/the-story-of-reactjs"},"headline":"القصة وراء مكتبة رياكت","image":"/images/the-story-of-reactjs.png","datePublished":"2022/05/03","dateModified":"2022/05/05","author":{"@type":"Person","name":"حمد بنقالي","url":"https://git.x7md.net/about-me"},"publisher":{"@type":"Person","name":"x7md"},"sameAs":"https://www.wikidata.org/wiki/Q19399674"}</script>
+	</html>
