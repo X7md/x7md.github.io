@@ -26,7 +26,7 @@ let richResults = structuredData(postData);
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={content.title} />
 	{content.des && <meta property="og:description" content={content.des} />}
-	<meta property="og:image" content={content.image} />
+	<meta property="og:image" content={new URL(content.image, "https://git.x7md.net/")} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
