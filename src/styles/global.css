@@ -101,7 +101,7 @@ figure {
 }
 
 .blog-content img {
-  @apply inline-block my-4 max-w-96;
+  @apply inline-block my-4 max-w-[90vw];
 }
 
 .btn {
