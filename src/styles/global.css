@@ -97,11 +97,11 @@ p, span {
 }
 
 figure {
-  @apply text-center m-auto text-sm max-w-96;
+  @apply text-center m-auto text-sm lg:max-w-[480px] sm:max-w-96;
 }
 
 .blog-content img {
-  @apply inline-block my-4 max-w-[90vw];
+  @apply inline-block my-4 lg:max-w-[480px] sm:max-w-[90vw];
 }
 
 .btn {
