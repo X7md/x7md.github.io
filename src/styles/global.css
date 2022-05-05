@@ -97,7 +97,7 @@ p, span {
 }
 
 figure {
-  @apply text-center m-auto text-sm lg:max-w-[480px] sm:max-w-96;
+  @apply text-center m-auto text-sm @lg:max-w-[480px] sm:max-w-96;
 }
 
 .blog-content img {
