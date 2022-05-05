@@ -38,7 +38,7 @@ let richResults = structuredData(postData);
 	<meta name="description" content={content.des} />
 	</Fragment>
 	)}
-	<meta property="twitter:image" content={content.image} />
+	<meta property="twitter:image" content={new URL(content.image, "https://git.x7md.net/")} />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<title>{content.title}</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css" />
