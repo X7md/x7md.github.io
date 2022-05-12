@@ -13,8 +13,10 @@ function JSONid(data){
         "dateModified": data.dateModified,
         "author": {
             "@type": "Person",
-            "name": "حمد بنقالي",
-            "url": "https://git.x7md.net/about-me"
+            "givenName": "Hamad",
+            "familyName":"Binqali",
+            "url": "https://git.x7md.net/about-me",
+            "sameAs": "https://www.wikidata.org/wiki/Q111890205"
         },
         "publisher": {
             "@type": "Person",

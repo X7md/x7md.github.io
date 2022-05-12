@@ -92,16 +92,20 @@ h3 {
 h4, h5, h6 {
   @apply text-xl;
 }
-p, span {
+p {
   @apply font-medium text-base text-[#300D43] leading-8;
 }
 
-figure {
+figure:not(.author) {
   @apply text-center m-auto text-sm @lg:max-w-[480px] sm:max-w-96;
 }
 
 .blog-content img {
-  @apply inline-block my-4 lg:max-w-[480px] sm:max-w-[90vw];
+  @apply w-full inline-block my-4 lg:max-w-[480px] sm:max-w-[90vw];
+}
+
+section.byline {
+  @apply text-right p-3 shadow-lg;
 }
 
 .btn {
@@ -123,7 +127,7 @@ button:hover {
   display: block;
 }
 
-.blog-content a {
+.blog-content a, [itemprop="author"] a  {
   @apply text-blue-500 break-words hover:text-purple-900;
 }
 
