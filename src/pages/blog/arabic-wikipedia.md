@@ -4,6 +4,7 @@ layout: ../../layouts/blog.astro
 image: /images/sleepyhead-cat-unsplash.jpg
 link: /blog/arabic-programming-content-online
 date: '2022/05/12'
+draft: true
 dateModified: '2022/05/12'
 desc: 'هل تستحق ويكيبيديا العربية أن أساهم فيها؟'
 tags: ["Content", "Blogging"]
