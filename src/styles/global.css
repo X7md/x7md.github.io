@@ -138,3 +138,7 @@ pre {
 footer svg {
   @apply mx-2;
 }
+
+.blog-content ol li, .blog-content ul li {
+  @apply m-3;
+}
