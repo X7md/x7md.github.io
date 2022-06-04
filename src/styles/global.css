@@ -49,7 +49,7 @@ img.tag-card {
   @apply p-3 drop-shadow-md;
 }
 .card .card-info > h1 {
-  @apply text-2xl;
+  @apply text-3xl !important;
 }
 code {
   @apply bg-[#f8f9fa] p-[0.35rem] border border-solid border-[#d2d3d7] whitespace-nowrap text-left;
@@ -81,16 +81,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @apply text-4xl;
+  @apply text-4xl font-bold !important;
 }
 h2 {
-  @apply text-3xl;
+  @apply text-3xl font-bold !important;
 }
 h3 {
-  @apply text-2xl;
+  @apply text-2xl !important;
 }
 h4, h5, h6 {
-  @apply text-xl;
+  @apply text-xl !important;
 }
 p {
   @apply font-medium text-base text-[#300D43] leading-8;

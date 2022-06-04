@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/page.astro'
+let meAsJSON = JSON.stringify(
+{
+  "@context" : "https://schema.org",
+  "@type" : "Person",
+  "name" : "حمد",
+  "familyName": "بنقالي",
+  "birthDate": "2004-08-21T21:00:00.000Z",
+  "hasOccupation": [
+    {
+      "@type": "Role",
+      "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Blogger",
+	  "sameAs": "https://www.wikidata.org/wiki/Q8246794"
+    }
+	}
+  ],
+  "url" : "http://git.x7md.net/about-me",
+  "sameAs" : [
+	"https://twitter.com/x7mdNet",
+	"https://developers.google.com/profile/u/x7md"
+  ]
+}
+)
+---
+<BaseLayout>
+<>
+	<header class="x-container flex-col text-right">
+		<h1 class="pt-10 d-block w-full">أعمالي</h1>
+        <section class="mt-5 w-full">
+            <div class="flex justify-start">
+                <div class="max-w-[310px]">
+                    <img src="/assets/mushkhbat.svg">
+                </div>
+            </div>
+		</section>
+	</header>
+	<script type="application/ld+json" set:html={meAsJSON}>
+	</script>
+</>
+</BaseLayout>
