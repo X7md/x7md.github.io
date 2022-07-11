@@ -3,7 +3,7 @@
 import BaseLayout from '../../layouts/page.astro';
 import Card from  "../../components/Card.astro";
 const data_ =  await Astro.glob('../blog/*.md');
-const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date)) 
+const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
 ---
 <BaseLayout>
     <>
@@ -12,13 +12,14 @@ const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.fro
         </div>
         <section class="flex flex-row flex-wrap items-center justify-center rounded">
             {
-            
+
                  data.filter(post => !post.frontmatter.draft).map((post)=> {
                     return (
                         <Card
                         postURL={post.url}
                         postTitle={post.frontmatter.title}
-                        postImage={post.frontmatter.image} />
+                        postImage={post.frontmatter.image}
+                        mainTag={post.frontmatter.tags[0]}/>
                     )
                  })
             }
