@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Banner from '../components/Banner.astro';
 import Footer from '../components/Footer.astro';
 import Person from '../components/Person.astro';
+import Tag from '../components/Tag.astro';
 import structuredData from '../utility/JSONid.js';
 import "./../styles/global.css";
 const {content} = Astro.props;
@@ -53,6 +54,8 @@ let richResults = structuredData(postData);
 		<img class="header-blog" src={content.image} />
 		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
 			<slot></slot>
+      <!╌ FIXME: Better ui ╌>
+    <div>{content.tags.map(tag => <Tag tag={tag} />)}</div>
 		<Person />
 		</div>
 	</main>
