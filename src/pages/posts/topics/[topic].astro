@@ -1,0 +1,54 @@
+---
+export function getStaticPaths() {
+    return [
+        {params: {topic: "android"}},
+        {params: {topic: "blogging"}},
+        {params: {topic: "cloud"}},
+        {params: {topic: "cloudfunction"}},
+        {params: {topic: "command_line"}},
+        {params: {topic: "content"}},
+        {params: {topic: "deno"}},
+        {params: {topic: "js"}},
+        {params: {topic: "javascript"}},
+        {params: {topic: "nodejs"}},
+        {params: {topic: "react"}},
+        {params: {topic: "reactjs"}},
+        {params: {topic: "termux"}},
+        {params: {topic: "framework"}},
+        {params: {topic: "javascript"}},
+        // Don't add any new topic here, use <scripts/topics-dynamic-routes.py>
+            // and it will add all topics
+        ];
+}
+
+import BaseLayout from '../../../layouts/page.astro';
+import Card from  "../../../components/Card.astro";
+const data_ =  await Astro.glob('../../blog/*.md');
+const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
+
+const { topic } = Astro.params;
+const topicTitle = topic.charAt(0).toUpperCase() + topic.substr(1).toLowerCase();
+const title = `عن ${topicTitle}`
+---
+
+<BaseLayout>
+    <>
+        <div class="text-right flex justify-center px-4 sm:px-6 md:px-8 py-3">
+            <h2>{title}</h2>
+        </div>
+        <section class="flex flex-row flex-wrap items-center justify-center rounded">
+            {
+
+                 data.filter(post => !post.frontmatter.draft && Boolean(post.frontmatter.tags.find(tag => tag.toLowerCase() == topic))).map((post)=> {
+                    return (
+                        <Card
+                        postURL={post.url}
+                        postTitle={post.frontmatter.title}
+                        postImage={post.frontmatter.image}
+                        mainTag={post.frontmatter.tags[0]}/>
+                    )
+                 })
+            }
+        </section>
+    </>
+</BaseLayout>
