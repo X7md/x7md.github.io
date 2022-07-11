@@ -2,15 +2,12 @@
 const { tag } = Astro.props;
 const tagTitle = tag.charAt(0).toUpperCase() + tag.substr(1).toLowerCase();
 const tagUrl = `/posts/topics/${tag.toLowerCase()}`;
-const dir = tag.charCodeAt(0) <= 255 ? "ltr" : "rtl";
 ---
 
 <!╌ FIXME: Better ui ╌>
 
-<div dir={dir}>
-  <a href={tagUrl}>
-    <button class="btn btn-purple">
-      {tagTitle}
-    </button>
-  </a>
-</div>
+<a href={tagUrl}>
+  <button class="btn btn-purple">
+    {tagTitle}
+  </button>
+</a>
