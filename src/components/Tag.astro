@@ -2,7 +2,6 @@
 const { tag } = Astro.props;
 const tagTitle = tag.charAt(0).toUpperCase() + tag.substr(1).toLowerCase();
 const tagUrl = `/posts/topics/${tag.toLowerCase()}`;
-//FIXME: Better ui
 ---
 
 <a href={tagUrl} class="!text-white !text-decoration-line: none;">
