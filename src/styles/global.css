@@ -68,7 +68,7 @@ blockquote {
     @apply mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 max-w-screen-lg lg:p-0;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6, p {
   padding-top: .65rem;
   padding-bottom: .65rem;
   margin-block-start: 0;

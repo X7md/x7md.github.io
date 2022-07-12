@@ -7,8 +7,10 @@ const tagDir = mainTag.charCodeAt(0) <= 255 ? "ltr" : "rtl";
     <a href={postURL}>
       <img width="3440" height="1440" class="tag-card" src={postImage} />
       <div class="card-info border-t-1 border-gray-300">
+        <div class="tags">
+          <Tag tag={mainTag}/>
+        </div>
         <h1>{postTitle}</h1>
-        <div dir={tagDir}><Tag tag={mainTag}/></div>
       </div>
     </a>
 </div>

@@ -2,12 +2,12 @@
 const { tag } = Astro.props;
 const tagTitle = tag.charAt(0).toUpperCase() + tag.substr(1).toLowerCase();
 const tagUrl = `/posts/topics/${tag.toLowerCase()}`;
+//FIXME: Better ui
 ---
 
-<!╌ FIXME: Better ui ╌>
-
-<a href={tagUrl}>
-  <button class="btn btn-purple">
-    {tagTitle}
-  </button>
+<a href={tagUrl} class="!text-white !text-decoration-line: none;">
+    <span class="inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      <Fragment set:text={tagTitle}></Fragment>
+    </span>
 </a>
