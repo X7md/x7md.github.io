@@ -1,24 +1,12 @@
 ---
-export function getStaticPaths() {
+export async function getStaticPaths() {
+    const posts =  await Astro.glob('../../blog/*.md');
     return [
-        {params: {topic: "android"}},
-        {params: {topic: "blogging"}},
-        {params: {topic: "cloud"}},
-        {params: {topic: "cloudfunction"}},
-        {params: {topic: "command_line"}},
-        {params: {topic: "content"}},
-        {params: {topic: "deno"}},
-        {params: {topic: "js"}},
-        {params: {topic: "javascript"}},
-        {params: {topic: "nodejs"}},
-        {params: {topic: "react"}},
-        {params: {topic: "reactjs"}},
-        {params: {topic: "termux"}},
-        {params: {topic: "framework"}},
-        {params: {topic: "javascript"}},
-        // Don't add any new topic here, use <scripts/topics-dynamic-routes.py>
-            // and it will add all topics
-        ];
+            ... new Set(posts.map(post => post.frontmatter.tags)
+            .flat()
+            .map(tag => tag.toLowerCase()))
+        ]
+        .map(tag => {return {params: {topic: tag}}});
 }
 
 import BaseLayout from '../../../layouts/page.astro';
