@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "./scripts/build.sh && astro build",
+    "build": "astro build",
     "preview": "astro preview --host"
   },
   "devDependencies": {
