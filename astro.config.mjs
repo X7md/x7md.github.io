@@ -16,6 +16,9 @@ export default defineConfig(
   // Set "renderers" to "[]" to disable all default, builtin component support.
   // renderers: [],
   vite: {
+    ssr: {
+      external: ["github-slugger"],
+    },
     plugins: [WindiCSS()]
   },
   site: 'https://git.x7md.net/',

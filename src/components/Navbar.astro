@@ -17,7 +17,8 @@
 
 				<ul class="list-none hidden lg:flex md:mr-10 items-center justify-start">
 					{[{title: "عني", link: "/about-me"},
-					{title: "التدوينات", link: "/posts"},   
+					{title: "التدوينات", link: "/posts"},
+					{title: "المواضيع", link: "/posts/topics"},   
 					{title: "أعمالي", link: "/portfolio"}].map(e => (
 					<li>
 						<a href={e.link} class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">{e.title}</a>
@@ -45,7 +46,8 @@
 					<ul class="list-none px-2 pt-4 pb-3">
 					{
 					[{title: "عني", link: "/about-me"},
-					{title: "التدوينات", link: "/posts"},   
+					{title: "التدوينات", link: "/posts"}, 
+					{title: "المواضيع", link: "/posts/topics"},   
 					{title: "تواصل معي", link: "/connect"}].map(e => (
 					<li>
 						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href={e.link} >{e.title}</a>
