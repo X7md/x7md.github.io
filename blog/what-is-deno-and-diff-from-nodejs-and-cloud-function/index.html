@@ -12,8 +12,7 @@
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:title" content="ما هو Deno؟ وعلاقته بحوسبة الحافة؟">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="/assets/asset.f3404956.css" />
-</head><meta property="twitter:description"><meta name="description">
+	<link rel="stylesheet" href="/assets/ad8ffcbe.a3432c91.css" /></head><meta property="twitter:description"><meta name="description">
 	<meta property="twitter:image" content="https://git.x7md.net/images/what-is-deno.png">
 	<link rel="icon" type="image/x-icon" href="/favicon.svg">
 	<title>ما هو Deno؟ وعلاقته بحوسبة الحافة؟</title>
@@ -42,6 +41,8 @@
 					</li><li>
 						<a href="/posts" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">التدوينات</a>
 					</li><li>
+						<a href="/posts/topics" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">المواضيع</a>
+					</li><li>
 						<a href="/portfolio" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">أعمالي</a>
 					</li>
 				</ul>
@@ -69,6 +70,8 @@
 					</li><li>
 						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/posts">التدوينات</a>
 					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/posts/topics">المواضيع</a>
+					</li><li>
 						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/connect">تواصل معي</a>
 					</li>
 					</ul>
@@ -81,16 +84,82 @@
 	<main>
 		<img class="header-blog" src="/images/what-is-deno.png">
 		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
-			<p>في الآونة الاخيرة ظهرت لدينا  <strong>بيئة</strong>  <strong>تشغيل</strong> <strong>جافاسربت (JavaScript Runtime Environment)</strong> تسمى Deno وقد تم تصميمها من نفس الشخص الذي أبتكر NodeJS، المبرمج العظيم ومهندس البرمجيات  <strong>ريان داهل (Ryan Dahl)</strong>.</p><h1 id="ما-هو-دينو-deno">ما هو دينو (Deno)؟</h1><p>في 2018 صرح ريان بمؤتمر  <strong>JSConf EU</strong>  عن وجهة نظره الحالية في NodeJS في لقاء كان تحت اسم "<strong>عشر أخطاء ندمت أني أتقرفتها بشأن NodeJS</strong>" ذكر فيه بعض الأخطاء ومفاهيم برمجية خاطئة حصلت في فترة تطوير NodeJS والتي لا يمكن إصلاحها الآن! كون العديد من البرمجيات المبنية على NodeJS لا زالت تستند عليها وتستخدمها.</p><p>في الفقرة الأخيرة من اللقاء قام ريان بعرض Deno على العلن، وقام بمشاركة رابط مشروع غتهاب مع الحضور في المؤتمر وقام بتعريف Deno على أنه "Secure TypeScript Runtime" أي (مُشغل تايبسكربت آمن)، أشار ريان بأنه أعاد برمجة وهيكلة مشغل جافاسكربت جديد ليصلح الأشياء التي ندم عليها في NodeJS على حد قوله.</p><p>ولخص مميزات وفروقات Deno عن Node في:</p><p><strong>1- الحماية</strong></p><p>على عكس NodeJS الذي يسمح بتشغيل الكود البرمجي وحصوله على كافة الصلاحيات بشكل مباشر  <em>كالوصول إلى ملفات النظام</em>،  <em>والوصول إلى الشبكة</em>  وغير ذلك... لا يعطي Deno تلك الصلاحيات بشكل مباشر، ويعتبر  <strong>معزول بشكل افتراضي (Sandboxed Environment By Default)</strong> حيث يتبادل Deno الرسائل مع محرك جافاسكربت (V8 Engine) في بيئة معزولة، وعلى المبرمج أن يحدد أي الصلاحيات يجب أن تُعطى للبرنامج (الكود البرمجي) عند تشغيله على Deno.</p><p>يعزز هذا الحماية في حال تشغيل أكواد مكتبات طرف ثالث بحيث لا تحصل على كل الصلاحيات أو صلاحيات لا تحتاجها.</p><p><strong>2- الإعتماد على نظام الوعود</strong></p><p>ذكر ريان في اللقاء أنه قام في عام 2009 بإضافة نظام الوعود (promises) إلى NodeJS ولكن قام بإزالته في 2010، وبعد تبني مفهوم الوعود في جافاسكربت ومعايرتها في إصدارات ES2015 والأحدث، عبر ريان أن قراره كان غير سليم... وجعل Deno يستخدم هذا المفهوم منذ البداية.</p><p>يمكن هذا المبرمجين من استخدام مفهوم (async/await) بشكل فعال.</p><p><strong>3- تبسيط نظام الوحدات</strong></p><p>نظام الوحدات في NodeJS يعتبر معقد نسبيًا فعندما تم إبتكار NodeJS لم يكن هناك نظام وحدات مُوحد في جافاسكربت- في الوقت الحالي يوجد نظام وحدات ES Moudle- في ذلك الوقت اضطر فريق NodeJS إلى أبتكار نظامهم الخاص الذي سموه CommonJS وقد حصل سمعة سيئة خاصة مع مجلد  <strong>node_module وملف packges.json</strong> ومع كل تعقيدات إدارة الحزم وحجمها الكبير.</p><p>وبما أن Deno أتى بعد أبتكار نظام وحدات ES Module فهو يستخدم نفس الفكرة والمفهوم الموجود في المتصفحات.</p><p>مثال على نظام وحدات جافاسكربت المعياري:</p><code><pre>import { log } form &quot;utility&quot;;  
+			<p>في الآونة الاخيرة ظهرت لدينا  <strong>بيئة</strong>  <strong>تشغيل</strong> <strong>جافاسربت (JavaScript Runtime Environment)</strong> تسمى Deno وقد تم تصميمها من نفس الشخص الذي أبتكر NodeJS، المبرمج العظيم ومهندس البرمجيات  <strong>ريان داهل (Ryan Dahl)</strong>.</p>
+<h1 id="ما-هو-دينو-deno">ما هو دينو (Deno)؟</h1>
+<p>في 2018 صرح ريان بمؤتمر  <strong>JSConf EU</strong>  عن وجهة نظره الحالية في NodeJS في لقاء كان تحت اسم "<strong>عشر أخطاء ندمت أني أتقرفتها بشأن NodeJS</strong>" ذكر فيه بعض الأخطاء ومفاهيم برمجية خاطئة حصلت في فترة تطوير NodeJS والتي لا يمكن إصلاحها الآن! كون العديد من البرمجيات المبنية على NodeJS لا زالت تستند عليها وتستخدمها.</p>
+<p>في الفقرة الأخيرة من اللقاء قام ريان بعرض Deno على العلن، وقام بمشاركة رابط مشروع غتهاب مع الحضور في المؤتمر وقام بتعريف Deno على أنه "Secure TypeScript Runtime" أي (مُشغل تايبسكربت آمن)، أشار ريان بأنه أعاد برمجة وهيكلة مشغل جافاسكربت جديد ليصلح الأشياء التي ندم عليها في NodeJS على حد قوله.</p>
+<p>ولخص مميزات وفروقات Deno عن Node في:</p>
+<p><strong>1- الحماية</strong></p>
+<p>على عكس NodeJS الذي يسمح بتشغيل الكود البرمجي وحصوله على كافة الصلاحيات بشكل مباشر  <em>كالوصول إلى ملفات النظام</em>،  <em>والوصول إلى الشبكة</em>  وغير ذلك... لا يعطي Deno تلك الصلاحيات بشكل مباشر، ويعتبر  <strong>معزول بشكل افتراضي (Sandboxed Environment By Default)</strong> حيث يتبادل Deno الرسائل مع محرك جافاسكربت (V8 Engine) في بيئة معزولة، وعلى المبرمج أن يحدد أي الصلاحيات يجب أن تُعطى للبرنامج (الكود البرمجي) عند تشغيله على Deno.</p>
+<p>يعزز هذا الحماية في حال تشغيل أكواد مكتبات طرف ثالث بحيث لا تحصل على كل الصلاحيات أو صلاحيات لا تحتاجها.</p>
+<p><strong>2- الإعتماد على نظام الوعود</strong></p>
+<p>ذكر ريان في اللقاء أنه قام في عام 2009 بإضافة نظام الوعود (promises) إلى NodeJS ولكن قام بإزالته في 2010، وبعد تبني مفهوم الوعود في جافاسكربت ومعايرتها في إصدارات ES2015 والأحدث، عبر ريان أن قراره كان غير سليم... وجعل Deno يستخدم هذا المفهوم منذ البداية.</p>
+<p>يمكن هذا المبرمجين من استخدام مفهوم (async/await) بشكل فعال.</p>
+<p><strong>3- تبسيط نظام الوحدات</strong></p>
+<p>نظام الوحدات في NodeJS يعتبر معقد نسبيًا فعندما تم إبتكار NodeJS لم يكن هناك نظام وحدات مُوحد في جافاسكربت- في الوقت الحالي يوجد نظام وحدات ES Moudle- في ذلك الوقت اضطر فريق NodeJS إلى أبتكار نظامهم الخاص الذي سموه CommonJS وقد حصل سمعة سيئة خاصة مع مجلد  <strong>node_module وملف packges.json</strong> ومع كل تعقيدات إدارة الحزم وحجمها الكبير.</p>
+<p>وبما أن Deno أتى بعد أبتكار نظام وحدات ES Module فهو يستخدم نفس الفكرة والمفهوم الموجود في المتصفحات.</p>
+<p>مثال على نظام وحدات جافاسكربت المعياري:</p>
+<code>
 
-log(&quot;Hamad&quot;);</pre></code><p>هناك فكرة قيد التنفيذ شبيهة بـ pakage.json تدعى import-maps ويدعمها Deno حاليًا.</p><p>مثال على import-maps :</p><code><pre>&lt;script type=&quot;importmap&quot;&gt;  
+</code><p><code>log("Hamad");`}>
+
+</code></p>
+<p>هناك فكرة قيد التنفيذ شبيهة بـ pakage.json تدعى import-maps ويدعمها Deno حاليًا.</p>
+<p>مثال على import-maps :</p>
+<code>
+<pre set:text="{&#x60;<script" type="importmap">  
 {  
-&quot;imports&quot;: {  
- &quot;moment&quot;: &quot;/node_modules/moment/src/moment.js&quot;,  
- &quot;lodash&quot;: &quot;/node_modules/lodash-es/lodash.js&quot;  
+  "imports": {  
+    "moment": "/node_modules/moment/src/moment.js",  
+    "lodash": "/node_modules/lodash-es/lodash.js"  
+  }  
 }  
-}  
-&lt;/script&gt;</pre></code><p>*نظام وحدات جافاسكربت المعياري  ES Module -يستخدم في المتصفحات وتدعمه الإصدارات الحديثة من Node بدأً من الإصدار 12 فما فوق-.</p><p><strong>4- دعم TypeScript بشكل افتراضي</strong></p><p>يدعم Deno الأكواد المكتوبة باستخدام TypeScript دون الحاجة إلى ترجمتها (compiling) إلى جافاسكربت عادية ويمكنه تشغيلها دون أي مشكلة، وبما أن العديد من مبرمجين JavaScript يستخدمون TypeScript في مشارعيهم تعد هذه خطوة جيدة.</p><p><strong>5- تبسيط عملية البناء والبرمجة</strong></p><p>ربط وحدات NodeJS مع بعضها البعض عملية مرهقة ومعقدة... ويظهر ذلك جليًا في أدوات بناء جافاسكربت التي جاءت لتسهل هذه العملية مثل Parcel وغيرها والتي تهدف إلى تبسيط عملية جمع الوحدات وتحويلها إلى ملف جافاسكربت واحد او أكثر قابل للتنفيذ.</p><p>يستطيع Deno إنشاء ملف جافاسكربت قابل للتنفيذ (standalone-executable).</p><p>نستنتج أن الإختلافات الجذرية هي نظام الوحدات (Modules system)، وطريقة العمل حيث أن NodeJS يعمل مباشرة في V8 Engine بينما يوفر Deno طريقة أخرى في تنفيذ جافاسكربت والتواصل مع V8 Engine وتركيز Deno على البقاء في مساحة آمنة، دعم تايبسكربت، الإعتماد على نظام وحدات معياري وموحد، التركيز على دعم نظام الوعود، تسهيل عملية البناء والنشر.</p><p>وخلال مراحل تصميم Deno تم التركيز على مُراعاة معاير الويب مع جافاسكربت (JavaScript Web API Standards) حتى لا يتم أرباك المبرمجين الجدد القادمين إلى Deno ولديهم خلفية في جافاسكربت.</p><h2 id="التطورات-وراء-deno">التطورات وراء Deno</h2><p>طور ريان Deno في بداية الأمر باستخدام لغة Go الشهيرة من قوقل -وهي نفس اللغة التي تم تطوير Docker من خلالها- ولكن في أواخر 2018 قام ريان والمجتمع القائم على تطوير Deno بالإنتقال إلى لغة Rust وذلك بسبب مخاوف من بعض المشاكل التي قد تحصل أثناء تطويره.</p><p>في 29 من مارس لعام 2021 حصل Deno على دعم بملايين الدولارات من قبل شركة موزيلا وعدة شركات أخرى، لضمان استمرار عملية التطوير.</p><h3 id="deno-والحوسبة-على-الحافة-edge">Deno والحوسبة على الحافة (Edge)</h3><p>تعد الحوسبة على الحافة Edge Computing أحد المفاهيم الحديثة... ويمكن تلخيص الفكرة ورائها بأنها تسمح لمراكز البيانات (Data center) الموزعة حول مناطق مختلفة، بإجراء بعض العمليات البرمجية.</p><p>في يونيو 2021 قام فريق Deno بالإعلان عن خدمة تسمى Deno Deploy في المرحلة التجريبية الأولى، وهي عبارة عن خدمة تسمح بتشغيل البرمجيات المكتوبة على Deno بأن تعمل على 25 مركز بيانات مختلف موزع حول العالم، الذي سوف يساعد على تخفيف الحمل وتسريع عمليات المعالجة التي سوف تتم على مراكز البيانات، تهدف الخدمة بشكل رئيسي إلى تمكين Deno والأستفادة منه في مراكز البيانات.</p><p>وفي أبريل 2022 أعلنت كل من Supabase و Netlify استخدمهم البنية التحتية (infrastructure) الخاصة بمشروع Deno Deploy وتمكين استخدمها مع منتجاتهم تحت مسمى دوال على الحافة (Edge Functions) وهي عبارة عن خدمة تسمح لك بكتابة كود JavaScript أو TypeScript يعمل على مراكز البيانات خاصتهم ويقوم بتنفيذ مهام معينة، كمعالجة البيانات أو تصير الصفحات في الخادم وغير ذلك... كما هو شائع في مفهوم JamaStack.</p><h4 id="المصادر-والمراجع">المصادر والمراجع</h4><p><a href="https://www.youtube.com/watch?v=M3BM9TB-8yA">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU</a></p><p><a href="https://github.com/WICG/import-maps">Import maps</a></p><p><a href="https://github.com/denoland/deno/tree/golang">Deno (Golang  Repository)</a></p><p><a href="https://github.com/ry/deno/commits/ry_master?after=e247deb844e0c7c0ff96955166ac37ed481e6f37+505&branch=ry_master">Deno (Golang  commit)</a></p><p><a href="https://github.com/denoland/deno/issues/205">Deno to Rust</a></p><p><a href="https://en.wikipedia.org/wiki/Deno_(software)#History">Deno History</a></p><p><a href="https://deno.com/blog/deploy-beta1">Deno Deploy</a></p><p><a href="https://deno.com/blog/the-deno-company">Deno Company</a></p>
+`}>
+</pre>
+</code>
+<p>*نظام وحدات جافاسكربت المعياري  ES Module -يستخدم في المتصفحات وتدعمه الإصدارات الحديثة من Node بدأً من الإصدار 12 فما فوق-.</p>
+<p><strong>4- دعم TypeScript بشكل افتراضي</strong></p>
+<p>يدعم Deno الأكواد المكتوبة باستخدام TypeScript دون الحاجة إلى ترجمتها (compiling) إلى جافاسكربت عادية ويمكنه تشغيلها دون أي مشكلة، وبما أن العديد من مبرمجين JavaScript يستخدمون TypeScript في مشارعيهم تعد هذه خطوة جيدة.</p>
+<p><strong>5- تبسيط عملية البناء والبرمجة</strong></p>
+<p>ربط وحدات NodeJS مع بعضها البعض عملية مرهقة ومعقدة... ويظهر ذلك جليًا في أدوات بناء جافاسكربت التي جاءت لتسهل هذه العملية مثل Parcel وغيرها والتي تهدف إلى تبسيط عملية جمع الوحدات وتحويلها إلى ملف جافاسكربت واحد او أكثر قابل للتنفيذ.</p>
+<p>يستطيع Deno إنشاء ملف جافاسكربت قابل للتنفيذ (standalone-executable).</p>
+<p>نستنتج أن الإختلافات الجذرية هي نظام الوحدات (Modules system)، وطريقة العمل حيث أن NodeJS يعمل مباشرة في V8 Engine بينما يوفر Deno طريقة أخرى في تنفيذ جافاسكربت والتواصل مع V8 Engine وتركيز Deno على البقاء في مساحة آمنة، دعم تايبسكربت، الإعتماد على نظام وحدات معياري وموحد، التركيز على دعم نظام الوعود، تسهيل عملية البناء والنشر.</p>
+<p>وخلال مراحل تصميم Deno تم التركيز على مُراعاة معاير الويب مع جافاسكربت (JavaScript Web API Standards) حتى لا يتم أرباك المبرمجين الجدد القادمين إلى Deno ولديهم خلفية في جافاسكربت.</p>
+<h2 id="التطورات-وراء-deno">التطورات وراء Deno</h2>
+<p>طور ريان Deno في بداية الأمر باستخدام لغة Go الشهيرة من قوقل -وهي نفس اللغة التي تم تطوير Docker من خلالها- ولكن في أواخر 2018 قام ريان والمجتمع القائم على تطوير Deno بالإنتقال إلى لغة Rust وذلك بسبب مخاوف من بعض المشاكل التي قد تحصل أثناء تطويره.</p>
+<p>في 29 من مارس لعام 2021 حصل Deno على دعم بملايين الدولارات من قبل شركة موزيلا وعدة شركات أخرى، لضمان استمرار عملية التطوير.</p>
+<h3 id="deno-والحوسبة-على-الحافة-edge">Deno والحوسبة على الحافة (Edge)</h3>
+<p>تعد الحوسبة على الحافة Edge Computing أحد المفاهيم الحديثة... ويمكن تلخيص الفكرة ورائها بأنها تسمح لمراكز البيانات (Data center) الموزعة حول مناطق مختلفة، بإجراء بعض العمليات البرمجية.</p>
+<p>في يونيو 2021 قام فريق Deno بالإعلان عن خدمة تسمى Deno Deploy في المرحلة التجريبية الأولى، وهي عبارة عن خدمة تسمح بتشغيل البرمجيات المكتوبة على Deno بأن تعمل على 25 مركز بيانات مختلف موزع حول العالم، الذي سوف يساعد على تخفيف الحمل وتسريع عمليات المعالجة التي سوف تتم على مراكز البيانات، تهدف الخدمة بشكل رئيسي إلى تمكين Deno والأستفادة منه في مراكز البيانات.</p>
+<p>وفي أبريل 2022 أعلنت كل من Supabase و Netlify استخدمهم البنية التحتية (infrastructure) الخاصة بمشروع Deno Deploy وتمكين استخدمها مع منتجاتهم تحت مسمى دوال على الحافة (Edge Functions) وهي عبارة عن خدمة تسمح لك بكتابة كود JavaScript أو TypeScript يعمل على مراكز البيانات خاصتهم ويقوم بتنفيذ مهام معينة، كمعالجة البيانات أو تصير الصفحات في الخادم وغير ذلك... كما هو شائع في مفهوم JamaStack.</p>
+<h4 id="المصادر-والمراجع">المصادر والمراجع</h4>
+<p><a href="https://www.youtube.com/watch?v=M3BM9TB-8yA">10 Things I Regret About Node.js - Ryan Dahl - JSConf EU</a></p>
+<p><a href="https://github.com/WICG/import-maps">Import maps</a></p>
+<p><a href="https://github.com/denoland/deno/tree/golang">Deno (Golang  Repository)</a></p>
+<p><a href="https://github.com/ry/deno/commits/ry_master?after=e247deb844e0c7c0ff96955166ac37ed481e6f37+505&#x26;branch=ry_master">Deno (Golang  commit)</a></p>
+<p><a href="https://github.com/denoland/deno/issues/205">Deno to Rust</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Deno_(software)#History">Deno History</a></p>
+<p><a href="https://deno.com/blog/deploy-beta1">Deno Deploy</a></p>
+<p><a href="https://deno.com/blog/the-deno-company">Deno Company</a></p>
+    <div><span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      Deno
+    </span><span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      Nodejs
+    </span><span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      Javascript
+    </span><span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      Js
+    </span><span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      Cloud
+    </span><span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+    <!--Hacky use of ex css uint-->
+      Cloud function
+    </span></div>
 		<section class="byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <section class="line-meta">
     <div class="line-name">
