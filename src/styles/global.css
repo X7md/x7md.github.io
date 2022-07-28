@@ -109,7 +109,9 @@ section.byline {
 }
 
 .btn {
-  @apply m-1 py-2 px-4 font-semibold rounded-lg shadow-md;
+  @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+  margin-block: .25rem;
+
 }
 .btn-purple {
   @apply text-white bg-[#93237B] hover:bg-[#93237B];
