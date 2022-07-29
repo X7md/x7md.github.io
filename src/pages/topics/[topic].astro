@@ -1,6 +1,6 @@
 ---
 export async function getStaticPaths() {
-    const posts =  await Astro.glob('../../blog/*.md');
+    const posts =  await Astro.glob('../blog/*.md');
     return [
             ... new Set(posts.map(post => post.frontmatter.tags)
             .flat()
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 import BaseLayout from '@layouts/page.astro';
 import Card from  "@components/Card.astro";
-const data_ =  await Astro.glob('../../blog/*.md');
+const data_ =  await Astro.glob('../blog/*.md');
 const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
 
 const { topic } = Astro.params;
