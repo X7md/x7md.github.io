@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '../../../layouts/page.astro';
-import Tag from  "../../../components/Tag.astro";
+import BaseLayout from '@layouts/page.astro';
+import Tag from  "@components/Tag.astro";
 
-const posts =  await Astro.glob('../../blog/*.md');
+const posts =  await Astro.glob('../blog/*.md');
 const tags =  [
         ... new Set(posts.map(post => post.frontmatter.tags).flat())
     ];
