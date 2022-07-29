@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^0.1.0",
-    "astro": "^1.0.0-rc.1",
+    "astro": "^1.0.0-rc.2",
     "postcss-windicss": "^1.0.0",
     "vite-plugin-windicss": "^1.8.4",
     "windicss": "^3.5.4"
