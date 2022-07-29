@@ -1,7 +1,6 @@
 @windicss;
 
 * {
-    font-family: 'Vazirmatn RD';
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -19,6 +18,7 @@ body, html {
 
 body {
     @apply bg-white;
+    font-family: 'Vazirmatn RD';
 }
 
 main {
@@ -51,12 +51,7 @@ img.tag-card {
 .card .card-info > h1 {
   @apply text-3xl !important;
 }
-code {
-  @apply bg-[#f8f9fa] p-[0.35rem] border border-solid border-[#d2d3d7] whitespace-nowrap text-left;
-  font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  direction: ltr;
-  unicode-bidi: isolate;
-}
+
 blockquote {
   text-align: left;
   direction: ltr;
@@ -133,9 +128,27 @@ button:hover {
   @apply text-blue-500 break-words hover:text-purple-900;
 }
 
-pre {
-  @apply whitespace-pre-line break-words;
+.astro-code {
+    direction: ltr;
+    border-radius: 10px;
+    text-align: left;
+    unicode-bidi: plaintext;
+    width: 100%;
+    padding: 0.35rem;
 }
+
+p > code {
+    @apply bg-[#f8f9fa] p-[0.35rem] border border-solid border-[#d2d3d7] whitespace-nowrap text-left;
+    unicode-bidi: plaintext;
+}
+
+code {
+  font-family: 'IBM Plex Mono', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace !important;
+}
+
+/* pre {
+  @apply whitespace-pre-line break-words;
+} */
 
 footer svg {
   @apply mx-2;

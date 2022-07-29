@@ -48,30 +48,26 @@ tags: ["Deno", "NodeJS", "JavaScript", "JS", "Cloud", "Cloud Function"]
 
 مثال على نظام وحدات جافاسكربت المعياري:
 
-<code>
-<pre set:text=
-{`import { log } form "utility";  
+```js
+import { log } form "utility";  
 
-log("Hamad");`}>
-</pre>
-</code>
+log("Hamad");
+```
 
 هناك فكرة قيد التنفيذ شبيهة بـ pakage.json تدعى import-maps ويدعمها Deno حاليًا.
 
 مثال على import-maps :
 
-<code>
-<pre set:text=
-{`<script type="importmap">  
+```html
+<script type="importmap">  
 {  
   "imports": {  
     "moment": "/node_modules/moment/src/moment.js",  
     "lodash": "/node_modules/lodash-es/lodash.js"  
   }  
 }  
-</script>`}>
-</pre>
-</code>
+</script>
+```
 
 *نظام وحدات جافاسكربت المعياري  ES Module -يستخدم في المتصفحات وتدعمه الإصدارات الحديثة من Node بدأً من الإصدار 12 فما فوق-.
 

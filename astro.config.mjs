@@ -26,7 +26,10 @@ export default defineConfig(
   markdown: {
     rehypePlugins: [
       ['rehype-autolink-headings', { behavior: 'prepend'}],
-      ['rehype-figure-for-img', {}]
-    ]
+      ['rehype-figure-for-img', {}],
+    ],
+    shikiConfig: {
+      theme: 'vitesse-light',
+    }
   }
 });
