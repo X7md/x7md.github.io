@@ -1,6 +1,6 @@
 ---
 title: "ما هو Deno؟ وعلاقته بحوسبة الحافة؟"
-layout: ../../layouts/blog.astro
+layout: "@layouts/blog.astro"
 image: /images/what-is-deno.png
 link: /blog/what-is-deno-and-diff-from-nodejs-and-cloud-function
 date: '2022/04/26'

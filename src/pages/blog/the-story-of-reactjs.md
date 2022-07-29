@@ -1,6 +1,6 @@
 ---
 title: "القصة وراء مكتبة رياكت"
-layout: ../../layouts/blog.astro
+layout: "@layouts/blog.astro"
 image: /images/the-story-of-reactjs.png
 link: /blog/the-story-of-reactjs
 sameAs: "https://www.wikidata.org/wiki/Q19399674"

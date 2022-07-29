@@ -1,6 +1,6 @@
 ---
 title: "تجربتي مع  ترمكس"
-layout: ../../layouts/blog.astro
+layout: "@layouts/blog.astro"
 image: /images/termux-thm.jpg
 link: /blog/termux
 date: '2022/02/18'

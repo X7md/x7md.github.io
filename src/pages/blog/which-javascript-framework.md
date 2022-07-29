@@ -1,6 +1,6 @@
 ---
 title: "أي إطار جافاسكربت؟"
-layout: ../../layouts/blog.astro
+layout: "@layouts/blog.astro"
 image: /images/powerpuff-frameworks.png
 link: /blog/which-javascript-framework
 date: '2022/05/26'

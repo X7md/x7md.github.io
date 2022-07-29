@@ -1,6 +1,6 @@
 ---
 title: "المحتوى العربي البرمجي على الانترنت"
-layout: ../../layouts/blog.astro
+layout: "@layouts/blog.astro"
 image: /images/sleepyhead-cat-unsplash.jpg
 link: /blog/arabic-programming-content-online
 date: '2022/05/01'
