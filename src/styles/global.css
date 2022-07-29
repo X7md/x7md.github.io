@@ -88,7 +88,10 @@ h4, h5, h6 {
   @apply text-xl !important;
 }
 p {
-  @apply font-medium text-base text-[#300D43] leading-8;
+  @apply text-base text-[#300D43] leading-8 md:leading-10;
+  /*dynamic size */
+  font-size: calc(1rem + 0.4vw);
+  font-weight: 400;
 }
 
 figure:not(.author) {
