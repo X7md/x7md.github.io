@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^0.1.0",
-    "astro": "^1.0.0-rc.2",
+    "astro": "^1.0.0-rc.3",
     "postcss-windicss": "^1.0.0",
     "vite-plugin-windicss": "^1.8.4",
     "windicss": "^3.5.4"
@@ -18,6 +18,9 @@
   "dependencies": {
     "@astrojs/rss": "^0.2.0",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-figure-for-img": "^0.0.4"
+    "rehype-figure-for-img": "^0.0.4",
+    "rehype-wrap-all": "^1.1.0",
+    "remark-gfm": "^3.0.1",
+    "remark-unwrap-images": "^3.0.1"
   }
 }

@@ -24,9 +24,14 @@ export default defineConfig(
   site: 'https://git.x7md.net/',
   integrations: [sitemap()],
   markdown: {
+    remarkPlugins: [["remark-gfm", {}], ['remark-unwrap-images', {}]],
     rehypePlugins: [
       ['rehype-autolink-headings', { behavior: 'prepend'}],
       ['rehype-figure-for-img', {}],
+      ['rehype-wrap-all', {
+        selector: 'table',
+        wrapper: 'figure#table'
+      }]
     ],
     shikiConfig: {
       theme: 'vitesse-light',

@@ -94,8 +94,60 @@ p {
   font-weight: 400;
 }
 
-figure:not(.author) {
+figure:not(.author){
   @apply text-center m-auto text-sm @lg:max-w-[480px] sm:max-w-96;
+}
+#table {
+  max-width: none;
+  display: block;
+  margin: 0;
+  margin-block-end: .5rem;
+  padding: 0;
+  overflow-x: auto;
+}
+
+[data-tag] {
+  @apply ml-2;
+}
+
+
+table {
+  @apply leading-6;
+  margin-top: 0;
+  font-style: normal;
+  font-size: calc(1rem + 0.25vw);
+}
+
+/**
+ * Table
+ */
+ :where(table) {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+}
+
+thead th{
+  @apply pl-4;
+}
+
+th,
+td {
+  padding: .5rem;
+  border-bottom: 0.15rem solid #cecece;
+  color: var(--color);
+  text-align: right;
+  text-align: start;
+}
+
+tfoot th,
+tfoot td {
+  border-bottom: 0;
+}
+
+table[role=grid] tbody tr:nth-child(odd) {
+  background-color: #cecece;
 }
 
 .blog-content img {
@@ -127,7 +179,7 @@ button:hover {
   display: block;
 }
 
-.blog-content a, [itemprop="author"] a  {
+.blog-content p a, [itemprop="author"] a  {
   @apply text-blue-500 break-words hover:text-purple-900;
 }
 

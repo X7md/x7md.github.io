@@ -1,9 +1,21 @@
 ---
-const { tag } = Astro.props;
+const { tag, inCard } = Astro.props;
 const tagTitle = tag.charAt(0).toUpperCase() + tag.substr(1).toLowerCase();
 const tagUrl = `/posts/topics/${tag.toLowerCase()}`;
 ---
-    <span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+
+<Fragment>
+
+    {inCard && <button v-scope data-tag={`${tag}`}
+    @click={"window.open(new URL('topics/' + '" + tag.toLowerCase() +  "',location.origin),'_self','', false);"}
+     class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
     <!--Hacky use of ex css uint-->
       <Fragment set:text={tagTitle}></Fragment>
-    </span>
+    </button>}
+    {!inCard && <a data-tag={`${tag}`}
+          href={"/topics/" + tag.toLowerCase()}
+        class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+        <!--Hacky use of ex css uint-->
+          <Fragment set:text={tagTitle}></Fragment>
+      </a>}
+</Fragment>
