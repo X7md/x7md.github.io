@@ -9,7 +9,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<meta name="description" content="مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية">
 	<script src="https://unpkg.com/petite-vue" defer init></script>
-	<link rel="stylesheet" href="/assets/827a9426.299565f6.css" /></head>
+	<link rel="stylesheet" href="/assets/6b791f3c.e879322d.css" /></head>
 	<body>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
@@ -75,15 +75,16 @@
 				<div class="text-right flex justify-center px-4 sm:px-6 md:px-8 py-3">
             <h2>عن Command_line</h2>
         </div><section class="flex flex-row flex-wrap items-center justify-center rounded">
-            <div class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
-    <a href="/blog/termux">
+            <div v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
+    <a href="/blog/termux" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
       <img width="3440" height="1440" class="tag-card" src="/images/termux-thm.jpg">
       <div class="card-info border-t-1 border-gray-300">
         <div class="tags">
-          <span class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800;">
+          <button v-scope data-tag="Termux" @click="window.open(new URL('topics/' + 'termux',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
     <!--Hacky use of ex css uint-->
       Termux
-    </span>
+    </button>
+    
         </div>
         <h1>تجربتي مع  ترمكس</h1>
       </div>
