@@ -1,13 +1,13 @@
 const tags = new Map();
-const imageLink = (path)=> new URL(path, "https://x7md.net/")
+const imageLink = (path)=> new URL("images/1x1/" + path, "https://x7md.net/")
 
 tags.set("javascript", {
     name: "جافاسكربت",
-    image: imageLink("images/1x1/JavaScript_logo.svg"),
+    image: imageLink("JavaScript_logo.svg"),
     description: "لغة برمجة"
 })
 tags.set("javascript framework", {
-    name: "إطار عمل جافاسكربت"
+    name: "إطار عمل جافاسكربت",
 })
 tags.set("cloud function", {
     name: "دوال سحابية"
@@ -32,6 +32,7 @@ tags.set("react", {
 })
 tags.set("webassembly", {
     name: "ويب أسمبلي",
+    image: imageLink("WebAssembly_logo.svg"),
 })
 
 export default tags;

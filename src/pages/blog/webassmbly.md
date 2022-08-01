@@ -3,7 +3,7 @@ title: "ما هي ويب أسمبلي؟"
 layout: "@layouts/blog.astro"
 image: /images/sleepyhead-cat-unsplash.jpg
 link: /blog/arabic-programming-content-online
-# draft: true
+draft: true
 date: '2022/08/01'
 # dateModified: '2022/05/02'
 desc: 'لطالما سمعنا مصطلح ويب أسمبلي، ولكن ما الفكرة من ويب أسمبلي بالضبط؟'
