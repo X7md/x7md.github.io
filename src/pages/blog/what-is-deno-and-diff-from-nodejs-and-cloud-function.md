@@ -7,7 +7,8 @@ date: '2022/04/26'
 sameAs: "https://www.wikidata.org/wiki/Q65070939"
 dateModified: '2022/04/26'
 desc: 'في هذه التدوينة أتناول موضوع دينو وعلاقته مع الحوسبة السحابية على الحافة، والفرق بين دينو و نود جي أس'
-tags: ["Deno", "NodeJS", "JavaScript", "JS", "Cloud", "CloudFunction"]
+keyword: [ "NodeJS", "JavaScript", "JS"]
+tags: ["Deno", "Cloud", "Cloud Function"]
 ---
 
 في الآونة الاخيرة ظهرت لدينا  **بيئة**  **تشغيل** **جافاسربت (JavaScript Runtime Environment)** تسمى Deno وقد تم تصميمها من نفس الشخص الذي أبتكر NodeJS، المبرمج العظيم ومهندس البرمجيات  **ريان داهل (Ryan Dahl)**.

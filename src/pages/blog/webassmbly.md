@@ -3,11 +3,12 @@ title: "ما هي ويب أسمبلي؟"
 layout: "@layouts/blog.astro"
 image: /images/sleepyhead-cat-unsplash.jpg
 link: /blog/arabic-programming-content-online
-draft: true
+# draft: true
 date: '2022/08/01'
 # dateModified: '2022/05/02'
 desc: 'لطالما سمعنا مصطلح ويب أسمبلي، ولكن ما الفكرة من ويب أسمبلي بالضبط؟'
-tags: ["WebAssembly", "wasm"]
+keyword: ["wasm", "WebAssembly"]
+tags: ["WebAssembly"]
 ---
 
 في الفترة الأخيرة، سمعنا كثيرًا عن **ويب أسمبلي** -أو **(تجميع الويب)** لو كنت تُحب التعريب- ولكن العديد من الأشخاص لا يعرف أي تفاصيل الموضوع عنها ما عدا الاسم، سأُحاول في هذا المقال تبسيط الموضوع ليتمكن أي شخص من مواكبة هذا التقدم الذي حصل في عالم الويب، وفي العالم البرمجي عمومًا.
