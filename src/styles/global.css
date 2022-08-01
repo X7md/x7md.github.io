@@ -82,10 +82,10 @@ h2 {
   @apply text-3xl font-bold !important;
 }
 h3 {
-  @apply text-2xl !important;
+  @apply text-2xl font-bold !important;
 }
 h4, h5, h6 {
-  @apply text-xl !important;
+  @apply text-3xl font-bold !important;
 }
 p {
   @apply text-base text-[#300D43] leading-8 md:leading-10;
@@ -179,8 +179,12 @@ button:hover {
   display: block;
 }
 
-.blog-content p a, [itemprop="author"] a  {
+.blog-content p a, [itemprop="author"] a {
   @apply text-blue-500 break-words hover:text-purple-900;
+}
+
+#topic-link h3 {
+  @apply text-blue-500 font-extrabold break-words hover:text-purple-900;
 }
 
 .astro-code {

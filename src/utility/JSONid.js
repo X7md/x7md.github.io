@@ -4,8 +4,7 @@ function JSONid(data){
         "@type": "Article",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://google.com/article",
-            "url":data.link
+            "url": data.link
         },
         "headline": data.title,
         "image": data.imageName,
@@ -22,7 +21,7 @@ function JSONid(data){
             "@type": "Person",
             "name": "x7md"
         }
-        }
+    }
     if (data["sameAs"]){
         JSONid["sameAs"] = data["sameAs"];
     }

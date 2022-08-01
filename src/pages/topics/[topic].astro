@@ -1,4 +1,5 @@
 ---
+import tag from '@utility/tags'
 export async function getStaticPaths() {
     const posts =  await Astro.glob('../blog/*.md');
     return [
@@ -14,8 +15,8 @@ const data_ =  await Astro.glob('../blog/*.md');
 const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
 
 const { topic } = Astro.params;
-const topicTitle = topic.charAt(0).toUpperCase() + topic.substr(1).toLowerCase();
-const title = `عن ${topicTitle}`
+// const topicTitle = topic./*.charAt(0).toUpperCase() + topic.substr(1).*/toLowerCase();
+const title = `عن ${tag.get(topic.replaceAll("-", " "))?.name}`
 ---
 
 <BaseLayout>

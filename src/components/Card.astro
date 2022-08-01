@@ -3,7 +3,7 @@ import Tag from './Tag.astro';
 const { postTitle, postURL, postImage, mainTag } = Astro.props;
 const tagDir = mainTag.charCodeAt(0) <= 255 ? "ltr" : "rtl";
 ---
-<div v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
+<article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
     <a href={postURL} @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
       <img width="3440" height="1440" class="tag-card" src={postImage} />
       <div class="card-info border-t-1 border-gray-300">
@@ -13,4 +13,4 @@ const tagDir = mainTag.charCodeAt(0) <= 255 ? "ltr" : "rtl";
         <h1>{postTitle}</h1>
       </div>
     </a>
-</div>
+</article>
