@@ -3,13 +3,13 @@ const { tag, topic } = Astro.props
 const link = tag.replaceAll(" ", "-").toLocaleLowerCase()
 ---
 <div class="flex m-2 min-w-[375px] mex-w-[99vw]">
-    <div class="flex-none w-35 relative">
+    <div class="flex-none ml-2">
       <a href={"/topics/" + link}>
         <img 
-        height="125" 
-        width="125" 
+        height="90"
+        width="90" 
         src={topic.image || new URL("/images/1x1/404.png",  "https://x7md.net/")}
-        class="absolute object-contain inset-0 w-full h-full " loading="lazy" />
+        class="object-contain" loading="lazy" />
       </a>
     </div>
     <section class="flex-auto">
@@ -22,7 +22,7 @@ const link = tag.replaceAll(" ", "-").toLocaleLowerCase()
       </div>
       <hr />
       <p class="text-sm text-slate-700">
-        
+        {topic?.description}
       </p>
     </section>
   </div>

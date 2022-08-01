@@ -184,7 +184,7 @@ button:hover {
 }
 
 #topic-link h3 {
-  @apply text-blue-500 font-extrabold break-words hover:text-purple-900;
+  @apply pt-0 text-blue-500 font-extrabold break-words hover:text-purple-900;
 }
 
 .astro-code {
