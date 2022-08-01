@@ -9,7 +9,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<meta name="description" content="مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية">
 	<script src="https://unpkg.com/petite-vue" defer init></script>
-	<link rel="stylesheet" href="/assets/6b791f3c.e879322d.css" /></head>
+	<link rel="stylesheet" href="/assets/6b791f3c.67d0f8a6.css" /></head>
 	<body>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
@@ -73,51 +73,23 @@
 		<!-- <Banner /> -->
 			<main>
 				<div class="text-right flex justify-center px-4 sm:px-6 md:px-8 py-3">
-            <h2>عن Javascript</h2>
+            <h2>عن جافاسكربت</h2>
         </div><section class="flex flex-row flex-wrap items-center justify-center rounded">
-            <div v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
+            <article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
     <a href="/blog/which-javascript-framework" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
       <img width="3440" height="1440" class="tag-card" src="/images/powerpuff-frameworks.png">
       <div class="card-info border-t-1 border-gray-300">
         <div class="tags">
-          <button v-scope data-tag="javascript" @click="window.open(new URL('topics/' + 'javascript',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+          <button v-scope data-tag="JavaScript Framework" @click="window.open(new URL('topics/' + 'javascript-framework',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
     <!--Hacky use of ex css uint-->
-      Javascript
+      javascript framework
     </button>
     
         </div>
         <h1>أي إطار جافاسكربت؟</h1>
       </div>
     </a>
-</div><div v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
-    <a href="/blog/the-story-of-reactjs" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
-      <img width="3440" height="1440" class="tag-card" src="/images/the-story-of-reactjs.png">
-      <div class="card-info border-t-1 border-gray-300">
-        <div class="tags">
-          <button v-scope data-tag="React" @click="window.open(new URL('topics/' + 'react',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
-    <!--Hacky use of ex css uint-->
-      React
-    </button>
-    
-        </div>
-        <h1>القصة وراء مكتبة رياكت</h1>
-      </div>
-    </a>
-</div><div v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
-    <a href="/blog/what-is-deno-and-diff-from-nodejs-and-cloud-function" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
-      <img width="3440" height="1440" class="tag-card" src="/images/what-is-deno.png">
-      <div class="card-info border-t-1 border-gray-300">
-        <div class="tags">
-          <button v-scope data-tag="Deno" @click="window.open(new URL('topics/' + 'deno',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
-    <!--Hacky use of ex css uint-->
-      Deno
-    </button>
-    
-        </div>
-        <h1>ما هو Deno؟ وعلاقته بحوسبة الحافة؟</h1>
-      </div>
-    </a>
-</div>
+</article>
         </section>
 			</main>
 		<footer class="mt-2 bg-gray-50">
