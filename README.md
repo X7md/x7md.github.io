@@ -5,54 +5,36 @@
 Inside of your Astro project, you'll see the following folders and files:
 
 ```
-./
+.
 ├── astro.config.mjs
+├── jsconfig.json
+├── LICENSE.md
 ├── package.json
 ├── package-lock.json
 ├── postcss.config.cjs
 ├── public
 │   ├── assets
-│   │   └── logo.svg
+│   │   ├── logo.svg
+│   │   └── mushkhbat.svg
 │   ├── CNAME
-│   ├── favicon.ico
+│   ├── favicon.svg
 │   ├── fonts
 │   │   ├── ttf
-│   │   │   ├── Vazirmatn-RD-Black.ttf
-│   │   │   ├── Vazirmatn-RD-Bold.ttf
-│   │   │   ├── Vazirmatn-RD-ExtraBold.ttf
-│   │   │   ├── Vazirmatn-RD-ExtraLight.ttf
-│   │   │   ├── Vazirmatn-RD-Light.ttf
-│   │   │   ├── Vazirmatn-RD-Medium.ttf
-│   │   │   ├── Vazirmatn-RD-Regular.ttf
-│   │   │   ├── Vazirmatn-RD-SemiBold.ttf
-│   │   │   └── Vazirmatn-RD-Thin.ttf
+│   │   │   └── [all Vazirmatn as ttf]
 │   │   ├── variable
 │   │   │   └── Vazirmatn-RD[wght].ttf
 │   │   └── webfonts
-│   │       ├── Vazirmatn-RD-Black.woff2
-│   │       ├── Vazirmatn-RD-Bold.woff2
-│   │       ├── Vazirmatn-RD-ExtraBold.woff2
-│   │       ├── Vazirmatn-RD-ExtraLight.woff2
-│   │       ├── Vazirmatn-RD-Light.woff2
-│   │       ├── Vazirmatn-RD-Medium.woff2
-│   │       ├── Vazirmatn-RD-Regular.woff2
-│   │       ├── Vazirmatn-RD-SemiBold.woff2
-│   │       ├── Vazirmatn-RD-Thin.woff2
-│   │       └── Vazirmatn-RD[wght].woff2
+│   │       └──[all Vazirmatn as woff2]
 │   ├── images
-│   │   ├── cat.svg
-│   │   ├── GitHub-Emblem.png
-│   │   ├── satr.svg
-│   │   ├── sleepyhead-cat-unsplash.jpg
-│   │   ├── termux-thm.jpg
-│   │   ├── test2.png
-│   │   ├── test.png
-│   │   └── what-is-deno.png
+│   │   ├── 1x1
+│   │   │   └── [all 1x1 images]
+│   │   └── [all images]
 │   ├── robots.txt
 │   ├── style
 │   │   ├── global.css
 │   │   └── home.css
 │   └── Vazirmatn-RD-font-face.css
+├── README.md
 ├── sandbox.config.json
 ├── src
 │   ├── components
@@ -60,7 +42,10 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   ├── Button.astro
 │   │   ├── Card.astro
 │   │   ├── Footer.astro
-│   │   └── Navbar.astro
+│   │   ├── Navbar.astro
+│   │   ├── Person.astro
+│   │   ├── Tag.astro
+│   │   └── Topic.astro
 │   ├── layouts
 │   │   ├── blog.astro
 │   │   └── page.astro
@@ -68,14 +53,20 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   ├── 404.astro
 │   │   ├── about-me.astro
 │   │   ├── blog
+│   │   │   └── [all blogs...]
 │   │   ├── index.astro
-│   │   └── posts
-│   │       └── index.astro
+│   │   ├── portfolio
+│   │   │   └── index.astro
+│   │   ├── posts
+│   │   │   └── index.astro
+│   │   ├── rss.xml.js
+│   │   └── topics
+│   │       ├── index.astro
+│   │       └── [topic].astro
 │   ├── styles
 │   │   └── global.css
 │   └── utility
-│       └── JSONid.js
-├── tsconfig.json
+│       └── [all utility script...]
 └── windi.config.js
 ```
 
