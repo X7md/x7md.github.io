@@ -1,8 +1,8 @@
 import rss from '@astrojs/rss';
 
 const postImportResult = import.meta.globEager('./**/*.md');
-const posts = Object.values(postImportResult);
-
+const data_ = Object.values(postImportResult);
+const posts = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
 export const get = () => rss({
     title: 'x7md blog',
     description: 'مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية',
