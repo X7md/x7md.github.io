@@ -16,7 +16,7 @@ const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.fro
 
 const { topic } = Astro.params;
 // const topicTitle = topic./*.charAt(0).toUpperCase() + topic.substr(1).*/toLowerCase();
-const title = `عن ${tag.get(topic.replaceAll("-", " "))?.name}`
+const title = `تدوينات عن ${tag.get(topic.replaceAll("-", " "))?.name}`
 ---
 
 <BaseLayout>
@@ -25,18 +25,36 @@ const title = `عن ${tag.get(topic.replaceAll("-", " "))?.name}`
             <h2>{title}</h2>
         </div>
         <section class="flex flex-row flex-wrap items-center justify-center rounded">
+            <ul>
             {
 
                  data.filter(post => !post.frontmatter.draft && Boolean(post.frontmatter.tags.find(tag => tag.toLowerCase().replaceAll(" ", "-") == topic))).map((post)=> {
                     return (
+                        <li>
                         <Card
                         postURL={post.url}
                         postTitle={post.frontmatter.title}
                         postImage={post.frontmatter.image}
                         mainTag={post.frontmatter.tags[0]}/>
+                        </li>
                     )
                  })
             }
+            </ul>
         </section>
+        <script
+        set:html={
+            JSON.stringify(
+            {
+                "@context": "https://schema.org",
+                "@type": "ItemPage",
+                "name": "تدوينات عن " + tag.get(topic.replaceAll("-", " "))?.name,
+                "description": "مجموعة تدوينات تتناول موضوع " + tag.get(topic.replaceAll("-", " "))?.name,
+                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+            }
+            )
+        }
+         type="application/ld+json">
+        </script>
     </>
 </BaseLayout>

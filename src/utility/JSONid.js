@@ -1,7 +1,7 @@
 function JSONid(data){
     let JSONid = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "url": data.link
@@ -15,7 +15,6 @@ function JSONid(data){
             "givenName": "Hamad",
             "familyName":"Binqali",
             "url": "https://git.x7md.net/about-me",
-            "sameAs": "https://www.wikidata.org/wiki/Q111890205"
         },
         "publisher": {
             "@type": "Person",
