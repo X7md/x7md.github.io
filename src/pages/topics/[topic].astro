@@ -25,22 +25,22 @@ const title = `تدوينات عن ${tag.get(topic.replaceAll("-", " "))?.name}`
             <h1>{title}</h1>
         </div>
         <section class="flex flex-row flex-wrap items-center justify-center rounded">
-            <ul>
+            <!-- <ul> -->
             {
 
                  data.filter(post => !post.frontmatter.draft && Boolean(post.frontmatter.tags.find(tag => tag.toLowerCase().replaceAll(" ", "-") == topic))).map((post)=> {
                     return (
-                        <li>
+                        // <li>
                         <Card
                         postURL={post.url}
                         postTitle={post.frontmatter.title}
                         postImage={post.frontmatter.image}
                         mainTag={post.frontmatter.tags[0]}/>
-                        </li>
+                        // </li>
                     )
                  })
             }
-            </ul>
+            <!-- </ul> -->
         </section>
         <script
         set:html={
@@ -58,3 +58,6 @@ const title = `تدوينات عن ${tag.get(topic.replaceAll("-", " "))?.name}`
         </script>
     </>
 </BaseLayout>
+<style>
+
+</style>
