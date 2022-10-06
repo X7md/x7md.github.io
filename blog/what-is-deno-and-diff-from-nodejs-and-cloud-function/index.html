@@ -1,4 +1,4 @@
-<!DOCTYPE html><link rel="stylesheet" href="/assets/fe2f25ef.240f2c29.css" /><html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 	<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,13 +11,14 @@
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:title" content="ما هو Deno؟ وعلاقته بحوسبة الحافة؟">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="/assets/fe2f25ef.240f2c29.css" /></head><meta property="twitter:description"><meta name="description">
+	<link rel="stylesheet" href="/assets/e6e29778.240f2c29.css" /></head><meta property="twitter:description"><meta name="description">
 	<meta property="twitter:image" content="https://git.x7md.net/images/what-is-deno.png">
 	<link rel="icon" type="image/x-icon" href="/favicon.svg">
 	<title>ما هو Deno؟ وعلاقته بحوسبة الحافة؟</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3411370527276845" crossorigin="anonymous"></script>
 	
 	
 		<div class="relative py-3 z-10">
@@ -98,19 +99,19 @@
 <p>نظام الوحدات في NodeJS يعتبر معقد نسبيًا فعندما تم إبتكار NodeJS لم يكن هناك نظام وحدات مُوحد في جافاسكربت- في الوقت الحالي يوجد نظام وحدات ES Moudle- في ذلك الوقت اضطر فريق NodeJS إلى أبتكار نظامهم الخاص الذي سموه CommonJS وقد حصل سمعة سيئة خاصة مع مجلد  <strong>node_module وملف packges.json</strong> ومع كل تعقيدات إدارة الحزم وحجمها الكبير.</p>
 <p>وبما أن Deno أتى بعد أبتكار نظام وحدات ES Module فهو يستخدم نفس الفكرة والمفهوم الموجود في المتصفحات.</p>
 <p>مثال على نظام وحدات جافاسكربت المعياري:</p>
-<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #1C6B48">import</span><span style="color: #393A34"> </span><span style="color: #8E8F8B">{</span><span style="color: #393A34"> </span><span style="color: #8C862B">log</span><span style="color: #393A34"> </span><span style="color: #8E8F8B">}</span><span style="color: #393A34"> </span><span style="color: #8C862B">form</span><span style="color: #393A34"> </span><span style="color: #B56959">"utility"</span><span style="color: #393A34">;  </span></span>
+<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #1E754F">import</span><span style="color: #393A34"> </span><span style="color: #999999">{</span><span style="color: #393A34"> </span><span style="color: #B07D48">log</span><span style="color: #393A34"> </span><span style="color: #999999">}</span><span style="color: #393A34"> </span><span style="color: #B07D48">form</span><span style="color: #393A34"> </span><span style="color: #B56959AA">"</span><span style="color: #B56959">utility</span><span style="color: #B56959AA">"</span><span style="color: #393A34">;  </span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #8C862B">log</span><span style="color: #393A34">(</span><span style="color: #B56959">"Hamad"</span><span style="color: #393A34">);</span></span></code></pre>
+<span class="line"><span style="color: #B07D48">log</span><span style="color: #393A34">(</span><span style="color: #B56959AA">"</span><span style="color: #B56959">Hamad</span><span style="color: #B56959AA">"</span><span style="color: #393A34">);</span></span></code></pre>
 <p>هناك فكرة قيد التنفيذ شبيهة بـ pakage.json تدعى import-maps ويدعمها Deno حاليًا.</p>
 <p>مثال على import-maps :</p>
-<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #8E8F8B">&#x3C;</span><span style="color: #2F8A89">script</span><span style="color: #393A34"> </span><span style="color: #B58451">type</span><span style="color: #8E8F8B">=</span><span style="color: #B56959">"importmap"</span><span style="color: #8E8F8B">></span><span style="color: #393A34">  </span></span>
+<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #999999">&#x3C;</span><span style="color: #1E754F">script</span><span style="color: #393A34"> </span><span style="color: #B07D48">type</span><span style="color: #999999">=</span><span style="color: #B56959AA">"</span><span style="color: #B56959">importmap</span><span style="color: #B56959AA">"</span><span style="color: #999999">></span><span style="color: #393A34">  </span></span>
 <span class="line"><span style="color: #393A34">{  </span></span>
 <span class="line"><span style="color: #393A34">  "imports": {  </span></span>
 <span class="line"><span style="color: #393A34">    "moment": "/node_modules/moment/src/moment.js",  </span></span>
 <span class="line"><span style="color: #393A34">    "lodash": "/node_modules/lodash-es/lodash.js"  </span></span>
 <span class="line"><span style="color: #393A34">  }  </span></span>
 <span class="line"><span style="color: #393A34">}  </span></span>
-<span class="line"><span style="color: #8E8F8B">&#x3C;/</span><span style="color: #2F8A89">script</span><span style="color: #8E8F8B">></span></span></code></pre>
+<span class="line"><span style="color: #999999">&#x3C;/</span><span style="color: #1E754F">script</span><span style="color: #999999">></span></span></code></pre>
 <p>*نظام وحدات جافاسكربت المعياري  ES Module -يستخدم في المتصفحات وتدعمه الإصدارات الحديثة من Node بدأً من الإصدار 12 فما فوق-.</p>
 <p><strong>4- دعم TypeScript بشكل افتراضي</strong></p>
 <p>يدعم Deno الأكواد المكتوبة باستخدام TypeScript دون الحاجة إلى ترجمتها (compiling) إلى جافاسكربت عادية ويمكنه تشغيلها دون أي مشكلة، وبما أن العديد من مبرمجين JavaScript يستخدمون TypeScript في مشارعيهم تعد هذه خطوة جيدة.</p>
