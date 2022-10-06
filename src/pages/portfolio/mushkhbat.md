@@ -2,7 +2,6 @@
 title: "مدونة مشخبط"
 layout: "@layouts/blog.astro"
 image: /images/mushkhbat-thm.jpg
-link: /blog/termux
 date: '2022/09/02'
 desc: 'قصة مدونة مشخبط... من الفكرة إلى التطوير والتنفيذ، والإطلاق'
 draft: false
