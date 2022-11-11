@@ -4,7 +4,7 @@ const posts = Object.values(postImportResult);
 
 export const get = () => rss({
   // `<title>` field in output xml
-  title: 'مدون  حمد بنقالي',
+  title: 'مدونة حمد بنقالي',
   // `<description>` field in output xml
   description: 'مدونة شخصية حيث ستجد آرائي، مواضيع عن البرمجة، وغير ذلك...',
   // base URL for RSS <item> links
