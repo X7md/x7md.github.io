@@ -1,15 +1,23 @@
 import rss from '@astrojs/rss';
+const postImportResult = import.meta.glob('../posts/**/*.md', { eager: true });
+const posts = Object.values(postImportResult);
 
-const postImportResult = import.meta.globEager('./**/*.md');
-const data_ = Object.values(postImportResult);
-const posts = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
 export const get = () => rss({
-    title: 'x7md blog',
-    description: 'مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية',
-    site: import.meta.env.SITE,
-    items: posts.map((post) => ({
-      title: post.frontmatter.title,
-      link: post.frontmatter.link,
-      pubDate: post.frontmatter.date
-    }))
-  });
+  // `<title>` field in output xml
+  title: 'مدون  حمد بنقالي',
+  // `<description>` field in output xml
+  description: 'مدونة شخصية حيث ستجد آرائي، مواضيع عن البرمجة، وغير ذلك...',
+  // base URL for RSS <item> links
+  // SITE will use "site" from your project's astro.config.
+  site: import.meta.env.SITE,
+  // list of `<item>`s in output xml
+  // simple example: generate items for every md file in /src/pages
+  // see "Generating items" section for required frontmatter and advanced use cases
+  items: posts.map((post) => ({
+    link: post.url,
+    title: post.frontmatter.title,
+    pubDate: post.frontmatter.date,
+  })),
+  // (optional) inject custom xml
+  customData: `<language>ar-sa</language>`,
+});
