@@ -1,6 +1,8 @@
 import rss from '@astrojs/rss';
-const postImportResult = import.meta.glob('../posts/**/*.md', { eager: true });
+const postImportResult = import.meta.glob('./**/*.md', { eager: true });
 const posts = Object.values(postImportResult);
+
+console.log(posts);
 
 export const get = () => rss({
   // `<title>` field in output xml
