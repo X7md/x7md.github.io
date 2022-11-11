@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Banner from '../components/Banner.astro';
 import Footer from '../components/Footer.astro';
 import "./../styles/global.css";
+const {origin} = Astro.site
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -12,6 +13,7 @@ import "./../styles/global.css";
 	<head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="alternate" type="application/rss+xml" href={new URL("rss.xml", origin)} />
 	<link rel="icon" type="image/x-icon" href="/favicon.svg" />
 	<title>x7md</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css" />
