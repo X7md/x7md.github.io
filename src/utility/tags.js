@@ -35,4 +35,8 @@ tags.set("webassembly", {
     image: imageLink("WebAssembly_logo.svg"),
 })
 
+tags.set("ai", {
+    name: "الذكاء الاصطناعي",
+})
+
 export default tags;
