@@ -51,7 +51,7 @@ tags: ["Data", "Blogging"]
         "datePublished": "{{تاريخ}}",
         "author": {
             "@type": "Person",
-            "name": "{{اسم الؤلف}}",
+            "name": "{{اسم المؤلف}}",
             "url": "{{URL}}"
         }
     }
