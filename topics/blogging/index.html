@@ -10,7 +10,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<meta name="description" content="مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية">
 	<script src="https://unpkg.com/petite-vue" defer init></script>
-	<link rel="stylesheet" href="/assets/arabic-programming-content-online.240f2c29.css" /></head>
+	<link rel="stylesheet" href="/assets/arabic-programming-content-online.76d1875d.css" /></head>
 	<body>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
@@ -78,6 +78,20 @@
         </div><section class="flex flex-row flex-wrap items-center justify-center rounded">
             <!-- <ul> -->
             <article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
+    <a href="/blog/structured-data" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
+      <img width="3440" height="1440" class="tag-card" src="/images/structured-data.jpg">
+      <div class="card-info border-t-1 border-gray-300">
+        <div class="tags">
+          <button v-scope data-tag="Data" @click="window.open(new URL('topics/' + 'data',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+    <!--Hacky use of ex css uint-->
+      data
+    </button>
+
+        </div>
+        <h1>البيانات المنظّمة، وأثرها على موقعك</h1>
+      </div>
+    </a>
+</article><article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
     <a href="/blog/arabic-programming-content-online" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
       <img width="3440" height="1440" class="tag-card" src="/images/sleepyhead-cat-unsplash.jpg">
       <div class="card-info border-t-1 border-gray-300">
@@ -86,7 +100,7 @@
     <!--Hacky use of ex css uint-->
       blogging
     </button>
-    
+
         </div>
         <h1>المحتوى العربي البرمجي على الانترنت</h1>
       </div>

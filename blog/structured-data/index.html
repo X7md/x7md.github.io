@@ -4,18 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="أي إطار جافاسكربت؟">
+	<meta property="og:title" content="البيانات المنظّمة، وأثرها على موقعك">
 	
-	<meta property="og:image" content="https://git.x7md.net/images/powerpuff-frameworks.png">
+	<meta property="og:image" content="https://git.x7md.net/images/structured-data.jpg">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:title" content="أي إطار جافاسكربت؟">
+	<meta property="twitter:title" content="البيانات المنظّمة، وأثرها على موقعك">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta property="twitter:description"><meta name="description">
-	<meta property="twitter:image" content="https://git.x7md.net/images/powerpuff-frameworks.png">
+	<meta property="twitter:image" content="https://git.x7md.net/images/structured-data.jpg">
 	<link rel="icon" type="image/x-icon" href="/favicon.svg">
-	<title>أي إطار جافاسكربت؟</title>
+	<title>البيانات المنظّمة، وأثرها على موقعك</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
@@ -82,40 +82,96 @@
 </div>
 		<!-- <Banner /> -->
 	<main>
-		<img class="header-blog" src="/images/powerpuff-frameworks.png">
+		<img class="header-blog" src="/images/structured-data.jpg">
 		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
-			<p>في بداية تعلمي وتعمقي في عالم جافاسكربت، وصلت لمرحلة أردت فيها أن أُجرب ذاك الشيء الذي يسمونه "إطار عمل"... كانت هناك ثلاث إطارات رنانة Vue و React و Angular، وكان علي الإختيار وقررت تجربة فيو كأول إطار عمل، لكن مؤخرًا مع تجربتي لرياكت أصبحت أشعر أني أميل إلى جانب رياكت أكثر، سأحاول في هذه التدوينة سرد بعض النصائح لإختيار إطار العمل</p>
-<h1 id="محتار-بين-إطارات-العمل">محتار بين إطارات العمل...</h1>
-<p>برأيي أن مسألة اختيار إطار عمل جافاسكربت هو مثل مسألة اختيار أي فتاة من فتيات القوة تفضل... كُل واحدة من فتيات القوة تحمي المدينة ولكن لكل واحدة منهن قدرتها الخاصة وأسلوب يميزها عن غيرها من الفتيات، وهذا مشابه لإطارات عمل جافاسكربت كل من فيو ورياكت وأنجولار وغيرها من الإطارات لديها أسلوب خاص وأيضًا مجتمع يحبها ويدعمها ويساعد في تطويرها ويساعد بعضه البعض... وهناك العديد من العوامل التي تجعلك تفضل أن تستخدم أحدها على الآخر، من هذه العوامل أولًا تفضيلك الشخصي وهو الذي يطغى في الغالب، ومن ثم نوع المشروع الذي سوف تقوم به ومتطلبات المشروع لأنه ربما قد تجد إطار عمل يسهل لك شيء معين على عكس الإطار الآخر، ولكن تحتاج أولًا أن تعرف ما الفائدة من إطار العمل بالضبط</p>
-<p><strong>ما فكرة إطارات عمل الواجهات؟</strong></p>
-<p>يمكن تبسيط فكرة إطار العمل بأنها مجموعة أكواد وطرق في البرمجة وتصميم المشروع، يستخدمها العديد من الأشخاص لتسهيل عمل شيء ما، دون الغوص في التفاصيل وإيجاد حلول تم إيجادها من قبل وفي الغالب إطارات عمل الواجهات في جافاسكربت تقوم بتسهيل العديد من اﻷمور، تتضمن أشياء مثل تصميم واجهة مُستخدم تفاعلية بشكل أسهل، التعامل مع البيانات المتغيرة، وإخفاء التفاصيل عن طريق فصل العناصر المتكررة إلى مُكونات يُمكن إعادة استخدامها "Components" بدلًا من تكرار كتابة نفس الكود.</p>
-<p>وتقريبًا تقدم كل إطارات عمل جافاسكربت تقسيم عناصر الواجهة إلى مكونات، وتكمن الإختلافات غالبًا في مبدأ العمل للإطار نفسه وطريقة كتابة الكود وترتيبه ولكل أطار عمل أسلوب يُميزه قد تعجب به أو ربما قد لا يناسبك.</p>
-<p>غالبًا تهتم إطارات العمل بتسهيل تنفيذ المواقع التي تتبع مفهوم الصفحة الواحدة (Single Page App) ولكن مؤخرًا لم تعد تقتصر الإطارات على هذا النوع من المواقع بل تشمل حتى المواقع متعددة الصفحات (Multi Page App) بإستحداث طرق لتوليد الصفحات أو تصييرها عن طريق السيرفر</p>
-<h2 id="ما-الفرق-بين-رياكت-وفيو-وأنجولار">ما الفرق بين رياكت وفيو وأنجولار؟</h2>
-<p>ربما يدفعك الفضول لمعرفة الفرق بين إطارات العمل هذه، صحيح أن جميعها هدفها تسهيل برمجة واجهة المستخدم المرئية، ولكن لكل مكتبة تكنيك وطريقة تستخدمها وسأذكر بعضها:</p>
-<ol>
-<li>
-<p><strong>طريقة العمل وتعديل عناصر الصفحة</strong><br>
-تستخدم كل من رياكت وفيو مفهوم خوارزمية تسمى VDOM (نموذج كائنات المستند الإفتراضي), وببساطة تعتمد الفكرة على نسخ شجرة عناصر HTML وحفظها في الذاكرة، وعند حصول تغير سيتم إعادة بناء المكون بالكامل مع البيانات الجديدة، ويتم مقارنة التغيرات في المكون الجديد مع النسخة الموجودة في الذاكرة وإيجاد التغيرات الحاصلة، ومن ثم يتم إجراء التعديلات في الواجهة المرئية على شجرة DOM الأساسية في المتصفح، وفي الجانب الآخر تستخدم أنجولار خاصية موجودة بالمتصفح تسمى custom element وهي طريقة تمكن المبرمج من صنع عناصر HTML مُخصصة.</p>
-</li>
-<li>
-<p><strong>طريقة كتابة المكونات</strong><br>
-لكل إطار عمل طريقة تميزه عن غيره في كتابة المكونات، وتعتبر فـيو أقرب إلى طريقة HTML العادية، وتستخدم رياكت طريقة تسمى JSX وهي أقرب إلى دمج كل من HTML وجافاسكربت مع بعضهما البعض، وبما أن أنجلولار تستخدم custom element الموجودة في المتصفح، فطريقة كتابتها ستكون مشابهة ومقاربة إلى الطريقة الإعتيادية في custom element مع بعض الفروقات والتسهيلات التي ينفرد بها إطار العمل.</p>
-</li>
-<li>
-<p><strong>الدعم</strong><br>
-كونك تستخدم إطار عمل يعني أنك ستحصل على دعم من خلال مجتمعه، على سبيل المثال ستجد العديد من العناصر الجاهزة التي تستطيع أخذها وإعادة استخدامها في مشروعك، وستجد أيضًا حلول لمشاكل تواجهك أو أفكار تحاول تطبيقها، ويختلف كل إطار عن الآخر في طريقة الدعم، فمثلًا يحضى كل من أنجولار ورياكت بدعم بواسطة شركات حيث أن إطار أنجولار يُدار من طرف شركة قوقل، ويدار رياكت من طرف شركة فيسبوك -ميتا حاليًا- بينما يتمتع فيو بدعم مجتمعي كبير ولا تديره شركة، بل يديره مساهمون من المجتمع يترأسهم إيفان يو مبتكر الإطار.</p>
-</li>
-</ol>
-<h3 id="أي-إطار-عمل-أختار">أي إطار عمل أختار؟</h3>
-<p>تتشارك جميع الإطارات في المفهوم، وعندما تبدأ في إحداها وتتشرب المفهوم وتستوعبه سوف يسهل عليك الإنتقال بين إطارات العمل بسهولة، ولكي تختار أول إطار عمل لك راجع أولًا أسباب تفضيلك لإطار عن الآخر، ربما تجد فيو أسهل من أنجولار ورياكت، أو ربما تفضل رياكت لأنها تمكنك من تعلم رياكت نيتف بسهولة لاحقًا، أو قد تتعلم أنجولار لأنها تعطيك بيئة عمل متكاملة تقريبًا... الأمر يرجع لتفضيلك وأختيارك.</p>
-    <div><a data-tag="JavaScript Framework" href="/topics/javascript-framework" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+			<p>في الفترة الأخيرة، ومع تعمقي في مجال الويب وتحسين محركات البحث، تعرفت على شيء يدعى
+"البيانات المنظمة"
+كانت الفكرة مُبهمة لي، تعمقت أكثر فأكثر... وجربتها، وفهمتها أكثر فأكثر
+وبنيت قالب مدونتي "مشخبط" بشكل متوافق معها... وياللمفاجأة الناتج النهائي
+كان رائع، محرك البحث يفهمني.</p>
+<h2 id="ما-هي-البيانات-المنظمة">ما هي البيانات المنظمة؟</h2>
+<p>البيانات المنظّمة، أو البيانات الهيكلية (Structure Data)
+هي طريقة لإضافة بيانات قابلة
+للقراءة من قبل الآلات (Machine-Readable Data)، في هذه الحالة
+<strong>"محركات البحث"</strong>
+والتي تساعد محرك البحث على فهم محتوى صفحتك لفرزه وتصنيفه بشكل أفضل.</p>
+<h3 id="البيانات-العلائقية-linked-data">البيانات العلائقية (Linked Data)</h3>
+<p>البيانات العلائقية أو البيانات المرتبطة، هي طريقة في إنشاء شبكة بيانات مُعايرة تستطيع الآلات تفسيرها، عبر مختلف المستندات ومواقع الويب.</p>
+<figure><img src="/images/ex_strucData.png" alt="رسم بياني، لتمثيل بيانات علائقية لصفحة ويب تحوي على تدوينة"><figcaption>رسم بياني، لتمثيل بيانات علائقية لصفحة ويب تحوي على تدوينة</figcaption></figure>
+<h3 id="json-ld-json-linked-data">JSON-LD (JSON Linked-Data)</h3>
+<p>تعد JSON-LD طريقة متبعة في كتابة البيانات العلائقية، <a href="https://www.w3.org/TR/json-ld11/">تمت معايرتها من قبل منظمة w3c</a>
+وصممت لتكون
+<strong>سهلة</strong>، <strong>ذات توافقية</strong>، <strong>وموجزة</strong>، <strong>ومُعبرة</strong>...
+غالبًا ما تستخدم لتضمين البيانات المنظمة على صفحات الويب.</p>
+<p>يمكننا التعبير عنها بطريقة سهلة وتضمينها ضمن صفحة الويب،
+وتساهم العديد من الجهات فيها وتستخدمها في أنظمتها، من أجل الاستفادة من البيانات العلائقية، في تحسين
+فهم الآلات للمستندات وصفحات الويب.</p>
+<p>عبر إضافة وسم (tag) <code>&#x3C;script></code> مع الخاصية (attribute) <code>type="application/ld+json"</code>
+على صفحة الويب ببساطة:</p>
+<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #999999">&#x3C;</span><span style="color: #1E754F">script</span><span style="color: #393A34"> </span><span style="color: #B07D48">type</span><span style="color: #999999">=</span><span style="color: #B56959AA">"</span><span style="color: #B56959">application/ld+json</span><span style="color: #B56959AA">"</span><span style="color: #999999">></span></span>
+<span class="line"><span style="color: #393A34">[</span></span>
+<span class="line"><span style="color: #393A34">    {</span></span>
+<span class="line"><span style="color: #393A34">        "@context": "https://schema.org",</span></span>
+<span class="line"><span style="color: #393A34">        "@type": "BlogPosting",</span></span>
+<span class="line"><span style="color: #393A34">        "headline": "{{عنوان}}",</span></span>
+<span class="line"><span style="color: #393A34">        "image": "{{رابط صورة}}",</span></span>
+<span class="line"><span style="color: #393A34">        "datePublished": "{{تاريخ}}",</span></span>
+<span class="line"><span style="color: #393A34">        "author": {</span></span>
+<span class="line"><span style="color: #393A34">            "@type": "Person",</span></span>
+<span class="line"><span style="color: #393A34">            "name": "{{اسم الؤلف}}",</span></span>
+<span class="line"><span style="color: #393A34">            "url": "{{URL}}"</span></span>
+<span class="line"><span style="color: #393A34">        }</span></span>
+<span class="line"><span style="color: #393A34">    }</span></span>
+<span class="line"><span style="color: #393A34">]</span></span>
+<span class="line"><span style="color: #999999">&#x3C;/</span><span style="color: #1E754F">script</span><span style="color: #999999">></span></span></code></pre>
+<p>المثال أعلاه، يوضح طريقة وضع بيانات علائقية على هيئة
+<code>JSON</code>
+لمقال تدوينة على صفحة الويب.</p>
+<h2 id="الويب-الدلالي-والبيانات-العلائقية">الويب الدلالي والبيانات العلائقية</h2>
+<p>الويب الدلالي (Semantic Web)... هو مصطلح يقصد به وضع البيانات على صفحات الويب
+بطريقة تجعلها قابلة للإكتشاف من قبل الآلات.</p>
+<p>يقول <strong>تيم بيرنرز لي</strong>:
+"الويب الدلالي ليس فقط حول وضع البيانات على الشبكة العنكبوتية (الويب)، بل بشأن صُنع روابط، ما يُمكن الشخص أو الآلة على استكشاف الشبكة العنكبوتية في صورة بيانات."</p>
+<blockquote>
+<p>The Semantic Web isn't just about putting data on the web. It is about making links, so that a person or machine can explore the web of data.<br>
+— <a href="https://www.w3.org/DesignIssues/LinkedData.html">Tim Berners-Lee (on w3c)</a></p>
+</blockquote>
+<p>تساهم العديد من الشركات في تحسين تجربة تصنيف محتويات الويب، بما في ذلك Google و Microsoft و Pinterest و Yandex وغيرها من الجهات الأخرى...</p>
+<h3 id="كيف-أستفيد-من-البيانات-المنظمة">كيف أستفيد من البيانات المنظمة؟</h3>
+<p>من خلال إضافة بيانات منظمة إلى صفحات موقعك، ستعطي تلميحًا
+لمحرك البحث بكيفية فهم محتوى الصفحة وعن ماذا تعبر.</p>
+<p>تتبنى قوقل البيانات المنظمة الصادرة من <code>Schema.org</code>
+كما توفر قوقل ميزة
+"<a href="https://developers.google.com/search/docs/appearance/structured-data/search-gallery">ناتج البحث الثري</a>"
+(Rich Results)
+لبعض الأنواع من هذه البيانات المنظمة.</p>
+<p><strong>مشروع <code>Schema.org</code></strong>:</p>
+<p>هو مجتمع تعاوني نشط، مهمته صنع، وصيانة، وتشجيع تنسيق معياري، لإضافة البيانات
+المنظمة على الويب.</p>
+<p><strong>تجربتي في تضمين البيانات المنظمة</strong></p>
+<p>قمت بتجربة تضمين البيانات المنظمة على صفحات مدونة مشخبط.</p>
+<p>وبشكل أساسي قمت باستهداف تلك التي توصي بها قوقل من أجل
+ناتج البحث الثري وهي:
+المقالات (Articles)
+وممر التصفح (Breadcrumb)
+ومُقتَطَفات مراجعة (Review snippets)</p>
+<figure><img src="/images/rich-results-test.jpg" alt="اختبار ناتج البحث الثري، على إحدى صفحات مشخبط"><figcaption>اختبار ناتج البحث الثري، على إحدى صفحات مشخبط</figcaption></figure>
+<p>وبشكل عام، لم تظهر النتائج بسرعة ولكن مع الوقت، بدأت تظهر على البحث بشكل مختلف:</p>
+<figure><img src="/images/rich-results.jpg" alt="بعض نواتج البحث الثري لموقع مشخبط على قوقل"><figcaption>بعض نواتج البحث الثري لموقع مشخبط على قوقل</figcaption></figure>
+<p>ليس هذا فقط، بل عند البحث عن الموضوع، غالبًا ما يقترح قوقل تدوينات موقعي ضمن
+أول خمس نتائج بحث، وهذا مؤشر ممتاز ورائع!</p>
+<h3 id="مصادر-ومراجع">مصادر ومراجع</h3>
+<ul>
+<li><a href="https://youtu.be/hUHjeDylhE8">البيانات المنظمة، لمطوري الويب</a></li>
+<li><a href="https://schema.org/">schema org</a></li>
+</ul>
+    <div><a data-tag="Data" href="/topics/data" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
         <!--Hacky use of ex css uint-->
-          javascript framework
+          data
       </a>
-<a data-tag="JavaScript" href="/topics/javascript" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+<a data-tag="Blogging" href="/topics/blogging" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
         <!--Hacky use of ex css uint-->
-          javascript
+          blogging
       </a>
 </div>
 		<section class="byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -182,6 +238,6 @@
     </div>
   </div>
 </footer>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","url":"https://git.x7md.net/blog/which-javascript-framework"},"headline":"أي إطار جافاسكربت؟","image":"/images/powerpuff-frameworks.png","datePublished":"2022/05/26","dateModified":"2022/05/26","author":{"@type":"Person","givenName":"Hamad","familyName":"Binqali","url":"https://git.x7md.net/about-me"},"publisher":{"@type":"Person","name":"x7md"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","url":"https://git.x7md.net/blog/structure-data/"},"headline":"البيانات المنظّمة، وأثرها على موقعك","image":"/images/structured-data.jpg","datePublished":"2022/12/24","author":{"@type":"Person","givenName":"Hamad","familyName":"Binqali","url":"https://git.x7md.net/about-me"},"publisher":{"@type":"Person","name":"x7md"}}</script>
 	</body>
 </html>
