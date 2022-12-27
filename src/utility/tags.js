@@ -38,5 +38,8 @@ tags.set("webassembly", {
 tags.set("ai", {
     name: "الذكاء الاصطناعي",
 })
+tags.set("data", {
+    name: "البيانات",
+})
 
 export default tags;
