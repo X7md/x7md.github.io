@@ -12,17 +12,21 @@ function JSONid(data){
         "dateModified": data.dateModified,
         "author": {
             "@type": "Person",
-            "givenName": "Hamad",
-            "familyName":"Binqali",
+            "name": "حمد",
+            "familyName":"بنقالي",
             "url": "https://git.x7md.net/about-me",
         },
+        keywords: [],
         "publisher": {
             "@type": "Person",
             "name": "x7md"
         }
     }
-    if (data["sameAs"]){
-        JSONid["sameAs"] = data["sameAs"];
+    if (data["about"]){
+        JSONid["about"] = data["about"];
+    }
+    if (data["keywords"]){
+        JSONid["keywords"] = data["keywords"];
     }
     return JSON.stringify(JSONid);
 }
