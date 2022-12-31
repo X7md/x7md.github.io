@@ -25,10 +25,11 @@ tags.set("termux", {
     name: "ترمكس"
 })
 tags.set("blogging", {
-    name: "التدوين"
+    name: "التدوين",
 })
 tags.set("react", {
     name: "رياكت",
+    image: imageLink("React-icon.svg"),
 })
 tags.set("webassembly", {
     name: "ويب أسمبلي",
