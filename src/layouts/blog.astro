@@ -12,7 +12,11 @@ let postData = {
 	link: new URL(content.link, "https://git.x7md.net/").href,
 	title: content.title,
 	imageName: content.image,
-	sameAs: content.sameAs,
+	...( content.sameAs ? {sameAs: content.sameAs} : null),
+	...( content.about ? {about: content.about} : null),
+	keywords: [content.tags.map(
+		tag => new URL(`/posts/topics/${tag.toLowerCase()}`, "https://git.x7md.net/").href
+		)],
 	datePublished: content.date,
 	dateModified: content.dateModified
 }

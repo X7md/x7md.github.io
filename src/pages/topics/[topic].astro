@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 import BaseLayout from '@layouts/page.astro';
 import Card from  "@components/Card.astro";
 const data_ =  await Astro.glob('../blog/*.md');
+//@ts-ignore
 const data = data_.sort((a, b) => new Date(b.frontmatter?.date) - new Date(a.frontmatter?.date))
 
 const { topic } = Astro.params;
@@ -47,10 +48,11 @@ const title = `تدوينات عن ${tag.get(topic.replaceAll("-", " "))?.name}`
             JSON.stringify(
             {
                 "@context": "https://schema.org",
-                "@type": "ItemPage",
+                "@type": "CollectionPage",
                 "name": "تدوينات عن " + tag.get(topic.replaceAll("-", " "))?.name,
                 "description": "مجموعة تدوينات تتناول موضوع " + tag.get(topic.replaceAll("-", " "))?.name,
-                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+                "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US",
+                ...(tag.get(topic.replaceAll("-", " "))?.about ? {about: tag.get(topic.replaceAll("-", " "))?.about}  : null)
             }
             )
         }
