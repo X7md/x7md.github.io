@@ -2,8 +2,6 @@ import rss from '@astrojs/rss';
 const postImportResult = import.meta.glob('./**/*.md', { eager: true });
 const posts = Object.values(postImportResult);
 
-console.log(posts);
-
 export const get = () => rss({
   // `<title>` field in output xml
   title: 'مدونة حمد بنقالي',
@@ -15,7 +13,7 @@ export const get = () => rss({
   // list of `<item>`s in output xml
   // simple example: generate items for every md file in /src/pages
   // see "Generating items" section for required frontmatter and advanced use cases
-  items: posts.map((post) => ({
+  items: posts.filter(e => !e.frontmatter.draft).map((post) => ({
     link: post.url,
     title: post.frontmatter.title,
     pubDate: post.frontmatter.date,

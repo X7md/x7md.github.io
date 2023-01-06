@@ -41,7 +41,12 @@ tags: ["Termux", "Android"]
 
 ببساطة يعمل ترمكس بطريقة ذكية تضمن له سرعة وأداء وخِفة، ترمكس في وضعه الطبيعي لا يحاكي توزيعة من توزيعات لينكس، وذلك مذكور في ويكي ترمكس الرسمية:
 
-> ["Termux is neither a virtual machine nor any other kind of emulated or simulated environment. All provided packages are cross-compiled with Android NDK and only have compatibility patches to get them working on Android."](https://wiki.termux.com/wiki/Getting_started#How_does_it_work)
+<div lang="en" dir="ltr">
+
+> Termux is neither a virtual machine nor any other kind of emulated or simulated environment. All provided packages are cross-compiled with Android NDK and only have compatibility patches to get them working on Android.
+><br> — [Termux Wiki <small>- How does it work</small>](https://wiki.termux.com/wiki/Getting_started#How_does_it_work)
+
+</div>
 
 بل يعمل وينفذ الأوامر بشكل طبيعي عبر Android NDK و NDK إختصار لجُملة Native Development Kit، هو عبارة عن واجهة برمجية ومجموعة أدوات تتيح للمبرمج كتابة Native Code "كود أصلي" عبر لغات مثل `C` و `C++` والتعامل مع العتاد الفيزيائي بشكل أعقد، من أجل الحصول على أقصى أداء ممكن في تطبيقاتهم التي يبرمجونها لتعمل على هواتف أندرويد، وهذا ما يجعل ترمكس يعمل بدون الحاجة إلى صلاحية root ودون الحاجة للوصول إلى ملفات نظام أندرويد بشكل مباشر. أي بعدما ينفذ الأمر الذي كتبته، سيقوم بإرجاع لك الناتج في تلك الشاشة السوداء.
 

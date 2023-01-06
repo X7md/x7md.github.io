@@ -53,10 +53,16 @@ img.tag-card {
 }
 
 blockquote {
-  text-align: left;
-  direction: ltr;
-  padding: 10px;
+  margin: 0.25rem;
+  padding: 0.75rem;
   border-right: solid 0.5rem #cecece;
+}
+
+[lang="en"] blockquote {
+  direction: ltr;
+  text-align: start;
+  border-right: none;
+  border-left: solid 0.5rem #cecece;
 }
 
 .x-container {
