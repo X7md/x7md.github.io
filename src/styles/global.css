@@ -60,14 +60,9 @@ blockquote {
 
 [lang="en"] blockquote {
   direction: ltr;
-<<<<<<< HEAD
   text-align: start;
   border-right: none;
   border-left: solid 0.5rem #cecece;
-=======
-  padding: 10px;
-  border-right: solid 0.5rem #cecece;
->>>>>>> 533585b0b6e0157ea0e33823be6d842dfe911b24
 }
 
 .x-container {
