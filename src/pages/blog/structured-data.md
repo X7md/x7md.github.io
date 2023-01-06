@@ -70,8 +70,12 @@ tags: ["Data", "Blogging"]
 يقول **تيم بيرنرز لي**: 
 "الويب الدلالي ليس فقط حول وضع البيانات على الشبكة العنكبوتية (الويب)، بل بشأن صُنع روابط، ما يُمكن الشخص أو الآلة على استكشاف الشبكة العنكبوتية في صورة بيانات."
 
+<div lang="en">
+
 > The Semantic Web isn't just about putting data on the web. It is about making links, so that a person or machine can explore the web of data.  
 > — [Tim Berners-Lee (on w3c)](https://www.w3.org/DesignIssues/LinkedData.html)
+
+</div>
 
 تساهم العديد من الشركات في تحسين تجربة تصنيف محتويات الويب، بما في ذلك Google و Microsoft و Pinterest و Yandex وغيرها من الجهات الأخرى...
 
