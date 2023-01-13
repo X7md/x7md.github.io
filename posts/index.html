@@ -10,7 +10,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<meta name="description" content="مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية">
 	<script src="https://unpkg.com/petite-vue" defer init></script>
-	<link rel="stylesheet" href="/assets/arabic-programming-content-online.9ab329b7.css" /></head>
+	<link rel="stylesheet" href="/assets/arabic-programming-content-online.6631f594.css" /></head>
 	<body>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
@@ -77,6 +77,20 @@
             <h2>تدويناتي</h2>
         </div><section class="flex flex-row flex-wrap items-center justify-center rounded">
             <article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
+    <a href="/blog/monshaat-bootcamp" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
+      <img width="3440" height="1440" class="tag-card" src="/images/monshaat-bootcamp.jpg">
+      <div class="card-info border-t-1 border-gray-300">
+        <div class="tags">
+          <button v-scope data-tag="bootcamp" @click="window.open(new URL('topics/' + 'bootcamp',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+    <!--Hacky use of ex css uint-->
+      bootcamp
+    </button>
+
+        </div>
+        <h1>تجربتي في معسكر منشئات التدريبي</h1>
+      </div>
+    </a>
+</article><article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
     <a href="/blog/structured-data" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
       <img width="3440" height="1440" class="tag-card" src="/images/structured-data.jpg">
       <div class="card-info border-t-1 border-gray-300">
