@@ -58,7 +58,7 @@ let richResults = structuredData(postData);
 		<img class="header-blog" src={content.image} />
 		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
 			<slot></slot>
-    <div>{content.tags.map(tag => <Tag tag={tag} />)}</div>
+    <article>{content.tags.map(tag => <Tag tag={tag} />)}</article>
 		<Person />
 		</div>
 	</main>

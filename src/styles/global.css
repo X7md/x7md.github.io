@@ -221,9 +221,11 @@ footer svg {
 }
 
 .blog-content ol li, .blog-content ul li {
-  @apply m-3;
+  @apply mx-2;
 }
-
+.blog-content ol, .blog-content ul {
+  @apply m-1;
+}
 .blog-content ul li::marker {
   content: "- ";
 }

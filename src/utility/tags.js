@@ -80,6 +80,17 @@ tags.set("data", {
         description: "البيانات الحوسبية، هي طريقة لوضع البيانات على الحاسوب",
         sameAs: "https://www.wikidata.org/wiki/Q494756"
     },
-})
+},
+tags.set("bootcamp", {
+    name: "معسكر",
+    about: {
+        "@type": ["Thing", "EducationEvent"],
+        "name": "bootcamp",
+        alternateName: ["معسكر", "برنامج تدريبي قصير"],
+        description: "المعسكر هو برنامج تدريبي يهدف إلى تعليم مهارات معنية بشكل مكثف ودسم في فترة وجيزة.",
+        sameAs: "https://www.wikidata.org/wiki/Q25103984"
+    },
+}),
+)
 
 export default tags;
