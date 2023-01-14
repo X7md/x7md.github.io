@@ -13,7 +13,7 @@ about: {
     "applicationCategory": "DeveloperApplication",
     "name": "DenoJS",
     alternateName: ["دينو", "Deno", "دينو جي اس"], 
-    description: "بيئة تشغيل جافاسكربتظتايبسكربت.",
+    description: "بيئة تشغيل جافاسكربت/تايبسكربت.",
     url: "https://deno.land",
     "offers": {
         "@type": "Offer",
