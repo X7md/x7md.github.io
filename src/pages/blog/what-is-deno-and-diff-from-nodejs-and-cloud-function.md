@@ -7,6 +7,14 @@ date: '2022/04/26'
 sameAs: "https://www.wikidata.org/wiki/Q65070939"
 dateModified: '2022/04/26'
 desc: 'في هذه التدوينة أتناول موضوع دينو وعلاقته مع الحوسبة السحابية على الحافة، والفرق بين دينو و نود جي أس'
+about: {
+    "@type": ["Thing", "SoftwareApplication"],
+    "applicationSubCategory": "https://www.wikidata.org/wiki/Q1004415",
+    "name": "DenoJS",
+    alternateName: ["دينو", "Deno", "دينو جي اس"], 
+    description: "بيئة تشغيل جافاسكربتظتايبسكربت.",
+    url: "https://deno.land"
+}
 keyword: [ "NodeJS", "JavaScript", "JS"]
 tags: ["Deno", "Cloud", "Cloud Function"]
 ---

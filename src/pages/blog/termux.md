@@ -3,6 +3,14 @@ title: "تجربتي مع  ترمكس"
 layout: "@layouts/blog.astro"
 image: /images/termux-thm.jpg
 link: /blog/termux
+about: {
+    "@type": ["Thing", "SoftwareApplication"],
+    "applicationSubCategory": "https://www.wikidata.org/wiki/Q1071233",
+    "name": "Termux",
+    alternateName: ["ترمكس", "برنامج ترمكس"], 
+    description: "محاكي طرفية لينكس، يعمل على أجهزة اندرويد",
+    url: "https://termux.dev/"
+}
 date: '2022/02/18'
 dateModified: '2022/03/10'
 desc: 'تجربتي الشخصية مع برنامج ترمكس'

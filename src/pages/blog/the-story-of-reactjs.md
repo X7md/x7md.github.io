@@ -6,6 +6,14 @@ link: /blog/the-story-of-reactjs
 sameAs: "https://www.wikidata.org/wiki/Q19399674"
 date: '2022/05/03'
 dateModified: '2022/05/05'
+about: {
+    "@type": ["Thing", "SoftwareApplication"],
+    "applicationSubCategory": "https://www.wikidata.org/wiki/Q783866",
+    "name": "React JS",
+    alternateName: ["React.JS", "رياكت", "رياكت جي اس"], 
+    description: "إطار عمل جافاسكربت، لبناء واجهات مستخدم تفاعلية",
+    url: "https://ar.reactjs.org/"
+}
 desc: 'سوف أتناول قصة مكتبة رياكت وكيف وصلنا إلى هذه المرحلة في مكتبات جافاسكربت'
 keyword: ["NodeJS", "JavaScript", "JS", "ReactJS"]
 tags: ["React"]

@@ -5,6 +5,14 @@ image: /images/webassembly.jpg
 link: /blog/arabic-programming-content-online
 # draft: true
 date: '2022/08/09'
+about: {
+    "@type": ["Thing", "SoftwareApplication"],
+    "applicationSubCategory": "https://www.wikidata.org/wiki/Q837330",
+    "name": "WebAssembly",
+    alternateName: ["ويب أسمبلي", "تجميع الويب"], 
+    description: "شفرة بايت مفتوحة المصدر، تعمل على المتصفحات أو على بيئة تشغيل ويب اسمبلي",
+    url: "https://webassembly.org/"
+}
 # dateModified: '2022/05/02'
 desc: 'لطالما سمعنا مصطلح ويب أسمبلي، ولكن ما الفكرة من ويب أسمبلي بالضبط؟'
 keyword: ["wasm", "WebAssembly"]
