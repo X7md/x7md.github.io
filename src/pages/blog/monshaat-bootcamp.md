@@ -20,14 +20,18 @@ about: {
     },
     "location": {
     "@type": "Place",
+    "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "مكة المكرمة",
+    "postalCode": "24381",
+    "streetAddress": "العابدية"
+    },
     "geo": {
     "@type": "GeoCoordinates",
     "latitude": "21.3287139",
     "longitude": "39.9534412",
-    "sameAs": [
-        "https://www.google.com/maps/place/معهد+البحوث+والدراسات+الاستشارية/@21.3287139,39.9534412,18z"
-    ]
     },
+    "hasMap": "https://www.google.com/maps/place/معهد+البحوث+والدراسات+الاستشارية/@21.3287139,39.9534412,18z",
     url: "https://uqu.edu.sa/icrs/AboutUs",
     "name": "معهد البحوث والدراسات الاستشارية، بجامعة أم القرى",
   },
