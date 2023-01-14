@@ -6,10 +6,30 @@ link: /blog/termux
 about: {
     "@type": ["Thing", "SoftwareApplication"],
     "applicationSubCategory": "https://www.wikidata.org/wiki/Q1071233",
+    "applicationCategory": "UtilitiesApplication",
     "name": "Termux",
     alternateName: ["ترمكس", "برنامج ترمكس"], 
     description: "محاكي طرفية لينكس، يعمل على أجهزة اندرويد",
-    url: "https://termux.dev/"
+    url: "https://termux.dev/",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    },
+    review: {
+        {
+      "@type": "Review",
+      "author": {
+        "@id": "https://x7md.net/about-me/#identity"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+        }
+      }
+    },
+    }
 }
 date: '2022/02/18'
 dateModified: '2022/03/10'

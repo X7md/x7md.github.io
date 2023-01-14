@@ -64,6 +64,19 @@ let richResults = structuredData(postData);
 	</main>
 	<!--Rich Results-->
 	<Footer />
+	<script is:inline type="application/ld+json">
+		{
+		"@type": "Person",
+		"name": "حمد بنقالي",
+		"sameAs": [
+		"https://twitter.com/x7mdNet",
+		"https://github.com/x7md"
+		],
+		"@id": "https://x7md.net/about-me/#identity",
+		"url": "https://x7md.net/about-me"
+	}
+	</script>
 <script type="application/ld+json" set:html={richResults}></script>
+
 	</body>
 </html>

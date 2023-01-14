@@ -10,10 +10,30 @@ desc: 'في هذه التدوينة أتناول موضوع دينو وعلاق�
 about: {
     "@type": ["Thing", "SoftwareApplication"],
     "applicationSubCategory": "https://www.wikidata.org/wiki/Q1004415",
+    "applicationCategory": "DeveloperApplication",
     "name": "DenoJS",
     alternateName: ["دينو", "Deno", "دينو جي اس"], 
     description: "بيئة تشغيل جافاسكربتظتايبسكربت.",
-    url: "https://deno.land"
+    url: "https://deno.land",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    },
+    review: {
+        {
+      "@type": "Review",
+      "author": {
+        "@id": "https://x7md.net/about-me/#identity"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+        }
+      }
+    },
+    }
 }
 keyword: [ "NodeJS", "JavaScript", "JS"]
 tags: ["Deno", "Cloud", "Cloud Function"]

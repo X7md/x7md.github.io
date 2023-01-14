@@ -9,10 +9,30 @@ dateModified: '2022/05/05'
 about: {
     "@type": ["Thing", "SoftwareApplication"],
     "applicationSubCategory": "https://www.wikidata.org/wiki/Q783866",
+    "applicationCategory": "DeveloperApplication",
     "name": "React JS",
     alternateName: ["React.JS", "رياكت", "رياكت جي اس"], 
     description: "إطار عمل جافاسكربت، لبناء واجهات مستخدم تفاعلية",
-    url: "https://ar.reactjs.org/"
+    url: "https://ar.reactjs.org/",
+    "offers": {
+        "@type": "Offer",
+        "price": "0"
+    },
+    review: {
+        {
+      "@type": "Review",
+      "author": {
+        "@id": "https://x7md.net/about-me/#identity"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+        }
+      }
+    },
+    }
 }
 desc: 'سوف أتناول قصة مكتبة رياكت وكيف وصلنا إلى هذه المرحلة في مكتبات جافاسكربت'
 keyword: ["NodeJS", "JavaScript", "JS", "ReactJS"]
