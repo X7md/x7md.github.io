@@ -9,10 +9,10 @@
     "preview": "astro preview --host"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.7.2",
+    "@astrojs/sitemap": "^1.2.1",
+    "astro": "^2.1.7",
     "postcss-windicss": "^1.0.0",
-    "vite-plugin-windicss": "^1.8.4",
+    "vite-plugin-windicss": "^1.8.10",
     "windicss": "^3.5.6"
   },
   "dependencies": {

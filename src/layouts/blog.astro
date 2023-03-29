@@ -7,6 +7,7 @@ import Person from '../components/Person.astro';
 import Tag from '../components/Tag.astro';
 import structuredData from '../utility/JSONid.js';
 import "./../styles/global.css";
+const {origin} = Astro.site
 const {content} = Astro.props;
 let postData = {
 	link: new URL(content.link, "https://git.x7md.net/").href,
@@ -18,7 +19,11 @@ let postData = {
 		tag => new URL(`/posts/topics/${tag.toLowerCase()}`, "https://git.x7md.net/").href
 		)],
 	datePublished: content.date,
-	dateModified: content.dateModified
+	dateModified: content.dateModified,
+	author: {
+		"@type": "Person",
+		"@id": "https://x7md.net/about-me/#identity"
+	}
 }
 let richResults = structuredData(postData);
 // Full Astro Component Syntax:
@@ -46,6 +51,7 @@ let richResults = structuredData(postData);
 	)}
 	<meta property="twitter:image" content={new URL(content.image, "https://git.x7md.net/")} />
 	<link rel="icon" type="image/x-icon" href="/favicon.svg" />
+	<link rel="alternate" type="application/rss+xml" href={new URL("rss.xml", origin)} />
 	<title>{content.title}</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css" />
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
@@ -66,15 +72,31 @@ let richResults = structuredData(postData);
 	<Footer />
 	<script is:inline type="application/ld+json">
 		{
-		"@type": "Person",
-		"name": "حمد بنقالي",
-		"sameAs": [
-		"https://twitter.com/x7mdNet",
-		"https://github.com/x7md"
-		],
-		"@id": "https://x7md.net/about-me/#identity",
-		"url": "https://x7md.net/about-me"
-	}
+			"@type": "Person",
+			"name": "حمد بنقالي",
+			"sameAs": [
+			"https://twitter.com/x7mdNet",
+			"https://github.com/x7md",
+			"https://linkedin.com/in/x7md"
+			],
+			"worksFor": {
+				"@type" : "Organization",
+				"name": "منصة رواف العقارية",
+				"alternateName": [
+					"رواف",
+					"ٌRawaf"
+				],
+  				"url" : "https://www.rawaf.ai/"
+			},
+			"hasOccupation": [
+				{
+				"@type": "Occupation",
+				"name": "FrontEnd Developer"
+				}
+			],
+			"@id": "https://x7md.net/about-me/#identity",
+			"url": "https://x7md.net/about-me"
+		}
 	</script>
 <script type="application/ld+json" set:html={richResults}></script>
 
