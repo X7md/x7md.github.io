@@ -10,7 +10,7 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<meta name="description" content="مدونة حمد بنقالي x7md, مكان لآرائي الشخصية وبعض الأمور التقنية البرمجية">
 	<script src="https://unpkg.com/petite-vue" defer init></script>
-	<link rel="stylesheet" href="/assets/arabic-programming-content-online.e9fe5d4c.css" /></head>
+	<link rel="stylesheet" href="/_astro/arabic-programming-content-online.e9fe5d4c.css" /></head>
 	<body>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
@@ -77,6 +77,19 @@
             <h2>تدويناتي</h2>
         </div><section class="flex flex-row flex-wrap items-center justify-center rounded">
             <article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
+    <a href="/blog/react-tips" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
+      <img width="3440" height="1440" class="tag-card" src="/images/react-tips.jpg">
+      <div class="card-info border-t-1 border-gray-300">
+        <div class="tags">
+          <button v-scope data-tag="React" @click="window.open(new URL('topics/' + 'react',location.origin),'_self','', false);" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+    <!--Hacky use of ex css uint-->
+      react
+    </button>
+        </div>
+        <h1>نصائح لمطور رياكت</h1>
+      </div>
+    </a>
+</article><article v-scope class="card shadow-sm hover:shadow-lg border border-gray-200 rounded-lg hover:border-gray-300">
     <a href="/blog/monshaat-bootcamp" @click="event.target.dataset.hasOwnProperty('tag') ? event.preventDefault() : null">
       <img width="3440" height="1440" class="tag-card" src="/images/monshaat-bootcamp.jpg">
       <div class="card-info border-t-1 border-gray-300">
@@ -85,7 +98,6 @@
     <!--Hacky use of ex css uint-->
       bootcamp
     </button>
-
         </div>
         <h1>تجربتي في معسكر منشآت التدريبي</h1>
       </div>
@@ -99,7 +111,6 @@
     <!--Hacky use of ex css uint-->
       data
     </button>
-
         </div>
         <h1>البيانات المنظّمة، وأثرها على موقعك</h1>
       </div>
@@ -113,7 +124,6 @@
     <!--Hacky use of ex css uint-->
       webassembly
     </button>
-
         </div>
         <h1>ما هي ويب أسمبلي؟</h1>
       </div>
@@ -127,7 +137,6 @@
     <!--Hacky use of ex css uint-->
       javascript framework
     </button>
-
         </div>
         <h1>أي إطار جافاسكربت؟</h1>
       </div>
@@ -141,7 +150,6 @@
     <!--Hacky use of ex css uint-->
       react
     </button>
-
         </div>
         <h1>القصة وراء مكتبة رياكت</h1>
       </div>
@@ -155,7 +163,6 @@
     <!--Hacky use of ex css uint-->
       blogging
     </button>
-
         </div>
         <h1>المحتوى العربي البرمجي على الانترنت</h1>
       </div>
@@ -169,7 +176,6 @@
     <!--Hacky use of ex css uint-->
       deno
     </button>
-
         </div>
         <h1>ما هو Deno؟ وعلاقته بحوسبة الحافة؟</h1>
       </div>
@@ -183,7 +189,6 @@
     <!--Hacky use of ex css uint-->
       termux
     </button>
-
         </div>
         <h1>تجربتي مع  ترمكس</h1>
       </div>
@@ -230,7 +235,7 @@
       </div>
     </div>
     <p class="mt-2 text-xs text-gray-500">
-      <s>&copy;</s> حمد بنقالي 2021 - 2022<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
+      <s>&copy;</s> حمد بنقالي 2021 - 2023<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
     </p>
     <div data-nosnippet>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -249,7 +254,23 @@
 			"name": "حمد بنقالي",
 			"sameAs": [
 			"https://twitter.com/x7mdNet",
-			"https://github.com/x7md"
+			"https://github.com/x7md",
+			"https://linkedin.com/in/x7md"
+			],
+			"worksFor": {
+				"@type" : "Organization",
+				"name": "منصة رواف العقارية",
+				"alternateName": [
+					"رواف",
+					"ٌRawaf"
+				],
+  				"url" : "https://www.rawaf.ai/"
+			},
+			"hasOccupation": [
+				{
+				"@type": "Occupation",
+				"name": "FrontEnd Developer"
+				}
 			],
 			"@id": "https://x7md.net/about-me/#identity",
 			"url": "https://x7md.net/about-me"

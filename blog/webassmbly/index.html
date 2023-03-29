@@ -15,11 +15,12 @@
 	<meta property="twitter:description"><meta name="description">
 	<meta property="twitter:image" content="https://git.x7md.net/images/webassembly.jpg">
 	<link rel="icon" type="image/x-icon" href="/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" href="https://git.x7md.net/rss.xml">
 	<title>ما هي ويب أسمبلي؟</title>
 	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css">
 	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
-	<link rel="stylesheet" href="/assets/arabic-programming-content-online.e9fe5d4c.css" /></head>
+	<link rel="stylesheet" href="/_astro/arabic-programming-content-online.e9fe5d4c.css" /></head>
 	<body>
 		<div class="relative py-3 z-10">
 		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
@@ -98,7 +99,7 @@
 <p>وبشكل مبسط لتشغيل برمجيات ويب أسمبلي، فقط علينا فك تلك الشفرة ومن ثم تنفيذها،
 ويحدث ذلك عبر آلة أفتراضية تأخذ تعليمات ويب أسمبلي -والتي هي عبارة عن تعليمات
 مُكدسة <code>stack-based</code>- وتُفك شفرتها، ومن ثم تُحول إلى تعليمات يفهمها المعالج
-ويُنفذها...</p>
+ويُنفذها…</p>
 <h2 id="كيف-وصلنا-إلى-ويب-أسمبلي">كيف وصلنا إلى ويب أسمبلي؟</h2>
 <p>قبل ظهور ويب أسمبلي كانت هناك أفكار مُشابهة، لتمكين تنفيذ برمجيات مُعقدة أو غير
 مكتوبة بجافاسكربت، على المتصفحات.</p>
@@ -145,28 +146,27 @@ WebAssembly في بدايات 2017.</p>
 فريق WebAssembly الآن هو التركيز على تحسين هذه الفكرة، وجعلها آمنة، محمولة،
 وسريعة، وهنا تأتي قصة WASI.</p>
 <h2 id="ماهو-wasi">ماهو WASI؟</h2>
-<p>يبدو من الوهلة الأولى أن "ويب أسمبلي" سوف تعمل فقط على المتصفح... لكن لماذا لا
+<p>يبدو من الوهلة الأولى أن “ويب أسمبلي” سوف تعمل فقط على المتصفح… لكن لماذا لا
 نشغل ويب أسمبلي على الأجهزة أيضًا بدون الحاجة للمتصفح؟</p>
 <p>فعليًا هذا ما يعمل عليه مشروع <code>WebAssembly System Interface</code> وذلك بجعل
 WebAssembly تعمل خارج المتصفح، على الأجهزة، مراكز البيانات، السيرفرات، أجهزة
 أنترنت الأشياء، وأكثر!</p>
 <figure><img src="/images/solomon_hykes_wasm.png" alt="تغريدة مُبتكر دوكر"><figcaption>تغريدة مُبتكر دوكر</figcaption></figure>
-<p>وفي تغريدة لمبتكر دوكر "سولومون هيكس" غرد فيها قائلًا: <strong>"لو أن ويب أسمبلي و
+<p>وفي تغريدة لمبتكر دوكر “سولومون هيكس” غرد فيها قائلًا: <strong>“لو أن ويب أسمبلي و
 واجهة نظام ويب أسمبلي كانتا موجدتين في 2008، ما كُنا بحاجة إلى ابتكار دوكر، لهذا
 هي مُهمة، ويب أسمبلي على السيرفرات سيكون هو المستقبل للحوسبة، نظام مُعايرة
-لواجهة النظام هو الشيء الذي كنا نفتقده، آمل أن WASI سيقوم بالمهمة!"</strong></p>
+لواجهة النظام هو الشيء الذي كنا نفتقده، آمل أن WASI سيقوم بالمهمة!”</strong></p>
 <p>حتى الآن عشرات اللغات تدعم أن تُترجم إلى ويب أسمبلي، وأبرز هذه اللغات هي <code>Rust</code>
 و <code>C/ C++</code> و <code>Go</code> وغيرها الكثير التي تدعم أن تُترجم إلى ويب أسمبلي.</p>
 <p>وهناك حاليًا عشارات الجهات التي تستخدم ويب أسمبلي في جهة السرفر، أبرزها شركة Fastly و Cloudflare ومؤخرًا Shopify.</p>
 <p>يقودنا هذا إلى مشروع WASM Component Model.</p>
 <h2 id="ماهي-فكرة-webassembly-component-model">ماهي فكرة WebAssembly Component Model؟</h2>
-<p>تهدف فكرة "نموذج مُكونات ويب أسمبلي" إلى مُعايرة طرق لإنشاء ملفات ويب أسمبلي قابلة لإعادة الاستخدام.</p>
-<p>تخيل أن هناك مكتبة مُعينة تقوم بوظيفة ما... وأردت استخدامها، لكنك لا تستطيع لأنها مكتوبة بلغة برمجية مختلفة عن اللغة التي تعمل أنت بها... مع فكرة "مكونات ويب أسمبلي" تستطيع أخذ تلك المكتبة واستخدامها مع أي لغة برمجة وتستطيع حتى دمج عدة مكتبات أخرى معها... وهنا تكن أهمية الفكرة.</p>
+<p>تهدف فكرة “نموذج مُكونات ويب أسمبلي” إلى مُعايرة طرق لإنشاء ملفات ويب أسمبلي قابلة لإعادة الاستخدام.</p>
+<p>تخيل أن هناك مكتبة مُعينة تقوم بوظيفة ما… وأردت استخدامها، لكنك لا تستطيع لأنها مكتوبة بلغة برمجية مختلفة عن اللغة التي تعمل أنت بها… مع فكرة “مكونات ويب أسمبلي” تستطيع أخذ تلك المكتبة واستخدامها مع أي لغة برمجة وتستطيع حتى دمج عدة مكتبات أخرى معها… وهنا تكن أهمية الفكرة.</p>
     <article><a data-tag="WebAssembly" href="/topics/webassembly" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
         <!--Hacky use of ex css uint-->
           webassembly
-      </a>
-</article>
+      </a></article>
 		<section class="byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <section class="line-meta">
     <div class="line-name">
@@ -225,7 +225,7 @@ WebAssembly تعمل خارج المتصفح، على الأجهزة، مراك�
       </div>
     </div>
     <p class="mt-2 text-xs text-gray-500">
-      <s>&copy;</s> حمد بنقالي 2021 - 2022<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
+      <s>&copy;</s> حمد بنقالي 2021 - 2023<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
     </p>
     <div data-nosnippet>
     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
@@ -240,15 +240,31 @@ WebAssembly تعمل خارج المتصفح، على الأجهزة، مراك�
 </footer>
 	<script type="application/ld+json">
 		{
-		"@type": "Person",
-		"name": "حمد بنقالي",
-		"sameAs": [
-		"https://twitter.com/x7mdNet",
-		"https://github.com/x7md"
-		],
-		"@id": "https://x7md.net/about-me/#identity",
-		"url": "https://x7md.net/about-me"
-	}
+			"@type": "Person",
+			"name": "حمد بنقالي",
+			"sameAs": [
+			"https://twitter.com/x7mdNet",
+			"https://github.com/x7md",
+			"https://linkedin.com/in/x7md"
+			],
+			"worksFor": {
+				"@type" : "Organization",
+				"name": "منصة رواف العقارية",
+				"alternateName": [
+					"رواف",
+					"ٌRawaf"
+				],
+  				"url" : "https://www.rawaf.ai/"
+			},
+			"hasOccupation": [
+				{
+				"@type": "Occupation",
+				"name": "FrontEnd Developer"
+				}
+			],
+			"@id": "https://x7md.net/about-me/#identity",
+			"url": "https://x7md.net/about-me"
+		}
 	</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","url":"https://git.x7md.net/blog/arabic-programming-content-online"},"headline":"ما هي ويب أسمبلي؟","image":"/images/webassembly.jpg","datePublished":"2022/08/09","author":{"@type":"Person","name":"حمد","familyName":"بنقالي","url":"https://git.x7md.net/about-me"},"keywords":[["https://git.x7md.net/posts/topics/webassembly"]],"publisher":{"@type":"Person","name":"x7md"},"about":{"@type":["Thing","SoftwareApplication"],"applicationSubCategory":"https://www.wikidata.org/wiki/Q837330","applicationCategory":"DeveloperApplication","name":"WebAssembly","alternateName":["ويب أسمبلي","تجميع الويب"],"description":"شفرة بايت مفتوحة المصدر، تعمل على المتصفحات أو على بيئة تشغيل ويب اسمبلي","url":"https://webassembly.org/","offers":{"@type":"Offer","price":"0"},"review":{"[object Object]":null}}}</script>
 

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="نصائح لمطور رياكت">
+	
+	<meta property="og:image" content="https://git.x7md.net/images/react-tips.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="نصائح لمطور رياكت">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta property="twitter:description"><meta name="description">
+	<meta property="twitter:image" content="https://git.x7md.net/images/react-tips.jpg">
+	<link rel="icon" type="image/x-icon" href="/favicon.svg">
+	<link rel="alternate" type="application/rss+xml" href="https://git.x7md.net/rss.xml">
+	<title>نصائح لمطور رياكت</title>
+	<link rel="stylesheet" type="text/css" href="/Vazirmatn-RD-font-face.css">
+	<script defer src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/petite-vue@0.4.1/dist/petite-vue.iife.min.js" defer init></script>
+	<link rel="stylesheet" href="/_astro/arabic-programming-content-online.e9fe5d4c.css" /></head>
+	<body>
+		<div class="relative py-3 z-10">
+		<nav role="navigation" class="x-container" v-scope="{ openMenu: false }">
+				<a class="flex items-center" href="/">
+					<div class="inline-flex items-start" dir="ltr">
+					<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
+					<path fill="#93237B" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg><span data-nosnippet class="text-xl m-auto lg:py-2 py-1 text-[#93237B] leading-[3.25rem] font-bold">/x7md</span>
+					
+					</div>
+				</a>
+
+				<div class="mr-2 flex items-center lg:hidden">
+					<button @click="openMenu = true" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-[#BFBFBF] focus:outline-none focus:bg-[#BFBFBF] focus:text-gray-500 transition duration-150 ease-in-out"><svg stroke="#A75E99" fill="none" viewBox="0 0 24 24" class="h-6 w-6"><title>Menu | Deno</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path></svg></button>
+				</div>
+
+				<ul class="list-none hidden lg:flex md:mr-10 items-center justify-start">
+					<li>
+						<a href="/about-me" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">عني</a>
+					</li><li>
+						<a href="/posts" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">التدوينات</a>
+					</li><li>
+						<a href="/topics" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">المواضيع</a>
+					</li><li>
+						<a href="/connect" class="ml-10 font-medium text-[#E571BA] hover:text-[#5F1668] transition duration-150 ease-in-out">تواصل معي</a>
+					</li>
+				</ul>
+
+				<div v-cloak v-if="openMenu" class="absolute top-0 inset-x-0 p-2 lg:hidden">
+				<div class="rounded-lg shadow-md">
+				<div class="rounded-lg bg-[#260B3A] shadow-xs overflow-hidden">
+				<div class="px-5 pt-4 flex items-center justify-between">
+				<a class="flex items-center" href="/">
+					<div class="inline-flex items-start" dir="ltr">
+					<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
+					<path fill="#fff" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg><span class="text-xl m-auto lg:py-2 py-1 text-white leading-[3.25rem] font-bold">/x7md</span>
+					
+					</div>
+				</a>
+				<div class="mr-2">
+					<button @click="openMenu = false" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-[#A75E99] hover:bg-[#260B3A] focus:outline-none focus:bg-[#260B3A] transition duration-150 ease-in-out">
+					<svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+					</button>
+				</div>
+				</div>
+					<ul class="list-none px-2 pt-4 pb-3">
+					<li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/about-me">عني</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/posts">التدوينات</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/topics">المواضيع</a>
+					</li><li>
+						<a class="block px-3 py-2 rounded-md text-base font-medium text-[#A75E99] hover:bg-[#5F1668] focus:outline-none focus:bg-[#5F1668] transition duration-150 ease-in-out" href="/connect">تواصل معي</a>
+					</li>
+					</ul>
+				</div>
+				</div>
+				</div>
+		</nav>
+</div>
+		<!-- <Banner /> -->
+	<main>
+		<img class="header-blog" src="/images/react-tips.jpg">
+		<div class="container blog-content mx-auto text-right px-4 sm:px-6 md:px-8 pt-12 pb-5 flex flex-col">
+			<p>حظيتُ مؤخرًا بفرصة عمل كمطور واجهات أمامية في مشروع ناشئ، كان العمل عن بعد، أكملت
+حوالي نصف عام، وأظن الآن أني أستطيع أعطاء بعض النصائح لمبرمجي <code>ReactJS</code> الجدد الذين يودون استخدام رياكت.</p>
+<h2 id="أفهم-أساسيات-رياكت">أفهم أساسيات رياكت</h2>
+<p>أفهم أساسيات رياكت بشكل جيد، فهمك لأساسيات رياكت يجعل حياتك أسهل بكثير، من المفترض عند تعلمك لرياكت فأنت تتعلم مفاهيم جديدة مختلفة عن تلك التي في تطوير صفحات الويب العادية.</p>
+<h3 id="الفكرة-الأساسية-من-رياكت">الفكرة الأساسية من رياكت</h3>
+<p>يكمُل جوهر رياكت، بالسماح للمبرمجين بوصف واجهة المستخدم على شكل دالة (function) تلك الدالة تُمثل السناريو الحالي لواجهة المستخدم، <br>
+ومن ثم يأتي العبء على المبرمج أن عليه وصف مايجب أن يحدث من تغيرات بإستخدام القيم العادية التي توفرها جافاسكربت، أمور مثل: الأرقام <code>numbers</code>، النصوص <code>strings</code>، المصفوفات <code>arrays</code>، الكائنات <code>objects</code>، وأيضًا استخدام مفاهيم جافاسكربت المتعارف عليها مثل العبارات الشرطية <code>if/else</code>، جمل التكرار <code>for</code> وما إلى ذلك.</p>
+<div lang="en">
+<blockquote>
+<p>The core idea of React is that developers define their UI as a function of the current state. You work with plain JavaScript values — numbers, strings, arrays, objects — and use standard JavaScript idioms — if/else, for, etc — to describe your component logic.
+<br> — <a href="https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023">React blog</a></p>
+</blockquote>
+</div>
+<h3 id="طبيعة-رياكت">طبيعة رياكت</h3>
+<p>رياكت تركز على مفهوم يسمى <strong>“التصيير من جهة العميل” (Client Side Rendering)</strong>
+فهمك لهذا الأمر يجعلك تفكر بشكل جيد أنك تتعامل مع مكونات تعمل يتم إنشائها بينما يتم تحميل الصفحة على متصفح المستخدم، لذلك وجب عليك أخذ هذا في الحسبان</p>
+<p>غالبًا في رياكت أن تبرمج نوعًا من تطبيقات الويب يدعى <strong>“تطبيقات الصفحة الواحدة” (SPA)</strong>
+تذكر أنك لست تتعامل مع عدة صفحات،
+فعند رفع مشروعك إلى أي استضافة عليك ضبط إعدادات السيرفر بنفسك لهذا النوع من المواقع، او التوجه لإستضافات تقوم بضبط هذه الإعدادات بشكل مسبق مثل <code>Netlify</code>، <code>Vercel</code>، <code>Cloudflare Pages</code> حيث ستحصل على الإعدادات المناسبة لـ SPA بضغطة زر فحسب.</p>
+<p>يتسرع العديد من الأشخاص في عدم
+أخذ هذا الأمر على محمل الجد، مما يؤدي إلى تأخير في إطلاق الموقع حين إدراك هذه المشكلة.</p>
+<p>ومؤخرًا أصبح فريق رياكت لا يحبث بناء الموقع بشكل كامل على أساس <strong>“التصيير من جهة العميل” (Client Side Rendering)</strong><sup><a href="#user-content-fn-0" id="user-content-fnref-0" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>، بل يحبذ البدأ بحلول أخرى لتصيير صفحة الويب
+<strong>من جانب الخادم (Server Side Rendering)</strong> وذلك لتقديم تجربة مستخدم أفضل.</p>
+<h3 id="نمط-البرمجة-التصريحي">نمط البرمجة التصريحي</h3>
+<figure><img src="https://react.dev/images/docs/illustrations/i_imperative-ui-programming.png" alt="رسمة تعبر عن كيف هي البرمجة الأمرية (Imperative Programming)، للفنانة Rachel Lee Nabors"><figcaption>رسمة تعبر عن كيف هي البرمجة الأمرية (Imperative Programming)، للفنانة Rachel Lee Nabors</figcaption></figure>
+<p>البرمجة التصريحية (Declarative Programming)، هو المفهوم الأساسي الذي تركز عليه رياكت على خلاف البرمجة الأمرية (Imperative Programming) المعتادة حينما تبرمج عبر جافاسكربت بطريقة عادية.</p>
+<p><strong>البرمجة الأمرية في جافاسكربت العادية:</strong></p>
+<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #AB5959">function</span><span style="color: #393A34"> </span><span style="color: #59873A">makeBox</span><span style="color: #999999">(){</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #AB5959">const</span><span style="color: #393A34"> </span><span style="color: #B07D48">box</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #B07D48">document</span><span style="color: #999999">.</span><span style="color: #59873A">createElement</span><span style="color: #999999">(</span><span style="color: #B56959AA">"</span><span style="color: #B56959">div</span><span style="color: #B56959AA">"</span><span style="color: #999999">)</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #AB5959">const</span><span style="color: #393A34"> </span><span style="color: #B07D48">button</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #B07D48">document</span><span style="color: #999999">.</span><span style="color: #59873A">createElement</span><span style="color: #999999">(</span><span style="color: #B56959AA">"</span><span style="color: #B56959">button</span><span style="color: #B56959AA">"</span><span style="color: #999999">)</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #AB5959">const</span><span style="color: #393A34"> </span><span style="color: #59873A">changeBackground</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #999999">()</span><span style="color: #393A34"> </span><span style="color: #999999">=></span><span style="color: #393A34"> </span><span style="color: #B07D48">box</span><span style="color: #999999">.</span><span style="color: #B07D48">style</span><span style="color: #999999">.</span><span style="color: #B07D48">background</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #B56959AA">"</span><span style="color: #B56959">red</span><span style="color: #B56959AA">"</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #B07D48">button</span><span style="color: #999999">.</span><span style="color: #59873A">onclick</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #999999">()=></span><span style="color: #393A34"> </span><span style="color: #59873A">changeBackground</span><span style="color: #999999">()</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #B07D48">box</span><span style="color: #999999">.</span><span style="color: #59873A">appendChild</span><span style="color: #999999">(</span><span style="color: #B07D48">button</span><span style="color: #999999">)</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #B07D48">button</span><span style="color: #999999">.</span><span style="color: #B07D48">innerText</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #B56959AA">"</span><span style="color: #B56959">Change the backround of box</span><span style="color: #B56959AA">"</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #1E754F">return</span><span style="color: #393A34"> </span><span style="color: #B07D48">box</span></span>
+<span class="line"><span style="color: #999999">}</span></span></code></pre>
+<p><strong>البرمجة التصريحية في رياكت عبر JSX:</strong></p>
+<pre is:raw="" class="astro-code" style="background-color: #ffffff; overflow-x: auto;"><code><span class="line"><span style="color: #AB5959">const</span><span style="color: #393A34"> </span><span style="color: #59873A">Box</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #999999">()</span><span style="color: #393A34"> </span><span style="color: #999999">=></span><span style="color: #393A34"> </span><span style="color: #999999">{</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #AB5959">const</span><span style="color: #393A34"> </span><span style="color: #B07D48">boxRef</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #59873A">useRef</span><span style="color: #999999">(</span><span style="color: #AB5959">null</span><span style="color: #999999">);</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #AB5959">const</span><span style="color: #393A34"> </span><span style="color: #59873A">changeBackground</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #999999">()=></span><span style="color: #393A34"> </span><span style="color: #B07D48">boxRef</span><span style="color: #999999">.</span><span style="color: #B07D48">current</span><span style="color: #999999">.</span><span style="color: #B07D48">style</span><span style="color: #999999">.</span><span style="color: #B07D48">background</span><span style="color: #393A34"> </span><span style="color: #999999">=</span><span style="color: #393A34"> </span><span style="color: #B56959AA">"</span><span style="color: #B56959">red</span><span style="color: #B56959AA">"</span><span style="color: #999999">;</span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #1E754F">return</span><span style="color: #393A34"> </span><span style="color: #999999">(</span></span>
+<span class="line"><span style="color: #393A34">        </span><span style="color: #999999">&#x3C;</span><span style="color: #1E754F">div</span><span style="color: #393A34"> </span><span style="color: #B07D48">ref</span><span style="color: #999999">={</span><span style="color: #B07D48">boxRef</span><span style="color: #999999">}></span></span>
+<span class="line"><span style="color: #393A34">            </span><span style="color: #999999">&#x3C;</span><span style="color: #1E754F">button</span><span style="color: #393A34"> </span><span style="color: #B07D48">onClick</span><span style="color: #999999">={</span><span style="color: #B07D48">changeBackground</span><span style="color: #999999">}></span></span>
+<span class="line"><span style="color: #393A34">                Change the backround of box</span></span>
+<span class="line"><span style="color: #393A34">            </span><span style="color: #999999">&#x3C;/</span><span style="color: #1E754F">button</span><span style="color: #999999">></span></span>
+<span class="line"><span style="color: #393A34">        </span><span style="color: #999999">&#x3C;/</span><span style="color: #1E754F">div</span><span style="color: #999999">></span></span>
+<span class="line"><span style="color: #393A34">    </span><span style="color: #999999">);</span></span>
+<span class="line"><span style="color: #999999">}</span></span>
+<span class="line"></span></code></pre>
+<figure><img src="https://react.dev/images/docs/illustrations/i_declarative-ui-programming.png" alt="رسمة تعبر عن كيف هي البرمجة التصريحية (Declarative Programming)، للفنانة Rachel Lee Nabors"><figcaption>رسمة تعبر عن كيف هي البرمجة التصريحية (Declarative Programming)، للفنانة Rachel Lee Nabors</figcaption></figure>
+<p>تذكر أن البرمجة التصرحية لا تعني أنك ستكتب عدد سطور أقل دومًا… ولكنها تعني أن الكود
+سيكون واضح بشكل مباشر دون التعمق في قراءته، كما هو موضح في المثال أعلاه تقريبًا كل من
+رياكت وجافاسكربت العادية تحمل نفس عدد الأسطر، الفرق أن كود رياكت أسهل من ناحية القراءة والفهم.</p>
+<p>للأسف الكثير من <strong>(الكورسات)</strong> في الأنترنت تقول لك أن رياكت وغيرها تجعلك تكتب كود أقل
+حسنًا هذا الأمر <strong>ليس حقًا صحيح 100%</strong> فالفكرة من إطر العمل خاصة أطر عمل الواجهات (UI Frameworks)
+هو جعل الكود أكثر وضوحًا وسهولة وقابل للصيانة (Maintainable)،
+وبالإمكان إعادة استخدامه (Reusable)،
+وليس تقليل حجم الكود المكتوب بالضرورة.</p>
+<h3 id="خطط-جيدًا-لإدارة-الحالة">خطط جيدًا لإدارة الحالة</h3>
+<p>إدارة الحالة (State Management) في رياكت، تعد أكثر المفاهيم الصعبة والمعقدة نوعًا ما…
+تظهر هذه المشكلة جليًا حينما تقوم بفصل المكونات (components) حيث ستحتاج إلى
+حل لتبادل البيانات بين عدة مكونات أو أكثر.</p>
+<figure><img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لشجرة المكونات في رياكت"><figcaption>رسم توضيحي لشجرة المكونات في رياكت</figcaption></figure>
+<figure><img src="https://legacy.reactjs.org/static/b4643456a3de61c8352415a6fc171876/78612/flux-diagram.png" alt="مخطط بياني لتدفق البيانات في React Flux، الطريقة المستحسنة من قبل فريق رياكت لإدارة تدفق البيانات"><figcaption>مخطط بياني لتدفق البيانات في React Flux، الطريقة المستحسنة من قبل فريق رياكت لإدارة تدفق البيانات</figcaption></figure>
+<p>وأقتبس ما قاله “هادي حريري” وهو مهندس برمجيات في شركة JetBrains في نقاش عن مسألة التعقيد في هندسة البرمجيات:</p>
+<p><strong>وحينها جاءت رياكت جي أس، مع هيكلة فلسك (Flux<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>) تلك في رياكت، معها ذلك الرسم البياني المتداخل، وأنت تتسأل
+“لماذا؟ حقًا، لماذا علي فهم كل هذا، حقًا؟ لماذا؟”، أعني ما كان أسهل علي أن أستوعب لغة الآلة. حقًا
+لقد كان كود آلة <code>68000 Motorola</code> أسهل من البرمجة باستخدام رياكت. لازلت لا أفهم. حقًا لست أفهم، أظن أننا فقط نحب التعقيدات.</strong></p>
+<div lang="en">
+<blockquote>
+<p>And then React JS came about, and then there was this flux architecture of React JS, which is this massive diagram of all of these parts. <br> And you’re like, “Why? Like, why do I need to understand all of this, right? Why?” I mean, it was easier to understand machine code. Seriously, the 68000 Motorola… easier than programming with the React JS. I don’t get it. I really don’t. I think we just…like we enjoy complexity.
+<br> — <a href="https://youtu.be/P7CfWtR-ECk?t=2117">Hadi Hariri</a></p>
+</blockquote>
+</div>
+<figure><img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_prop_drilling.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لألية إدارة الحالة الافتراضية في رياكت، عبر تمرير Props بين المكونات"><figcaption>رسم توضيحي لألية إدارة الحالة الافتراضية في رياكت، عبر تمرير Props بين المكونات</figcaption></figure>
+<figure><img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_far.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لآلية عمل useContext Hook لإدارة تدفق البيانات، دون الحاجة لتمرير Props بين المكونات"><figcaption>رسم توضيحي لآلية عمل useContext Hook لإدارة تدفق البيانات، دون الحاجة لتمرير Props بين المكونات</figcaption></figure>
+<p>في حال كنت تبي تطبيقًا معقدًا، كلوحة تحكم (Dashbord) مثلًا، عليك أن تخطط جيدًا لتدفق البيانات…
+خاصةً فيما يتعلق بأمور صلاحيات المستخدمين وبيانات تسجيل الدخول وحتى نظام الإشعارات إن وجد.</p>
+<h2 id="أبني-مكونات-وليس-قوالب">أبني مكونات، وليس قوالب!</h2>
+<p>يصعب على الشخص المبتدئ في رياكت أستيعاب وفهم هذه النصيحة،
+وقد ذكرها <strong>pete hunt</strong> في مؤتمر JSConf ES 2013 في بداية لقاء:
+إعادة التفكير في الممارسات الحسنة (Rethinking best practices).</p>
+<div lang="en">
+<blockquote>
+<p>Building components not templates
+<br> — <a href="https://youtu.be/x7cQ3mrcKaY?t=128">Pete Hunt</a></p>
+</blockquote>
+</div>
+<p>حيث وضح وجهة نظره قائلًا: <strong>لو مر عليك “مبدأ المهمة الواحدة” (Single Responsibility Principle)<sup><a href="#user-content-fn-2" id="user-content-fnref-2" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup>،
+هذا المبدأ ببساطة يجعلك تقوم بوضع كل الوظائف ذت العلاقة في وحدات منفصلة دون وضع أي شيء إضافي غير مرغوب.
+<br>
+سوف تستشعر هذا الأمر حينما تقوم بتجربة النظر إلى صنف (Class) أو دالة (Function) وتبدو
+منطقية، أو أنها تفعل العديد من المهام وبمقدورك أن تقوم بإعادة كتابتها وفصلها إلى أجزاء أخرى.</strong></p>
+<div lang="en">
+<blockquote>
+<p>If you’ve heard of the single responsibility principle, basically grouping related functionality into modules and not putting extra crap in there.<br>
+You know the kind of the witness’ test is like does this class make sense or does this function make sense or is it doing a lot of stuff and can you refactor it into other pieces.
+<br> — <a href="https://youtu.be/x7cQ3mrcKaY?t=163">Pete Hunt</a></p>
+</blockquote>
+</div>
+<p>البناء على أساس مكونات، هو قرار تصميمي “Design Decision<sup><a href="#user-content-fn-3" id="user-content-fnref-3" data-footnote-ref="" aria-describedby="footnote-label">4</a></sup>” أي أنه يجب أن تخطط على هذا
+الأساس منذ بدايتك في كتابة الكود، حسنًا ليس حقًا أن تخطط بكل معنى الكلمة ولكن أن تضع في الحسبان
+أن ما تبنيه أنت وفريقكك سوف يعاد كاتبته في الغالب لأجزاء يُمكن إعادة استخدامها عند الحاجة.</p>
+<p>لتستوعب هذا المفهوم،
+أنصحك بالرجوع والإطلاع على بعض المفاهيم في تصميم وبرمجة واجهات المستخدم، وكذلك كيف يقوم مهندسوا واجهات المستخدم الأمامية في الشركات الكبرى ببناء مكوناتهم وتقسيمها:</p>
+<ol>
+<li>
+<p><a href="https://atomicdesign.bradfrost.com/table-of-contents/">كتاب Atomic Design</a> - الفصل الأول، وخصوصًا قسم UI frameworks in theory and in  practice و الفصل الثاني، قسم The atomic design methodology</p>
+</li>
+<li>
+<p>عرض Dan Abramov -أحد المبرمجين في فريق رياكت- بعنوان <a href="https://youtu.be/17KCHwOwgms">The wet codebase</a>.</p>
+</li>
+<li>
+<p><a href="https://react-spectrum.adobe.com/">Adobe React Spectrum</a></p>
+</li>
+<li>
+<p><a href="https://baseweb.design/">Base Web React UI</a></p>
+</li>
+</ol>
+<p>تقسيم المكونات الجيد يحتاج بعض الممارسة وفهم أكثر عمقًا لكل من متطلبات المشروع نفسه (تختلف متطلبات كل مشروع لذلك لا توجد طريقة واحدة محددة لفصل المكونات)، ويحتاج إلى فهم جيد لآلية عمل رياكت والمفاهيم التي تكمن ورائها.</p>
+<h3 id="الخلاصة">الخلاصة</h3>
+<p>برمجة واجهات المستخدم ليست عملية سهلة، توجد بعض التحديات والصعوبات، تحاول رياكت حل هذه المشاكل
+بالإستعانة بمفاهيم البرمجة الوظيفية، وبطريقة تصريحية… وكلما أستوعبت رياكت وفهمتها ستظهر لك
+الفلسفة التي تتمحور فيها رياكت وستتحسن في استخدامها بشكل جيد وفعال.</p>
+<h2 id="ملحوظات">ملحوظات</h2>
+<section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label"><a aria-hidden="true" tabindex="-1" href="#footnote-label"><span class="icon icon-link"></span></a>Footnotes</h2>
+<ol>
+<li id="user-content-fn-0">
+<p><a href="https://react.dev/learn/start-a-new-react-project#production-grade-react-frameworks">توصيات توثيق رياكت</a> للبدأ بمفهوم التصيير على الخادم <a href="#user-content-fnref-0" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-fn-1">
+<p>هيكلة فلسك <a href="https://reactjs.org/blog/2014/05/06/flux.html">(Flux Architecture)</a> هي الحل الذي أتت به رياكت لحل مشكلة تدفق البيانات (Data Flow). <a href="#user-content-fnref-1" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-fn-2">
+<p><a href="https://ar.wikipedia.org/wiki/%D9%85%D8%A8%D8%AF%D8%A3_%D8%A7%D9%84%D9%85%D9%87%D9%85%D8%A9_%D8%A7%D9%84%D9%88%D8%A7%D8%AD%D8%AF%D8%A9">مبدأ المهمة الواحدة</a> (Single Responsibility Principle) على ويكيبيديا. <a href="#user-content-fnref-2" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+<li id="user-content-fn-3">
+<p>القرار التصميمي (Design Decision)، في هندسة
+البرمجيات هو قرار يتخذ قبل الشروع ببناء الشيء بمثابة معيار تتبعه وتلتزم به خلال عملك <a href="#user-content-fnref-3" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
+</li>
+</ol>
+</section>
+    <article><a data-tag="React" href="/topics/react" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+        <!--Hacky use of ex css uint-->
+          react
+      </a><a data-tag="JavaScript" href="/topics/javascript" class="text-white inline-flex items-center px-2.5 pb-0.5 pt-[1ex] rounded-full text-xs font-medium bg-[#E571BA] text-brand-800">
+        <!--Hacky use of ex css uint-->
+          javascript
+      </a></article>
+		<section class="byline" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <section class="line-meta">
+    <div class="line-name">
+      <strong>تدوينة كتبها:</strong>
+      <span itemprop="name">
+        <a href="/about-me">
+          <span itemprop="givenName">حمد</span>
+          <span itemprop="familyName">بنقالي</span>
+        </a>
+      </span>
+    </div>
+    <div class="line-desc">
+       طالب جامعي في أم القرى، مُدون، ومطور ويب مهتم بإثراء المحتوى الرقمي العربي على الويب.
+    </div>
+  </section>
+</section>
+		</div>
+	</main>
+	<!--Rich Results-->
+	<footer class="mt-2 bg-gray-50">
+  <div class="max-w-screen-xl px-4 py-2 mx-auto">
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div>
+        <div class="flex mt-3 text-gray-500">
+
+          <a class="hover:opacity-75" href="https://twitter.com/x7mdNet" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Twitter </span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+            </svg>
+          </a>
+
+          <a class="hover:opacity-75" href="https://github.com/x7md" target="_blank" rel="noreferrer">
+            <span class="sr-only"> GitHub </span>
+
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+
+          <a class="hover:opacity-75" href="https://linkedin.com/in/x7md" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Linkedin </span>
+
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M18.335 18.339H15.67v-4.177c0-.996-.02-2.278-1.39-2.278c-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387c2.7 0 3.2 1.778 3.2 4.091v4.715zM7.003 8.575a1.546 1.546 0 0 1-1.548-1.549a1.548 1.548 0 1 1 1.547 1.549zm1.336 9.764H5.666V9.75H8.34v8.589zM19.67 3H4.329C3.593 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.338C20.4 21 21 20.42 21 19.703V4.297C21 3.58 20.4 3 19.666 3h.003z"></path>
+            </svg>
+          </a>
+          <a class="hover:opacity-75" href="/rss.xml" target="_blank" rel="noreferrer">
+            <span class="sr-only"> Rss </span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z"></path>
+              <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="mt-2 text-xs text-gray-500">
+      <s>&copy;</s> حمد بنقالي 2021 - 2023<span class="mt-8 text-xs text-gray-500" data-nosnippet>، ليست هناك حقوق محفوظة، تستطيع فعل ما شئت بالمحتوى على الموقع والمدونة مع ذكر المصدر.</span>
+    </p>
+    <div data-nosnippet>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <img alt="رخصة المشاع الابداعي" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+    </a>
+      <span class="mt-2 text-xs text-gray-500">هذا المُحتوى مرخص بموجب</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+      <span class="mt-2 text-xs text-gray-500">رخصة المشاع الإبداعي نَسب المُصنَّف - غير تجاري - الترخيص بالمثل 4.0 دولي.</span>
+      </a>
+    </div>
+  </div>
+</footer>
+	<script type="application/ld+json">
+		{
+			"@type": "Person",
+			"name": "حمد بنقالي",
+			"sameAs": [
+			"https://twitter.com/x7mdNet",
+			"https://github.com/x7md",
+			"https://linkedin.com/in/x7md"
+			],
+			"worksFor": {
+				"@type" : "Organization",
+				"name": "منصة رواف العقارية",
+				"alternateName": [
+					"رواف",
+					"ٌRawaf"
+				],
+  				"url" : "https://www.rawaf.ai/"
+			},
+			"hasOccupation": [
+				{
+				"@type": "Occupation",
+				"name": "FrontEnd Developer"
+				}
+			],
+			"@id": "https://x7md.net/about-me/#identity",
+			"url": "https://x7md.net/about-me"
+		}
+	</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","url":"https://git.x7md.net/blog/react-tips/"},"headline":"نصائح لمطور رياكت","image":"/images/react-tips.jpg","datePublished":"2023/03/13","author":{"@type":"Person","name":"حمد","familyName":"بنقالي","url":"https://git.x7md.net/about-me"},"keywords":[["https://git.x7md.net/posts/topics/react","https://git.x7md.net/posts/topics/javascript"]],"publisher":{"@type":"Person","name":"x7md"},"about":{"@type":["Thing","SoftwareApplication"],"applicationSubCategory":"https://www.wikidata.org/wiki/Q783866","applicationCategory":"DeveloperApplication","name":"React JS","alternateName":["React.JS","رياكت","رياكت جي اس"],"description":"إطار عمل جافاسكربت، لبناء واجهات مستخدم تفاعلية","url":"https://ar.reactjs.org/","offers":{"@type":"Offer","price":"0"}}}</script>
+
+	</body>
+</html>
