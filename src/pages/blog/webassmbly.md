@@ -2,7 +2,7 @@
 title: "ما هي ويب أسمبلي؟"
 layout: "@layouts/blog.astro"
 image: /images/webassembly.jpg
-link: /blog/arabic-programming-content-online
+link: /blog/webassembly/
 # draft: true
 date: '2022/08/09'
 about: {
