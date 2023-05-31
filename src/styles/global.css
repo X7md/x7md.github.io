@@ -118,11 +118,11 @@ blockquote {
 }
 
 article a {
-    @apply text-slate-400;
+    @apply text-sky-500;
 }
 
 article a:hover {
-    @apply underline decoration-slate-800;
+    @apply underline decoration-blue-950;
 }
 
 article li {

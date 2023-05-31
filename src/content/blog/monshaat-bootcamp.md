@@ -137,11 +137,8 @@ tags: ["bootcamp"]
 الذي كان عبارة عن فيديو فقط يوضح المنتج وفكرته،
 و وضعوا رابط ليسجل فيه المهتمين بتجربة المنتج.
 
-<div style="text-align: center;">
 
-<iframe width="513" height="385" style="aspect-ratio: 16/9; max-width: 90vw; height: auto;" src="https://www.youtube.com/embed/qxFLfY7_Gqw" title="Dropbox Original MVP Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-</div>
+<iframe src="https://www.youtube.com/embed/qxFLfY7_Gqw" title="Dropbox Original MVP Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 ## الورشة الخامسة

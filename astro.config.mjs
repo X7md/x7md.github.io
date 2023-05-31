@@ -28,12 +28,24 @@ export default defineConfig({
       selector: 'img',
       wrapper: 'figure data-img'
     }],
+    [rehypeWrapAll, {
+      selector: 'iframe',
+      wrapper: 'dev.iframe'
+    }],
     [rehypeRewrite, {
       rewrite: (node, index, parent) => {
         // remove h2 footnote
         if(node.properties?.id == 'footnote-label') {
           node.children = [];
           parent.children = parent.children.slice(1)
+        }
+
+        if(node.type == "raw" && node.value.startsWith("<iframe")) {
+          node.value = "<div " + `style="
+          display: flex;
+          justify-content: center;
+          width: calc(100% - 1rem);"` +
+          " >" + node.value.replace("<iframe", "<iframe " + 'class="md-iframe" ') + "</div>";
         }
 
         if(node.tagName == "img") {
