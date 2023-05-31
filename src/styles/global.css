@@ -1,232 +1,144 @@
-@windicss;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-    -webkit-tap-highlight-color: transparent;
+@font-face {
+    font-family: majalla;
+    src: url(/fonts/majalla.ttf);
 }
 
-*:focus {
-  outline: 2.5px auto !important;
+@font-face {
+    font-family: majalla;
+    font-weight: bold;
+    src: url(/fonts/majallab.ttf);
 }
 
-[v-cloak] {
+[x-cloak] {
     display: none;
 }
 
-body, html {
-  min-height: 100vh;
-}
-
-body {
-    @apply bg-white;
-    font-family: 'Vazirmatn RD';
-}
-
 main {
-  min-height: calc(100vh - 10rem)
+    @apply lg:px-12 md:px-6 px-5 pb-12;
+    font-family: majalla;
+    word-spacing: 0.15rem;
 }
 
-.container {
-  @apply max-w-[940px]
-}
-.header-blog {
-  max-height: 440px;
-  width: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-img.tag-card {
-  aspect-ratio: 43 / 18;
-}
-.card {
-  @apply transition-all duration-100 ease-in-out max-w-xl m-2 w-full h-full;
-}
-.card img {
-  @apply rounded-t-xl;
-  width: 100%;
-  height: 100%;
-}
-.card .card-info {
-  @apply p-3 drop-shadow-md;
-}
-.card .card-info > h1 {
-  @apply text-3xl !important;
+article {
+    @apply lg:px-16 md:px-4 px-2 text-2xl;
 }
 
-blockquote {
-  margin: 0.25rem;
-  padding: 0.75rem;
-  border-right: solid 0.5rem #cecece;
+article .title {
+    @apply my-3 text-5xl font-bold;
 }
 
-[lang="en"] blockquote {
-  direction: ltr;
-  text-align: start;
-  border-right: none;
-  border-left: solid 0.5rem #cecece;
+article hr {
+    @apply pb-3;
 }
 
-.x-container {
-    @apply mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 max-w-screen-lg lg:p-0;
+article h1:not(.title)::before {
+    content: "#";
+    @apply pl-1.5 text-gray-400;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  padding-top: .65rem;
-  padding-bottom: .65rem;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  line-height: 3rem;
+article h1 {
+    @apply my-3 text-4xl font-bold;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-extrabold text-[#300D43] py-2
+article h2::before {
+    content: "# ";
+    @apply pl-0.5 text-gray-400 select-none;
 }
 
-h1 {
-  @apply text-4xl font-bold !important;
-}
-h2 {
-  @apply text-3xl font-bold !important;
-}
-h3 {
-  @apply text-2xl font-bold !important;
-}
-h4, h5, h6 {
-  @apply text-3xl font-bold !important;
-}
-p {
-  @apply text-base text-[#300D43] leading-8 md:leading-10;
-  /*dynamic size */
-  font-size: calc(1rem + 0.4vw);
-  font-weight: 400;
+article h2 {
+    @apply my-3 text-3xl font-bold;
 }
 
-figure:not(.author){
-  @apply text-center m-auto text-sm @lg:max-w-[480px] sm:max-w-96;
-}
-#table {
-  max-width: none;
-  display: block;
-  margin: 0;
-  margin-block-end: .5rem;
-  padding: 0;
-  overflow-x: auto;
+article h3::before {
+    content: "# ";
+    @apply pl-0.5 text-gray-400 select-none;
 }
 
-[data-tag] {
-  @apply ml-2;
+article h3 {
+    @apply my-3 text-2xl font-bold;
 }
 
-
-table {
-  @apply leading-6;
-  margin-top: 0;
-  font-style: normal;
-  font-size: calc(1rem + 0.25vw);
+article p {
+    @apply my-4;
 }
 
-/**
- * Table
- */
- :where(table) {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-indent: 0;
+article p code {
+    direction: ltr;
+    @apply p-1 border bg-slate-100 text-base whitespace-nowrap;
+    unicode-bidi: plaintext;
 }
 
-thead th{
-  @apply pl-4;
+.remark-code-container {
+    direction: ltr;
+    @apply  p-1.5 my-2 border;
+    unicode-bidi: plaintext;
 }
 
-th,
-td {
-  padding: .5rem;
-  border-bottom: 0.15rem solid #cecece;
-  color: var(--color);
-  text-align: right;
-  text-align: start;
-}
-
-tfoot th,
-tfoot td {
-  border-bottom: 0;
-}
-
-table[role=grid] tbody tr:nth-child(odd) {
-  background-color: #cecece;
-}
-
-.blog-content img {
-  @apply w-full inline-block my-4 lg:max-w-[480px] sm:max-w-[90vw];
-}
-
-section.byline {
-  @apply text-right p-3 shadow-lg;
-}
-
-.btn {
-  @apply py-2 px-4 font-semibold rounded-lg shadow-md;
-  margin-block: .25rem;
-
-}
-.btn-purple {
-  @apply text-white bg-[#93237B] hover:bg-[#93237B];
-}
-button svg {
- @apply inline h-[1.35rem] w-[1.35rem];
-}
-button {
-  @apply transition;
-}
-button:hover {
-  transform: scale(1.025);
-}
-.d-block {
-  display: block;
-}
-
-.blog-content p a, .blog-content li a, [itemprop="author"] a {
-  @apply text-blue-500 break-words hover:text-purple-900;
-}
-
-#topic-link h3 {
-  @apply pt-0 text-blue-500 font-extrabold break-words hover:text-purple-900;
+.remark-code-title {
+    @apply font-mono text-sm font-bold text-gray-500 select-none;
 }
 
 .astro-code {
+    @apply bg-slate-100 text-sm;
+}
+
+blockquote {
+    margin: 0.25rem;
+    padding: 0.75rem;
+    border-right: solid 0.35rem #cecece;
+}
+
+figcaption {
+    @apply text-xl mb-8;
+}
+
+figure[data-img]{
+    text-align: center;
+}
+
+article img {
+    @apply w-full inline-block my-4 lg:max-w-[480px] sm:max-w-[90vw];
+}
+
+blockquote {
+    text-align: start;
+    border-left: none;
+    border-right: solid 0.35rem #cecece;
+}
+
+[lang="en"] blockquote {
     direction: ltr;
-    border-radius: 1.5px;
-    text-align: left;
-    unicode-bidi: plaintext;
-    width: 100%;
-    padding: 0.35rem;
-    box-shadow: #c6c6c681 -.25rem .45rem 0.65rem;
+    border-right: none;
+    border-left: solid 0.35rem #cecece;
+    @apply mb-4;
 }
 
-p > code {
-    @apply bg-[#f8f9fa] p-[0.35rem] border border-solid border-[#d2d3d7] whitespace-nowrap text-left;
-    unicode-bidi: plaintext;
+article a {
+    @apply text-slate-400;
 }
 
-code {
-  font-family: 'IBM Plex Mono', Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace !important;
+article a:hover {
+    @apply underline decoration-slate-800;
 }
 
-/* pre {
-  @apply whitespace-pre-line break-words;
-} */
-
-footer svg {
-  @apply mx-2;
+article li {
+    display: list-item;
 }
 
-.blog-content ol li, .blog-content ul li {
-  @apply mx-2;
-}
-.blog-content ol, .blog-content ul {
-  @apply m-1;
-}
-.blog-content ul li::marker {
-  content: "- ";
+article ::marker {
+    @apply font-bold text-2xl;
 }
 
+article ol {
+    list-style: decimal;
+    padding-right: 2rem;
+}
+
+article ul {
+    list-style: square;
+    padding-right: 2rem;
+}

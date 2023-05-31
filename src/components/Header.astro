@@ -1,0 +1,64 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+
+---
+
+<header>
+	<nav x-data="{ open: false }" class="flex justify-between items-center lg:px-6 pt-3 px-5 gap-2">
+		<div>
+			<a href="/" class="inline-flex items-start" dir="ltr">
+				<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
+				<path class="fill-gray-500" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+				<span data-nosnippet="" class="text-xl m-auto lg:py-2 py-1 text-gray-500 leading-[3.25rem] font-bold">/x7md</span>
+			</a>
+		</div>
+		<div class="font-majalla lg:flex md:flex gap-5 hidden text-lg">
+			<!-- <HeaderLink href="/">الرئيسية</HeaderLink> -->
+			<HeaderLink href="/blog">التدوينات</HeaderLink>
+			<HeaderLink href="/about">عني</HeaderLink>
+			<HeaderLink href="/get-touch">تواصل معي</HeaderLink>
+			<!-- <HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
+			<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink> -->
+		</div>
+		<div class="lg:hidden md:hidden block">
+			<button @click="open = true">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 32 32">
+					<path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"/>
+				</svg>
+			</button>
+		</div>
+
+		<div x-cloak x-show="open" class="absolute top-0 inset-x-0 p-2 lg:hidden">
+			<div class="rounded-lg sticky shadow-md">
+			<div class="rounded-lg bg-gray-600 shadow-xs overflow-hidden">
+			<div class="px-2 pt-1 flex items-center justify-between">
+			<a class="flex items-center" href="/">
+				<div class="inline-flex items-start" dir="ltr">
+				<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="lg:p-2 p-1 h-10 w-auto sm:h-12 my-2 v-align-middle">
+				<path fill="#fff" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path><span class="text-xl m-auto lg:py-2 py-1 text-white leading-[3.25rem] font-bold">/x7md</span>
+				</svg>
+				</div>
+			</a>
+			<div class="mr-2">
+				<button @click="open = false" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-700 focus:outline-none focus:bg-[#260B3A] transition duration-150 ease-in-out">
+				<svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+				</button>
+			</div>
+			</div>
+			<ul class="font-majalla font-bold lg:text-2xl md:text-2xl text-xl list-none px-2.5 pb-3 text-white">
+				<li class="p-1 w-full z-[10000] sticky">
+					<HeaderLink href="/blog">التدوينات</HeaderLink>
+				</li>
+				<li class="p-1 w-full z-[10000] sticky">
+					<HeaderLink href="/about">عني</HeaderLink>
+				</li>
+				<li class="p-1 w-full z-[10000] sticky">
+					<HeaderLink href="/get-touch">تواصل معي</HeaderLink>
+				</li>
+			</ul>
+			</div>
+			</div>
+			</div>
+	</nav>
+</header>

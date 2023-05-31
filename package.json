@@ -1,26 +1,28 @@
 {
-  "name": "@example/starter",
+  "name": "blog",
+  "type": "module",
   "version": "0.0.1",
-  "private": false,
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
     "build": "astro build",
-    "preview": "astro preview --host"
-  },
-  "devDependencies": {
-    "@astrojs/sitemap": "^1.2.1",
-    "astro": "^2.1.7",
-    "postcss-windicss": "^1.0.0",
-    "vite-plugin-windicss": "^1.8.10",
-    "windicss": "^3.5.6"
+    "preview": "astro preview --host",
+    "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/rss": "^1.2.1",
+    "@astrojs/alpinejs": "^0.2.2",
+    "@astrojs/mdx": "^0.19.1",
+    "@astrojs/rss": "^2.4.1",
+    "@astrojs/sitemap": "^1.3.0",
+    "@astrojs/tailwind": "^3.1.3",
+    "@types/alpinejs": "^3.7.1",
+    "alpinejs": "^3.12.1",
+    "astro": "^2.5.5",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-figure-for-img": "^0.0.4",
+    "rehype-rewrite": "^3.0.6",
     "rehype-wrap-all": "^1.1.0",
-    "remark-gfm": "^3.0.1",
-    "remark-unwrap-images": "^3.0.1"
+    "remark-flexible-code-titles": "^1.1.2",
+    "remark-unwrap-images": "^3.0.1",
+    "tailwindcss": "^3.3.2"
   }
 }

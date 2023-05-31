@@ -1,40 +1,56 @@
-// Full Astro Configuration API Documentation:
-// https://docs.astro.build/reference/configuration-reference
-// @type-check enabled!
-// VSCode and other TypeScript-enabled text editors will provide auto-completion,
-// helpful tooltips, and warnings if your exported object is invalid.
-// You can disable this by removing "@ts-check" and `@type` comments below.
-import WindiCSS from 'vite-plugin-windicss'; // @ts-check
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
+import tailwind from "@astrojs/tailwind";
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeWrapAll from 'rehype-wrap-all';
+import rehypeRewrite from 'rehype-rewrite';
+import remarkCodeTitles from "remark-flexible-code-titles";
+import remarkUnwrapImages from 'remark-unwrap-images';
 
-import { defineConfig } from "astro/config";
-import sitemap from "@astrojs/sitemap";
+import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
-export default defineConfig(
-/** @type {import('astro').AstroUserConfig} */
-{
-  // Set "renderers" to "[]" to disable all default, builtin component support.
-  // renderers: [],
-  vite: {
-    ssr: {
-      external: ["github-slugger"],
-    },
-    plugins: [WindiCSS()]
-  },
-  site: 'https://git.x7md.net/',
-  integrations: [sitemap()],
+export default defineConfig({
+  site: 'https://example.com',
+  integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   markdown: {
-    remarkPlugins: [["remark-gfm", {}], ['remark-unwrap-images', {}]],
-    rehypePlugins: [
-      ['rehype-autolink-headings', { behavior: 'prepend'}],
-      ['rehype-figure-for-img', {}],
-      ['rehype-wrap-all', {
-        selector: 'table',
-        wrapper: 'figure#table'
-      }]
-    ],
     shikiConfig: {
-      theme: 'vitesse-light',
-    }
-  }
+      theme: 'github-light',
+    },
+    remarkPlugins: [[remarkUnwrapImages, {}], [remarkCodeTitles, {}]],
+    rehypePlugins: [[rehypeAutolinkHeadings, {
+      behavior: 'prepend'
+    },
+    ],
+    // ['rehype-figure-for-img', {}],
+    [rehypeWrapAll, {
+      selector: 'img',
+      wrapper: 'figure data-img'
+    }],
+    [rehypeRewrite, {
+      rewrite: (node, index, parent) => {
+        // remove h2 footnote
+        if(node.properties?.id == 'footnote-label') {
+          node.children = [];
+          parent.children = parent.children.slice(1)
+        }
+
+        if(node.tagName == "img") {
+          // console.log(parent)
+          parent.children = [...parent.children, {
+            type: 'element',
+            tagName: "figcaption",
+            properties: {},
+            children: [
+              {type: 'text', value: node.properties.alt}
+            ]
+          }]
+        }
+      }
+    }]
+  
+    ]
+  },
+ 
 });
