@@ -12,7 +12,7 @@ import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://blog.x7md.net',
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   markdown: {
     shikiConfig: {
