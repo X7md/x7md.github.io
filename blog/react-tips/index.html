@@ -135,7 +135,7 @@
 <p>ومؤخرًا أصبح فريق رياكت لا يُفضل بناء الموقع بشكل كامل على أساس <strong>“التصيير من جهة العميل” (Client Side Rendering)</strong><sup><a href="#user-content-fn-0" id="user-content-fnref-0" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>، بل يحبذ البدأ بحلول أخرى لتصيير صفحة الويب
 <strong>من جانب الخادم (Server Side Rendering)</strong> وذلك لتقديم تجربة مستخدم أفضل.</p>
 <h3 id="نمط-البرمجة-التصريحي">نمط البرمجة التصريحي</h3>
-<img src="https://react.dev/images/docs/illustrations/i_imperative-ui-programming.png" alt="رسمة تعبر عن كيف هي البرمجة الأمرية (Imperative Programming)، للفنانة Rachel Lee Nabors">
+<figure data-img><img src="https://react.dev/images/docs/illustrations/i_imperative-ui-programming.png" alt="رسمة تعبر عن كيف هي البرمجة الأمرية (Imperative Programming)، للفنانة Rachel Lee Nabors"><figcaption>رسمة تعبر عن كيف هي البرمجة الأمرية (Imperative Programming)، للفنانة Rachel Lee Nabors</figcaption></figure data-img>
 <p>البرمجة التصريحية (Declarative Programming)، هو المفهوم الأساسي الذي تركز عليه رياكت على خلاف البرمجة الأمرية (Imperative Programming) المعتادة حينما تبرمج عبر جافاسكربت بطريقة عادية.</p>
 <p><strong>البرمجة الأمرية في جافاسكربت العادية:</strong></p>
 <div class="remark-code-container"><pre is:raw="" class="astro-code github-light" style="background-color: #fff; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #D73A49">function</span><span style="color: #24292E"> </span><span style="color: #6F42C1">makeBox</span><span style="color: #24292E">(){</span></span>
@@ -160,7 +160,7 @@
 <span class="line"><span style="color: #24292E">    );</span></span>
 <span class="line"><span style="color: #24292E">}</span></span>
 <span class="line"></span></code></pre></div>
-<img src="https://react.dev/images/docs/illustrations/i_declarative-ui-programming.png" alt="رسمة تعبر عن كيف هي البرمجة التصريحية (Declarative Programming)، للفنانة Rachel Lee Nabors">
+<figure data-img><img src="https://react.dev/images/docs/illustrations/i_declarative-ui-programming.png" alt="رسمة تعبر عن كيف هي البرمجة التصريحية (Declarative Programming)، للفنانة Rachel Lee Nabors"><figcaption>رسمة تعبر عن كيف هي البرمجة التصريحية (Declarative Programming)، للفنانة Rachel Lee Nabors</figcaption></figure data-img>
 <p>تذكر أن البرمجة التصرحية لا تعني أنك ستكتب عدد سطور أقل دومًا… ولكنها تعني أن الكود
 سيكون واضح بشكل مباشر دون التعمق في قراءته، كما هو موضح في المثال أعلاه تقريبًا كل من
 رياكت وجافاسكربت العادية تحمل نفس عدد الأسطر، الفرق أن كود رياكت أسهل من ناحية القراءة والفهم.</p>
@@ -173,8 +173,8 @@
 <p>إدارة الحالة (State Management) في رياكت، تعد أكثر المفاهيم الصعبة والمعقدة نوعًا ما…
 تظهر هذه المشكلة جليًا حينما تقوم بفصل المكونات (components) حيث ستحتاج إلى
 حل لتبادل البيانات بين عدة مكونات أو أكثر.</p>
-<img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لشجرة المكونات في رياكت">
-<img src="https://legacy.reactjs.org/static/b4643456a3de61c8352415a6fc171876/78612/flux-diagram.png" alt="مخطط بياني لتدفق البيانات في React Flux، الطريقة المستحسنة من قبل فريق رياكت لإدارة تدفق البيانات">
+<figure data-img><img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لشجرة المكونات في رياكت"><figcaption>رسم توضيحي لشجرة المكونات في رياكت</figcaption></figure data-img>
+<figure data-img><img src="https://legacy.reactjs.org/static/b4643456a3de61c8352415a6fc171876/78612/flux-diagram.png" alt="مخطط بياني لتدفق البيانات في React Flux، الطريقة المستحسنة من قبل فريق رياكت لإدارة تدفق البيانات"><figcaption>مخطط بياني لتدفق البيانات في React Flux، الطريقة المستحسنة من قبل فريق رياكت لإدارة تدفق البيانات</figcaption></figure data-img>
 <p>وأقتبس ما قاله “هادي حريري” وهو مهندس برمجيات في شركة JetBrains في نقاش عن مسألة التعقيد في هندسة البرمجيات:</p>
 <p><strong>وحينها جاءت رياكت جي أس، مع هيكلة فلسك (Flux<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup>) تلك في رياكت، معها ذلك الرسم البياني المتداخل، وأنت تتسأل
 “لماذا؟ حقًا، لماذا علي فهم كل هذا، حقًا؟ لماذا؟”، أعني ما كان أسهل علي أن أستوعب لغة الآلة. حقًا
@@ -185,8 +185,8 @@
 <br> — <a href="https://youtu.be/P7CfWtR-ECk?t=2117">Hadi Hariri</a></p>
 </blockquote>
 </div>
-<img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_prop_drilling.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لألية إدارة الحالة الافتراضية في رياكت، عبر تمرير Props بين المكونات">
-<img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_far.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لآلية عمل useContext Hook لإدارة تدفق البيانات، دون الحاجة لتمرير Props بين المكونات">
+<figure data-img><img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_prop_drilling.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لألية إدارة الحالة الافتراضية في رياكت، عبر تمرير Props بين المكونات"><figcaption>رسم توضيحي لألية إدارة الحالة الافتراضية في رياكت، عبر تمرير Props بين المكونات</figcaption></figure data-img>
+<figure data-img><img src="https://react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpassing_data_context_far.png&#x26;w=1920&#x26;q=75" alt="رسم توضيحي لآلية عمل useContext Hook لإدارة تدفق البيانات، دون الحاجة لتمرير Props بين المكونات"><figcaption>رسم توضيحي لآلية عمل useContext Hook لإدارة تدفق البيانات، دون الحاجة لتمرير Props بين المكونات</figcaption></figure data-img>
 <p>في حال كنت تبي تطبيقًا معقدًا، كلوحة تحكم (Dashbord) مثلًا، عليك أن تخطط جيدًا لتدفق البيانات…
 خاصةً فيما يتعلق بأمور صلاحيات المستخدمين وبيانات تسجيل الدخول وحتى نظام الإشعارات إن وجد.</p>
 <h2 id="أبني-مكونات-وليس-قوالب">أبني مكونات، وليس قوالب!</h2>
@@ -252,7 +252,7 @@ You know the kind of the witness’ test is like does this class make sense or d
 البرمجيات هو قرار يتخذ قبل الشروع ببناء الشيء بمثابة معيار تتبعه وتلتزم به خلال عملك <a href="#user-content-fnref-3" data-footnote-backref="" class="data-footnote-backref" aria-label="Back to content">↩</a></p>
 </li>
 </ol>
-</section><figcaption>رسمة تعبر عن كيف هي البرمجة الأمرية (Imperative Programming)، للفنانة Rachel Lee Nabors</figcaption><figcaption>رسمة تعبر عن كيف هي البرمجة التصريحية (Declarative Programming)، للفنانة Rachel Lee Nabors</figcaption><figcaption>رسم توضيحي لشجرة المكونات في رياكت</figcaption><figcaption>مخطط بياني لتدفق البيانات في React Flux، الطريقة المستحسنة من قبل فريق رياكت لإدارة تدفق البيانات</figcaption><figcaption>رسم توضيحي لألية إدارة الحالة الافتراضية في رياكت، عبر تمرير Props بين المكونات</figcaption><figcaption>رسم توضيحي لآلية عمل useContext Hook لإدارة تدفق البيانات، دون الحاجة لتمرير Props بين المكونات</figcaption>
+</section>
 
 			</article>
 		</main>
