@@ -7,26 +7,26 @@
 <meta name="generator" content="Astro v2.5.5">
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://blog.x7md.net/blog/arabic-programming-content-online/">
+<link rel="canonical" href="https://blog.x7md.net/blog/javascript-arraybuffer/">
 
 <!-- Primary Meta Tags -->
-<title>المحتوى العربي البرمجي على الانترنت</title>
-<meta name="title" content="المحتوى العربي البرمجي على الانترنت">
-<meta name="description" content="المحتوى البرمجي العربي على الإنترنت... وماذا يحتاج...">
+<title>Memory inspector في كروم و ArrayBuffer في جافاسكربت.</title>
+<meta name="title" content="Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
+<meta name="description" content="Javy أداة لتحويل جافاسكربت إلى Webassembly">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.x7md.net/blog/arabic-programming-content-online/">
-<meta property="og:title" content="المحتوى العربي البرمجي على الانترنت">
-<meta property="og:description" content="المحتوى البرمجي العربي على الإنترنت... وماذا يحتاج...">
-<meta property="og:image" content="https://blog.x7md.net/images/og-image/arabic-programming-content-online.png">
+<meta property="og:url" content="https://blog.x7md.net/blog/javascript-arraybuffer/">
+<meta property="og:title" content="Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
+<meta property="og:description" content="Javy أداة لتحويل جافاسكربت إلى Webassembly">
+<meta property="og:image" content="https://blog.x7md.net/images/og-image/javascript-arraybuffer.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://blog.x7md.net/blog/arabic-programming-content-online/">
-<meta property="twitter:title" content="المحتوى العربي البرمجي على الانترنت">
-<meta property="twitter:description" content="المحتوى البرمجي العربي على الإنترنت... وماذا يحتاج...">
-<meta property="twitter:image" content="https://blog.x7md.net/images/og-image/arabic-programming-content-online.png">
+<meta property="twitter:url" content="https://blog.x7md.net/blog/javascript-arraybuffer/">
+<meta property="twitter:title" content="Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
+<meta property="twitter:description" content="Javy أداة لتحويل جافاسكربت إلى Webassembly">
+<meta property="twitter:image" content="https://blog.x7md.net/images/og-image/javascript-arraybuffer.png">
 	<link rel="stylesheet" href="/_astro/404.2ad0e014.css" />
 <link rel="stylesheet" href="/_astro/_...slug_.a84fff63.css" /><script type="module" src="/_astro/page.1b7dd379.js"></script></head>
 
@@ -104,38 +104,14 @@
 		<main>
 			<article>
 				
-				<h1 class="title">المحتوى العربي البرمجي على الانترنت</h1>
-				<time class="text-sm" datetime="2022-04-30T21:00:00.000Z">
-	٣٠ رمضان ١٤٤٣ هـ
+				<h1 class="title">Memory inspector في كروم و ArrayBuffer في جافاسكربت.</h1>
+				<time class="text-sm" datetime="2023-05-31T21:00:00.000Z">
+	١٢ ذو القعدة ١٤٤٤ هـ
 </time>
-				<div class="last-updated-on text-lg">
-							حُدثت في <time class="text-sm" datetime="2022-05-01T21:00:00.000Z">
-	١ شوال ١٤٤٣ هـ
-</time>
-						</div>
+				
 				<hr>
 				
-	<p>في الآونة الأخيرة سترى أن “موقع المبرمج العربي” يتصدر محرك قوقل عندما تبحث عن شيء ما له علاقة بالبرمجة باللغة العربية على محرك قوقل ولكن هناك شيء ما أزعجني… الموقع ليس إلا عبارة عن بوت يترجم المقالات من على الإنترنت ومن ثم يعيد نشرها، والموقع كله إعلانات ادسينس.</p>
-<p>طريقة ركيكة لكسب بعض الأموال للأسف، من بعض الناس الذين يريدون البحث عن محتوى عربي بلغتهم الأم ولا يجيدون اللغة الإنجليزية… نحن لا نريد محتوى عشوائي ترجم آليًا إلى العربية! نريد محتوى عربي أصيل مكتوب بذمة وضمير.</p>
-<h2 id="المحتوى-العربي-التقني-على-الإنترنت">المحتوى العربي التقني على الإنترنت</h2>
-<p>لا يخفى علينا أن المحتوى العربي التقني <strong>والبرمجي تحديدًا</strong> متوافر بشكل أو بأخر على الإنترنت خاصة الأشياء الأساسية،  كنبذة عامة عن لغة برمجة ما، أساسيات أحد إطارات العمل وما إلى ذلك، في الغالب يكون هذا المحتوى أغلبه على ويكيبيديا العربية، أكاديمية حسوب، أو من بعض المساهمين المستقلين الآخرين في مواقعهم الخاصة وما إلى ذلك، كما ضجت وسائل التواصل مؤخرًا بالعديد من المبرمجين ينشرون عن البرمجة بشكل عام وخاص في حساباتهم على تلك المنصات.</p>
-<p>ولكن، حينما تبحث عن شيء متخصص جدًا أو جديد، أو مسار تعلم مقروء مرتب ومنظم (ليس سلسلة فيديوهات - كورس مسجل)، أو تبحث عن مقال في شيء معين كل ما تجده هو شروحات ركيكة، غالبيتها محتوى مترجم غير مصمم للقارء والمتعلم العربي، قد يكون بعضها جيد ولكن تصميمها وترتيبها لا يسر الزائرين أو قد لا تجد شيء بالمرة.</p>
-<h2 id="إلى-ماذا-يحتاج-المحتوى-العربي-على-الإنترنت">إلى ماذا يحتاج المحتوى العربي على الإنترنت؟</h2>
-<p>يفتقر المحتوى العربي على الإنترنت من وجهة نظري إلى التنظيم والدعم والتحفيز، وبسبب قلة الدعم والإهتمام لا نرى محتوى مُشرف يظهر على أوائل صفحات البحث إلا ما ندر.</p>
-<p>يندفن المساهمون والموهبون في هذا المجال بعد فقدان الشغف… عدم الحصول على دعم معنوي ومادي وإنشغالهم بأمور أخرى ويبقى القليل من هم يستمرون بالنشر.</p>
-<p>النشر على الحسابات الشخصية ليس مصمم ليكون محتوى دائم، فالخوارزميات في مواقع التواصل طريقة عملها هي أن يكون المحتوى لحظي… أي له وقتٌ معين وغالبًا هي تلك اللحظة التي كتبت فيها منشورك، ولو كنت تنشر في تلك المنصات، فسيندثر منشورك ويقل التفاعل عليه بعد عدة أيام من نشره في أغلب الأحيان…</p>
-<p>ومحركات البحث في غالبًا لن تُأرشف كل منشورات حسابك، وسيكون من الصعب الرجوع إليها مستقبلًا.</p>
-<p>وأيضًا أدوات النشر في تلك المواقع ليست مصممة بطريقة مناسبة لتدعك تشرح بأريحية -وتفصل ما وجب تفصيله- بينما لو كنت على موقعك تستطيع عمل كل ما يحلو لك، عكس تلك المنصات تحدك بعضها بعدد معين من الأحرف، أو لا تسمح لك بإضافة روابط، إدراج فيديو وغير ذلك…</p>
-<p>ويتميز المحتوى المقروء عن المرئي، أنه سهل التصفح… والقابلية للبحث داخله وخلاله… وسهولة مشاركته.</p>
-<p>لا توجد منصات عربية للنشر مثل <a href="https://dev.to/">dev.to</a> مثلًا، أو <a href="https://medium.com/">medium</a> وغيرها…
-قد تكون منصة وردبريس وشبيهاتها بديلًا جيدًا لكنها أعقد في التخصيص والتشغيل.</p>
-<h3 id="منصة-العطاء-الرقمي">منصة العطاء الرقمي</h3>
-<p>أحد المبادرات لمنصة نشر تقنية كانت منصة العطاء الرقمي في السعودية بالتعاون مع وزارة الإتصالات، المبادرة كفكرة أعتبرها جيدة ولكن تنفيذ… <em>مش ولا بد</em>، تشعر أن التنفيذ ليس بذاك القدر في الموقع… على سبيل المثال محرر النصوص في ذاك القسم الذي يسمونه “مكتبة المحتوى”، هو محرر بدائي سيء وليس مواكبًا للعصر ولا يتيح لك الكتابة بأريحية بعد تجربتي الشخصية له.</p>
-<p>ولو تصفحت مكتبة المحتوى في منصة العطاء الرقمي ستجد دُولابًا مملوء بالمنشورات العشوائية غير المنظمة… وأضف إلى ذلك تصميم الموقع البدائي والغير مناسب للعصر.</p>
-<p>كما أن التصفح في موقع المنصة، عبارة عن متاهة ليس إلا.</p>
-<h2 id="الخلاصة">الخلاصة</h2>
-<p>نحن بحاجة لأن ننشر أكثر بلغتنا من أجل نشر المعرفة وتبادل الخبرات وحتى إيجاد الفرص، أن ننشر بشكل منظم وليس فقط التصينف ضمن مواضيع (topics) بل نصنف المحتوى التعليمي الموسع عن المقالة تختص بشيء معين، وعن تدوينة مثل هذه… وليس حشوها كلها مع كلمات مفتاحية تؤدي بك إلى منشورات أخرى قد لا تكون مرتبطة وذات علاقة.</p>
-<p>أنصحك بالإطلاع على مقال <a href="https://hausaba.com/tips-for-better-arabic-content/">الويب العربي بحاجة للنشر المنظم والجاد وليس العشوائي</a> من إعداد منصة حوسبة بقلم محمد هاني صباغ، إن كنت تريد التعمق والإستزادة.</p>
+	
 
 			</article>
 		</main>
