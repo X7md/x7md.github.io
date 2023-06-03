@@ -3,7 +3,7 @@ title: "القصة وراء مكتبة رياكت"
 image: /images/the-story-of-reactjs.png
 sameAs: "https://www.wikidata.org/wiki/Q19399674"
 pubDate: '2022/05/03'
-dateModified: '2022/05/05'
+updatedDate: '2022/05/05'
 about: {
     "@type": ["Thing", "SoftwareApplication"],
     "applicationSubCategory": "https://www.wikidata.org/wiki/Q783866",

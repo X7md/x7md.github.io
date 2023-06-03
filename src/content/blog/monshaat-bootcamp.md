@@ -2,7 +2,7 @@
 title: "تجربتي في معسكر منشآت التدريبي"
 image: /images/monshaat-bootcamp.jpg
 pubDate: '2023/01/13'
-dateModified: '2023/01/13'
+updatedDate: '2023/01/13'
 description: 'معسكر منشآت لرواد الأعمال، بجامعة أم القرى'
 draft: false
 about: {

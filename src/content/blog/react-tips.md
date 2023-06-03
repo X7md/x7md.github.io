@@ -4,7 +4,7 @@ image: /images/react-tips.jpg
 pubDate: '2023/03/13'
 draft: false
 description: 'مجموعة نصائح لمطوري رياكت جي أس الجدد'
-keyword: ["Content"]
+keyword: ["JavaScript", "React JS"]
 about: {
     "@type": ["Thing", "SoftwareApplication"],
     "applicationSubCategory": "https://www.wikidata.org/wiki/Q783866",

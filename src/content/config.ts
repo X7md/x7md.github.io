@@ -1,3 +1,4 @@
+import { string } from 'astro/zod';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
@@ -15,6 +16,7 @@ const blog = defineCollection({
 			.optional()
 			.transform((str) => (str ? new Date(str) : undefined)),
 		heroImage: z.string().optional(),
+		tags: z.array(z.string()),
 	}),
 });
 

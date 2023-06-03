@@ -3,7 +3,7 @@ title: "ما هو Deno؟ وعلاقته بحوسبة الحافة؟"
 image: /images/what-is-deno.png
 pubDate: '2022/04/26'
 sameAs: "https://www.wikidata.org/wiki/Q65070939"
-dateModified: '2022/04/26'
+# updatedDate: '2022/04/26'
 description: 'في هذه التدوينة أتناول موضوع دينو وعلاقته مع الحوسبة السحابية على الحافة، والفرق بين دينو و نود جي أس'
 about: {
     "@type": ["Thing", "SoftwareApplication"],

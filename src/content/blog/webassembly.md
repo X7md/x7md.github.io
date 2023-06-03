@@ -31,7 +31,6 @@ about: {
     },
     }
 }
-# dateModified: '2022/05/02'
 description: 'لطالما سمعنا مصطلح ويب أسمبلي، ولكن ما الفكرة من ويب أسمبلي بالضبط؟'
 keyword: ["wasm", "WebAssembly"]
 tags: ["WebAssembly"]

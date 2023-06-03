@@ -30,7 +30,7 @@ about: {
     }
 }
 pubDate: '2022/02/18'
-dateModified: '2022/03/10'
+updatedDate: '2022/03/10'
 description: 'تجربتي الشخصية مع برنامج ترمكس'
 draft: false
 sameAs: "https://www.wikidata.org/wiki/Q60572759"
