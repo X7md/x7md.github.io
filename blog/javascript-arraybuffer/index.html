@@ -10,24 +10,24 @@
 <link rel="canonical" href="https://blog.x7md.net/blog/javascript-arraybuffer/">
 
 <!-- Primary Meta Tags -->
-<title>Memory inspector في كروم و ArrayBuffer في جافاسكربت.</title>
-<meta name="title" content="Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
-<meta name="description" content="Javy أداة لتحويل جافاسكربت إلى Webassembly">
+<title>نظرة على Memory inspector في كروم و ArrayBuffer في جافاسكربت.</title>
+<meta name="title" content="نظرة على Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
+<meta name="description" content="نظرة سريعة على نوع البيانات ArrayBuffer في جافاسكربت.">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://blog.x7md.net/blog/javascript-arraybuffer/">
-<meta property="og:title" content="Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
-<meta property="og:description" content="Javy أداة لتحويل جافاسكربت إلى Webassembly">
+<meta property="og:title" content="نظرة على Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
+<meta property="og:description" content="نظرة سريعة على نوع البيانات ArrayBuffer في جافاسكربت.">
 <meta property="og:image" content="https://blog.x7md.net/images/og-image/javascript-arraybuffer.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://blog.x7md.net/blog/javascript-arraybuffer/">
-<meta property="twitter:title" content="Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
-<meta property="twitter:description" content="Javy أداة لتحويل جافاسكربت إلى Webassembly">
+<meta property="twitter:title" content="نظرة على Memory inspector في كروم و ArrayBuffer في جافاسكربت.">
+<meta property="twitter:description" content="نظرة سريعة على نوع البيانات ArrayBuffer في جافاسكربت.">
 <meta property="twitter:image" content="https://blog.x7md.net/images/og-image/javascript-arraybuffer.png">
-	<link rel="stylesheet" href="/_astro/404.2ad0e014.css" />
+	<link rel="stylesheet" href="/_astro/404.7c9bd213.css" />
 <link rel="stylesheet" href="/_astro/_...slug_.a84fff63.css" /><script type="module" src="/_astro/page.1b7dd379.js"></script></head>
 
 	<body>
@@ -104,14 +104,140 @@
 		<main>
 			<article>
 				
-				<h1 class="title">Memory inspector في كروم و ArrayBuffer في جافاسكربت.</h1>
-				<time class="text-sm" datetime="2023-05-31T21:00:00.000Z">
-	١٢ ذو القعدة ١٤٤٤ هـ
+				<h1 class="title">نظرة على Memory inspector في كروم و ArrayBuffer في جافاسكربت.</h1>
+				<time class="text-sm" datetime="2023-06-02T21:00:00.000Z">
+	١٤ ذو القعدة ١٤٤٤ هـ
 </time>
 				
 				<hr>
 				
-	
+	<blockquote>
+<p>هذه التدوينة دسمة، تحوي مفاهيم منخفضة المستوى لا يسهل فهمها أو رؤية الفائدة منها على المبدئين.</p>
+</blockquote>
+<p>كمبرمج ويب، أنت لا تتعامل مع مفاهيم منخفضة المستوى يشمل ذلك التعامل مع البيانات في الذاكرة.</p>
+<p>لكن أحيانًا قد تحتاج وتضطر في حالات نادرة لفعل ذلك… جافاسكربت توفر لك طريقة لتعامل مع هذه الحالات وذلك عبر <code>ArrayBuffer</code>.</p>
+<h2 id="ماذا-يعني-arraybuffer">ماذا يعني <code>ArrayBuffer</code>؟</h2>
+<p>ببساطة هي مصفوفة، مثل أي مصفوفة جافاسكربت عادية، بإستثناء أنك لن تستطيع أن تضع
+داخلها قيم جافاسكربت عادية، مثل النصوص <code>strings</code>، والكائنات <code>objects</code>، وغير ذلك…
+بل ستضع بيانات على هيئة بايت <strong>“bytes”</strong> أي ببساطة مجرد أرقام.</p>
+<figure data-img><img src="https://hacks.mozilla.org/files/2017/06/02_03-768x580.png" alt="رسمة توضيحية تبين الفرق بين Array عادية وArrayBuffer, من رسم الفنانة Lin Clark"><figcaption>رسمة توضيحية تبين الفرق بين Array عادية وArrayBuffer, من رسم الفنانة Lin Clark</figcaption></figure data-img>
+<div lang="en">
+<blockquote>
+<p>It’s basically like working with any other JavaScript array. Except, when using an ArrayBuffer, you can’t put any JavaScript types into it, like objects or strings. The only thing that you can put into it are bytes (which you can represent using numbers).<br>
+—  <a href="https://hacks.mozilla.org/2017/06/a-cartoon-intro-to-arraybuffers-and-sharedarraybuffers/">hacks mozilla</a></p>
+</blockquote>
+</div>
+<h3 id="typedarray-في-جافاسكربت">TypedArray في جافاسكربت</h3>
+<p>بما أن التعامل مع البيانات في هيئة باينري <code>(0,1)</code> صعب، توفر جافاسكربت عدة طرق للتعامل معها وعرضها…
+يشار إليها باسم <code>TypedArray</code>، ليس هناك كائن يسمى <code>TypedArray</code> في جافاسكربت، لكن
+يوجد عدد من الكائنات الأخرى التي تمثل بحد ذاتها نوعًا للـ <code>TypedArray</code>
+من أجل عنصر معين.</p>
+<figure data-img><img src="https://2ality.com/2015/09/typed-arrays/typed_arrays_class_diagram.jpg" alt="رسم بياني، يوضح المغزى من TypedArray، الصورة من كتاب exploringjs"><figcaption>رسم بياني، يوضح المغزى من TypedArray، الصورة من كتاب exploringjs</figcaption></figure data-img>
+<figure data-img><img src="https://javascript.info/article/arraybuffer-binary-arrays/arraybuffer-views.svg" alt="رسم يوضح كيف يمكن لـ TypedArray تغير طريقة عرض ArrayBuffer، مصدر الصورة (javascript.info)"><figcaption>رسم يوضح كيف يمكن لـ TypedArray تغير طريقة عرض ArrayBuffer، مصدر الصورة (javascript.info)</figcaption></figure data-img>
+<div lang="en">
+<blockquote>
+<p>A TypedArray object describes an array-like view of an underlying binary data buffer. There is no global property named TypedArray, nor is there a directly visible TypedArray constructor. Instead, there are a number of different global properties, whose values are typed array constructors for specific element types <br>
+—  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">MDN</a></p>
+</blockquote>
+</div>
+<h2 id="النوع-uint8array">النوع Uint8Array</h2>
+<blockquote>
+<p>8-بت (<code>8-bits</code>) هو حجم شائع في الحوسبة، حتى أنه يحمل اسمًا خاصًا وهو <strong>“بايت”</strong> (<code>byte</code>). <br>
+— <a href="https://youtu.be/1GSjbWt0c9M?t=226">Carrie Anne</a></p>
+</blockquote>
+<p>يمثل النوع <code>Uint8Array</code> ما يسمى في علوم الحاسوب بـ <code>8-bit unsigned integer</code>
+أي عددٌ صحيح من 8-بت دون إشارة (لا موجبة ولا سالبة).</p>
+<p>لا يزال <code>Uint8Array</code> في جوهره مجرد <code>ArrayBuffer</code>.</p>
+<blockquote>
+<p>جميع الكائنات التي تمثل <code>TypedArray</code> تحمل خاصية <code>BYTES_PER_ELEMENT</code>
+والتي ترجع عدد “البايت” التي يستطيع النوع أن يحتويها لكل عنصر بالمصفوفة.</p>
+</blockquote>
+<p>كبداية لنجرب <code>Uint8Array constructor</code>
+ونرى ماذا ترجع لنا الخاصية <code>BYTES_PER_ELEMENT</code>؟</p>
+<div class="remark-code-container"><div class="remark-code-title">JS</div><pre is:raw="" class="astro-code github-light" style="background-color: #fff; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Uint8Array</span><span style="color: #24292E">().</span><span style="color: #005CC5">BYTES_PER_ELEMENT</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #6A737D">// 1</span></span></code></pre></div>
+<p>كل عنصر في <code>Uint8Array</code>  يمكنه أن يحمل رقمًا لا يتعدى حجمه <strong><code>1 Byte</code></strong>،
+أي أن الرقم لن يعدى 256، وفي علوم الحاسوب بما أننا نبدأ
+العد من 0 غالبًا، هذا يعني أن العدد لن يتعدى 255.</p>
+<p>لأن أقصى قيمة يمكن للـ <code>8-bit unsigned integer</code> تخزينها عبارة عن عدد قيمته تبدأ من 0 ولا تتعدى 255.</p>
+<h3 id="تجربة-عملية">تجربة عملية</h3>
+<p>كثرة الكلام النظري يُضيع ويشتت، لذلك دعونا نجري تجربة!
+سنقوم بكتابة ملف بشكل يدوي، بايت بـ بايت!</p>
+<p>سنقوم بكتابة ملف صورة بصيغة <code>gif87</code> من الصفر.</p>
+<figure data-img><img src="https://raw.githubusercontent.com/corkami/pics/master/binary/GIF.png" alt="رسم توضيحي، لهيكل ملف GIF في الذاكرة"><figcaption>رسم توضيحي، لهيكل ملف GIF في الذاكرة</figcaption></figure data-img>
+<div class="remark-code-container"><div class="remark-code-title">JS</div><pre is:raw="" class="astro-code github-light" style="background-color: #fff; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">/*magic number (GIF), and version (87a)*/</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">GIFHeader</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span></span>
+<span class="line"><span style="color: #24292E">    [</span><span style="color: #032F62">"G"</span><span style="color: #24292E">.</span><span style="color: #6F42C1">charCodeAt</span><span style="color: #24292E">(), </span><span style="color: #032F62">"I"</span><span style="color: #24292E">.</span><span style="color: #6F42C1">charCodeAt</span><span style="color: #24292E">(), </span><span style="color: #032F62">"F"</span><span style="color: #24292E">.</span><span style="color: #6F42C1">charCodeAt</span><span style="color: #24292E">(), </span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #032F62">"8"</span><span style="color: #24292E">.</span><span style="color: #6F42C1">charCodeAt</span><span style="color: #24292E">(), </span><span style="color: #032F62">"7"</span><span style="color: #24292E">.</span><span style="color: #6F42C1">charCodeAt</span><span style="color: #24292E">(), </span><span style="color: #032F62">"a"</span><span style="color: #24292E">.</span><span style="color: #6F42C1">charCodeAt</span><span style="color: #24292E">()];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">/* width (1), height (1), flags (), color table*/</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">GIFLocalScreenDescriptor</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span></span>
+<span class="line"><span style="color: #24292E">        [</span><span style="color: #005CC5">0x1</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x1</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">        </span><span style="color: #005CC5">0x80</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x1</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x00</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">        </span><span style="color: #005CC5">0x00</span><span style="color: #24292E">, </span><span style="color: #005CC5">0xff</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">        </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">/*separator, width (1), height (1),</span></span>
+<span class="line"><span style="color: #6A737D">min bits per LZW code, block size,</span></span>
+<span class="line"><span style="color: #6A737D">block data, block end.</span></span>
+<span class="line"><span style="color: #6A737D">*/</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">GIFImageDescriptor</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #24292E">    [</span><span style="color: #005CC5">0x2c</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">,</span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x1</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x1</span><span style="color: #24292E">, </span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x2</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x2</span><span style="color: #24292E">, </span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #005CC5">0x44</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x1</span><span style="color: #24292E">, </span><span style="color: #005CC5">0x0</span><span style="color: #24292E">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6A737D">/* teailer */</span></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">GIFTeailer</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #24292E">    [</span><span style="color: #005CC5">0x3b</span><span style="color: #24292E">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">GIF_File</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span></span>
+<span class="line"><span style="color: #24292E">    </span><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">File</span><span style="color: #24292E">(</span></span>
+<span class="line"><span style="color: #24292E">        [</span><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Uint8Array</span><span style="color: #24292E">(</span></span>
+<span class="line"><span style="color: #24292E">            [</span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFHeader,</span></span>
+<span class="line"><span style="color: #24292E">            </span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFLocalScreenDescriptor,</span></span>
+<span class="line"><span style="color: #24292E">            </span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFImageDescriptor,</span></span>
+<span class="line"><span style="color: #24292E">            </span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFTeailer</span></span>
+<span class="line"><span style="color: #24292E">            ])</span></span>
+<span class="line"><span style="color: #24292E">        ], </span><span style="color: #032F62">"file.gif"</span><span style="color: #24292E">, </span></span>
+<span class="line"><span style="color: #24292E">        {type: </span><span style="color: #032F62">"image/gif"</span><span style="color: #24292E">}</span></span>
+<span class="line"><span style="color: #24292E">        )</span></span></code></pre></div>
+<p>في الكود أعلاه  قمنا بإنشاء ملف صورة <code>gif</code>
+بالإعتماد على كتابة كل بايت يدويًا:</p>
+<p>صورة بحجم 1 بكسل
+ذات لون أزرق <code>#0000ff</code></p>
+<p>حيث قمنا بإنشاء مصفوفة أرقام عادية تحوي على بيانات الملف
+بحسب هيكلة صيغة <code>gif</code>، بعد ذلك جمعناها في <code>Uint8Array</code>.</p>
+<div class="remark-code-container"><div class="remark-code-title">JS</div><pre is:raw="" class="astro-code github-light" style="background-color: #fff; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">Uint8Array</span><span style="color: #24292E">(</span></span>
+<span class="line"><span style="color: #24292E">            [</span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFHeader,</span></span>
+<span class="line"><span style="color: #24292E">            </span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFLocalScreenDescriptor,</span></span>
+<span class="line"><span style="color: #24292E">            </span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFImageDescriptor,</span></span>
+<span class="line"><span style="color: #24292E">            </span><span style="color: #D73A49">...</span><span style="color: #24292E">GIFTeailer</span></span>
+<span class="line"><span style="color: #24292E">            ])</span></span></code></pre></div>
+<p>وبعد ذلك مررناها دخل <code>File constructor</code>:</p>
+<div class="remark-code-container"><div class="remark-code-title">js</div><pre is:raw="" class="astro-code github-light" style="background-color: #fff; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">GIF_File</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span></span>
+<span class="line"><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">File</span><span style="color: #24292E">([</span><span style="color: #6A737D">/* Bytes */</span><span style="color: #24292E">], </span><span style="color: #032F62">"file.gif"</span><span style="color: #24292E">, {type: </span><span style="color: #032F62">"image/gif"</span><span style="color: #24292E">})</span></span></code></pre></div>
+<p>الآن نستطيع تحويل هذا الملف الذي حصلنا عليه إلى رابط عبر استخدام <code>URL.createObjectURL()</code>.</p>
+<div class="remark-code-container"><div class="remark-code-title">JS</div><pre is:raw="" class="astro-code github-light" style="background-color: #fff; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">url_of_file</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #005CC5">URL</span><span style="color: #24292E">.</span><span style="color: #6F42C1">createObjectURL</span><span style="color: #24292E">(GIF_File);</span></span></code></pre></div>
+<p>الآن لديك رابط الصورة وتستطيع استخدامها.</p>
+<figure data-img><img src="/images/gif-bytes-to-css-background.png" alt="تجربة عملية، عبر استخدام ملف GIF لتغيير خلفية الصفحة"><figcaption>تجربة عملية، عبر استخدام ملف GIF لتغيير خلفية الصفحة</figcaption></figure data-img>
+<h2 id="تحليل-بيانات-arraybuffer-عبر-memory-inspector">تحليل بيانات ArrayBuffer عبر Memory inspector</h2>
+<p>في متصفح قوقل كروم  تستطيع تحليل في حال قمت بطباعة <code>Arraybuffer</code> في الطرفية
+ستظهر أيقونة ذاكرة رمادية… وبمجرد الضغط عليها يستم نقلك إلى Memory inspector</p>
+<figure data-img><img src="/images/memory_inspector_gif.png" alt="Memory inspector لبيانات ملف الصورة gif"><figcaption>Memory inspector لبيانات ملف الصورة gif</figcaption></figure data-img>
+<h2 id="الخلاصة">الخلاصة</h2>
+<p><code>ArrayBuffer</code> هو نوع بيانات يتيح لك التعامل مع البيانات في مستوى منخفض، تستطيع من خلاله التعامل مع أي نوع بيانات تقريبًا والتعامل معه بشكل مرن للإستخدامات المتقدمة والمعقدة.</p>
+<p>يوفر Chrome تجربة جيدة لفحص وتحليل الأشكالية عند التعامل مع <code>ArrayBuffer</code> عبر خاصية Memory inspector.</p>
+<h3 id="طالع-أكثر">طالع أكثر</h3>
+<ul>
+<li><a href="https://exploringjs.com/es6/ch_typed-arrays.html">exploringjs book, Typed Arrays</a></li>
+<li><a href="https://github.com/make-github-pseudonymous-again/pixels">1x1 black and white images - Github</a></li>
+<li><a href="https://hacks.mozilla.org/2017/06/a-cartoon-intro-to-arraybuffers-and-sharedarraybuffers/">A cartoon intro to ArrayBuffers and SharedArrayBuffers - MDN</a></li>
+<li><a href="https://youtu.be/1GSjbWt0c9M">Representing Numbers and Letters with Binary: Crash Course Computer Science - YouTube</a></li>
+<li><a href="https://www.youtube.com/watch?v=sUiOy0iI9G8">PNG File Structure - Mustafa Alesayi</a></li>
+<li><a href="https://www.w3.org/Graphics/GIF/spec-gif87.txt">W3C spec-gif87</a></li>
+<li><a href="https://stackoverflow.com/a/49554626">Why wrap Uint8Array through an Array, in (File/ Blob) constructor</a></li>
+</ul>
 
 			</article>
 		</main>
