@@ -154,7 +154,7 @@ const url_of_file = URL.createObjectURL(GIF_File);
 ![تجربة عملية، عبر استخدام ملف GIF لتغيير خلفية الصفحة](/images/gif-bytes-to-css-background.png)
 
 ## تحليل بيانات ArrayBuffer عبر Memory inspector
-في متصفح قوقل كروم  تستطيع تحليل في حال قمت بطباعة `Arraybuffer` في الطرفية
+في متصفح قوقل كروم تستطيع تحليل `Arraybuffer` في حال قمت بطباعتها في الطرفية
 ستظهر أيقونة ذاكرة رمادية... وبمجرد الضغط عليها يستم نقلك إلى Memory inspector
 
 
