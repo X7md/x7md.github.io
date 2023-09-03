@@ -1,7 +1,6 @@
 ---
 title: 'من الحاسب إلى التصميم الجرافيكي'
-image: /images/react-tips.jpg
-pubDate: '2023/07/27'
+pubDate: '2023/09/03'
 draft: false
 description: 'تخصصات الحاسب والأخرى ذات العلاقة'
 keyword: ["digtal-art-majors", "graphic-design"]
