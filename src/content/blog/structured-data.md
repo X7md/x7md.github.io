@@ -4,6 +4,7 @@ image: /images/structured-data.jpg
 pubDate: '2022/12/24'
 description: 'ماهي البيانات المنظّمة، وكيف تستفيد منها لمساعدة موقعك'
 keyword: ["Content"]
+draft: false
 tags: ["Data", "Blogging"]
 ---
 

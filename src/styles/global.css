@@ -3,6 +3,57 @@
 @tailwind utilities;
 
 @font-face {
+    font-family: "Haradh";
+    src: url("/fonts/Haradh/Haradh_1.344-Bold.woff2") format("woff2"),
+      url("/fonts/Haradh/Haradh_1.344-Bold.woff") format("woff");
+    font-weight: bold;
+    unicode-range: U+0600-06FF;
+  }
+  
+  @font-face {
+    font-family: "Haradh";
+    src: url("/fonts/Haradh/Haradh_1.344-Heavy.woff2") format("woff2"),
+      url("/fonts/Haradh/Haradh_1.344-Heavy.woff") format("woff");
+    font-weight: 900;
+    unicode-range: U+0600-06FF;
+  }
+  
+  @font-face {
+    font-family: "Haradh";
+    src: url("/fonts/Haradh/Haradh_1.344-Hefty.woff2") format("woff2"),
+      url("/fonts/Haradh/Haradh_1.344-Hefty.woff") format("woff");
+    font-weight: 800;
+    unicode-range: U+0600-06FF;
+  }
+  
+  @font-face {
+    font-family: "Haradh";
+    src: url("/fonts/Haradh/Haradh_1.344-Regular Hidden Tashkeel.woff2") format("woff2"),
+      url("/fonts/Haradh/Haradh_1.344-Regular Hidden Tashkeel.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-feature-settings: "liga";
+    unicode-range: U+0600-06FF;
+  }
+  
+  @font-face {
+    font-family: "Haradh";
+    src: url("/fonts/Haradh/Haradh_1.344-Regular.woff2") format("woff2"),
+      url("/fonts/Haradh/Haradh_1.344-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+0600-06FF;
+  }
+  
+  @font-face {
+    font-family: "Haradh";
+    src: url("/fonts/Haradh/Haradh_1.344-SemiBold.woff2") format("woff2"),
+      url("/fonts/Haradh/Haradh_1.344-SemiBold.woff") format("woff");
+    font-weight: 600;
+    unicode-range: U+0600-06FF;
+  }
+
+@font-face {
     font-family: majalla;
     src: url(/fonts/majalla.ttf);
 }
@@ -19,7 +70,7 @@
 
 main {
     @apply lg:px-12 md:px-6 px-5 pb-12;
-    font-family: majalla;
+    font-family: "Haradh", "majalla";
     word-spacing: 0.15rem;
 }
 
@@ -90,6 +141,7 @@ blockquote {
     margin: 0.25rem;
     padding: 0.75rem;
     border-right: solid 0.35rem #cecece;
+    @apply bg-gray-50;
 }
 
 figcaption {

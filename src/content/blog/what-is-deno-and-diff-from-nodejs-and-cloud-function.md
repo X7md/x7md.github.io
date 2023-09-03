@@ -34,6 +34,7 @@ about: {
     }
 }
 keyword: [ "NodeJS", "JavaScript", "JS"]
+draft: false
 tags: ["Deno", "Cloud", "Cloud Function"]
 ---
 

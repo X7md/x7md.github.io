@@ -1,7 +1,6 @@
 ---
 title: "ما هي ويب أسمبلي؟"
 image: /images/webassembly.jpg
-# draft: true
 pubDate: '2022/08/09'
 about: {
     "@type": ["Thing", "SoftwareApplication"],
@@ -33,6 +32,7 @@ about: {
 }
 description: 'لطالما سمعنا مصطلح ويب أسمبلي، ولكن ما الفكرة من ويب أسمبلي بالضبط؟'
 keyword: ["wasm", "WebAssembly"]
+draft: false
 tags: ["WebAssembly"]
 ---
 

@@ -7,7 +7,15 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import FormattedDate from '../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog', ({ data }) => {
+  return data.draft !== true;
+})).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+).slice(-3);
+
+const postsOfftopic = (await getCollection('offtopic', ({ data }) => {
+  return data.draft !== true;
+})).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 ).slice(-3);
 ---
@@ -32,6 +40,19 @@ const posts = (await getCollection('blog')).sort(
 				</section>
 			</header>
 
+			<section class="mt-8">
+				<h2 class="font-bold text-3xl">عشوائيات:</h2>
+				<ol class="text-2xl">
+					{
+						postsOfftopic.map((post) => (
+							<li>
+								<FormattedDate date={post.data.pubDate} />
+								<a href={`/offtopic/${post.slug}/`}>{post.data.title}</a>
+							</li>
+						)).reverse()
+					}
+				</ol>
+			</section>
 			<section class="mt-8">
 				<h2 class="font-bold text-3xl">آخر التدوينات:</h2>
 				<ol class="text-2xl">
