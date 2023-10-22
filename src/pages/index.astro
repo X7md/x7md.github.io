@@ -39,7 +39,19 @@ const postsOfftopic = (await getCollection('offtopic', ({ data }) => {
 					background="transparent" speed="0.75" loop autoplay></lottie-player>
 				</section>
 			</header>
-
+<section class="mt-8">
+				<h2 class="font-bold text-3xl">آخر التدوينات:</h2>
+				<ol class="text-2xl">
+					{
+						posts.map((post) => (
+							<li>
+								<FormattedDate date={post.data.pubDate} />
+								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+							</li>
+						)).reverse()
+					}
+				</ol>
+			</section>
 			<section class="mt-8">
 				<h2 class="font-bold text-3xl">عشوائيات:</h2>
 				<ol class="text-2xl">
@@ -48,19 +60,6 @@ const postsOfftopic = (await getCollection('offtopic', ({ data }) => {
 							<li>
 								<FormattedDate date={post.data.pubDate} />
 								<a href={`/offtopic/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						)).reverse()
-					}
-				</ol>
-			</section>
-			<section class="mt-8">
-				<h2 class="font-bold text-3xl">آخر التدوينات:</h2>
-				<ol class="text-2xl">
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
 							</li>
 						)).reverse()
 					}
