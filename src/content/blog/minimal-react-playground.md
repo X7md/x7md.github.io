@@ -87,7 +87,7 @@ const html = htm.bind(React.createElement);
 وهو مبرمج عمل سابقًا في شركة قوقل... وصاحب مكتبة تحمل اسم `preact`.
 
 هدف `htm` هو توفير طريقة لكتابة أكواد مشابهة لـ JSX دون الحاجة إلى transcompiler
-حيث ستقوم بـ `htm` بهذه العملية في المتصفح.
+حيث ستقوم `htm` بهذه العملية في المتصفح.
 
 عبر تحويل ما تكتبه في 
 [template string literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
