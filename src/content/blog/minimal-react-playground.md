@@ -74,11 +74,11 @@ npm create vite@latest react-app -- --template react
 ```
 ## ماهو `htm`؟
 في الكود أعلاه ستجد 
-```js
+```js "htm"1
 import htm from "https://esm.sh/htm"
 ```
 و
-```js
+```js "htm"2
 const html = htm.bind(React.createElement);
 ```
 

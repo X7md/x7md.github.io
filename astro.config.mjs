@@ -7,19 +7,39 @@ import rehypeWrapAll from 'rehype-wrap-all';
 import rehypeRewrite from 'rehype-rewrite';
 import remarkCodeTitles from "remark-flexible-code-titles";
 import remarkUnwrapImages from 'remark-unwrap-images';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 import alpinejs from "@astrojs/alpinejs";
+
+const prettyCodeOptions = {
+  theme: "github-light",
+  onVisitLine(node) {
+    if (node.children.length === 0) {
+      node.children = [
+        {
+          type: "text",
+          value: " ",
+        },
+      ];
+    }
+  },
+  onVisitHighlightedLine(node) {
+    node.properties.className.push("highlighted");
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ["word"];
+  },
+  tokensMap: {},
+};
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.x7md.net',
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   markdown: {
-    shikiConfig: {
-      theme: 'github-light',
-    },
+    syntaxHighlight: false,
     remarkPlugins: [[remarkUnwrapImages, {}], [remarkCodeTitles, {}]],
-    rehypePlugins: [[rehypeAutolinkHeadings, {
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions] ,[rehypeAutolinkHeadings, {
       behavior: 'prepend'
     },
     ],
@@ -50,7 +70,6 @@ export default defineConfig({
       }
     }]
 
-    ]
+    ],
   },
- 
 });
