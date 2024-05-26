@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Card from '@/components/Card.astro';
 import { blog } from '@/schema.blog';
 import { getCollection } from 'astro:content';
 
@@ -12,8 +11,55 @@ const posts = await getCollection('posts', ({ data }) => {
 <Layout title="مدونة x7md">
 	<main>
         <section class="container">
-			<h2>التدوينات</h2>
+			<div class="text-center">
+				<h2>التدوينات</h2>
+			</div>
+			<div class="d-flex flex-column justify-content-center">
+				<ol role="list" class="d-flex flex-column align-items-center justify-content-center">
+					{
+						posts.sort(
+							(a, b) => Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf())
+						).reverse().map((post) => {
+							return (
+							<li>
+								<a href={"/posts/" + post.slug}>
+								<article>
+									<h3>{post.data.title}</h3>
+									<time><small>
+									{
+										new Date(post.data.pubDate).toLocaleString('ar-SA', {
+											weekday: 'long',
+											year: 'numeric',
+											month: 'long',
+											day: 'numeric',
+										})
+									}</small></time>
+								</article>
+								</a>
+							</li>
+							);
+						})
+					}
+				</ol>
+			</div>
 		</section>
     </main>
 </Layout>
+<style>
+	ol {
+		list-style-type: none;
+		margin-block-start: 0;
+    	margin-block-end: 0;
+		padding-inline-start: 0;
+	}
+	ol a {
+		text-decoration: none;
+	}
+	li h3:hover {
+		text-decoration: underline;
+	}
+	li {
+		width: min(100%, 600px)
+	}
+</style>
 

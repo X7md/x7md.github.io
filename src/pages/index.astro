@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Card from '@/components/Card.astro';
 import { blog } from '@/schema.blog';
 import { getCollection } from 'astro:content';
 
@@ -33,7 +32,15 @@ const posts = await getCollection('posts', ({ data }) => {
 							<a href={"/posts/" + post.slug}>
 							<article>
 								<h3>{post.data.title}</h3>
-								<time><small>{post.data.pubDate}</small></time>
+								<time><small>
+								{
+									new Date(post.data.pubDate).toLocaleString('ar-SA', {
+										weekday: 'long',
+										year: 'numeric',
+										month: 'long',
+										day: 'numeric',
+									})
+								}</small></time>
 							</article>
 							</a>
 						</li>
