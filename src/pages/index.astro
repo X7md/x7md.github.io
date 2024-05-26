@@ -1,72 +1,75 @@
 ---
-import '../styles/global.css'
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '@/layouts/Layout.astro';
+import Card from '@/components/Card.astro';
+import { blog } from '@/schema.blog';
 import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import FormattedDate from '../components/FormattedDate.astro';
 
-const posts = (await getCollection('blog', ({ data }) => {
-  return data.draft !== true;
-})).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-).slice(-3);
-
-const postsOfftopic = (await getCollection('offtopic', ({ data }) => {
-  return data.draft !== true;
-})).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-).slice(-3);
+const posts = await getCollection('posts', ({ data }) => {
+	return data.draft !== true;
+	});
 ---
 
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="flex flex-col min-h-screen">
-		<Header title={SITE_TITLE} />
-		<main>
-			<header class="my-4 grid grid-cols-2 lg:px-10">
-				<section class="flex flex-col justify-center text-right">
-					<h1 class="font-bold text-5xl">مدونة حمد</h1>
-					<p class="text-lg">مساحة شخصية، لمحتوى تقني عربي مكتوب.</p>
-				</section>
-				<section class="flex justify-start w-full text-right">
-					<lottie-player class="-z-[9999] h-[120px]" 
-					src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f331/lottie.json"  
-					background="transparent" speed="0.75" loop autoplay></lottie-player>
-				</section>
-			</header>
-<section class="mt-8">
-				<h2 class="font-bold text-3xl">آخر التدوينات:</h2>
-				<ol class="text-2xl">
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						)).reverse()
-					}
-				</ol>
+<Layout title="مدونة x7md">
+	<main>
+		<section class="container row text-center py-3">
+			<h1>مدونة حمد</h1>
+			<p class="instructions">
+				مساحة شخصية، لتدويناتي الشخصية وأمور تقنية...
+			</p>
+			<section class="container row justify-content-center">
+				
 			</section>
-			<section class="mt-8">
-				<h2 class="font-bold text-3xl">عشوائيات:</h2>
-				<ol class="text-2xl">
-					{
-						postsOfftopic.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/offtopic/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						)).reverse()
-					}
-				</ol>
-			</section>
-		</main>
-		<Footer />
-		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-	</body>
-</html>
+		</section>
+		
+		<section class="container">
+			<h2>آخر التدوينات:</h2>
+			<ol role="list">
+				{
+					posts.sort(
+						(a, b) => Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf())
+					).reverse().splice(0, 3).map((post) => {
+						return (
+						<li>
+							<a href={"/posts/" + post.slug}>
+							<article>
+								<h3>{post.data.title}</h3>
+								<time><small>{post.data.pubDate}</small></time>
+							</article>
+							</a>
+						</li>
+						);
+					})
+				}
+			</ol>
+		</section>
+	</main>
+	<script type="application/ld+json" set:html={JSON.stringify(
+		{...JSON.parse(blog()),
+		...{"mainEntityOfPage": {
+        "@type": "WebPage",
+		}
+      }}
+	)} is:raw />
+</Layout>
+
+<style>
+	.py-3{
+		padding-top: 1.75rem;
+		padding-bottom: 1.75rem;
+	}
+	ol {
+		list-style-type: none;
+		margin-block-start: 0;
+    	margin-block-end: 0;
+		padding-inline-start: 0;
+	}
+	ol a {
+		text-decoration: none;
+	}
+	li h3:hover {
+		text-decoration: underline;
+	}
+	li {
+		width: min(100%, 600px)
+	}
+</style>

@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts', ({ data }) => {
+	return data.draft !== true;
+	});
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
+}
+type Props = CollectionEntry<'posts'>;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title="">
+    <main>
+        <article class="mx-lg-5 m-3">
+			<div class="p-2">
+				<h1>{post.data.title}</h1>
+				<time>{new Date(post.data.pubDate)
+				.toLocaleString('ar-SA', {
+					weekday: 'long',
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				  })}</time>
+			</div>
+			<hr>
+            <Content />
+        </article>
+    </main>
+</Layout>

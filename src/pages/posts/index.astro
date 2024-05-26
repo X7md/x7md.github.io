@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Card from '@/components/Card.astro';
+import { blog } from '@/schema.blog';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts', ({ data }) => {
+	return data.draft !== true;
+	});
+---
+
+<Layout title="مدونة x7md">
+	<main>
+        
+    </main>
+</Layout>
+

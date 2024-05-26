@@ -1,0 +1,73 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Card from '@/components/Card.astro';
+import { profilePage } from '@/schema.blog';
+---
+
+<Layout 
+	title="عني"
+	description={`
+	طالب تصميم جرافيكي 👨🏽‍🎨 في جامعة أم القرى،
+				تقني شغوف بتطوير البرمجيات
+				وتقنيات الويب.
+	`}
+>
+	<main>
+		<section class="container row text-rigth py-3">
+			<h2>حمد بنقالي</h2>
+			<p class="instructions">
+				طالب تصميم جرافيكي 👨🏽‍🎨 في جامعة أم القرى،
+				تقني شغوف بتطوير البرمجيات
+				وتقنيات الويب.
+			</p>
+			<section>
+				<h3>المهارات</h3>
+				<p>
+				أطور البرمجيات منذ 2019، 
+				<a href="https://profile.satr.codes/user/x7md">شاركت في تحديات كودرهب</a>
+				 التنافسية لجافاسكربت،
+				وعملت كمستقل حر
+				<br>
+				وكموظف في مشاريع لتطوير منصات ويب...
+				<a href="https://ar.wikipedia.org/wiki/user:x7md">أساهم في ويكيبيديا</a> العربية،
+				<a href="https://www.wikidata.org/wiki/User:X7md">ونشط في ويكي بيانات</a>.
+				</p>
+			</section>
+			<section class="container row justify-content-center">
+				<table>
+					<caption class="fw-bold">
+					  خبرات العمل
+					</caption>
+					<tbody>
+					  <tr>
+						<th scope="col" class="fw-light">
+							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
+								<small style="grid-row: 1"><a href="https://rawaf.ai">منصة رواف العقارية</a></small>
+								<small style="grid-row: 2"><time>2022/09</time> - <time>2023/09</time></small>
+							</div>
+						</th>
+						<th scope="col" class="fw-light text-nowrap">فني مواقع إلكترونية <small>(1 سنة)</small></th>
+					  </tr>
+					  <tr>
+						<th scope="col" class="fw-light text-start">
+							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
+								<small dir="ltr" style="grid-row: 1"><a href="https://yalla.com.sa">Yalla Marketing</a></small>
+								<small style="grid-row: 2"><time>2024/04</time> - </small>
+							</div>
+						</th>
+						<th scope="col" class="fw-light text-nowrap">مختص ويب  <small>(شهر ~)</small></th>
+					  </tr>
+					</tbody>
+				  </table>
+			</section>
+		</section>
+	</main>
+	<script type="application/ld+json" set:html={profilePage()} is:raw />
+</Layout>
+
+<style>
+	.py-3{
+		padding-top: 1.75rem;
+		padding-bottom: 1.75rem;
+	}
+</style>

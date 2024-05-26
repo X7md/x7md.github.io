@@ -19,7 +19,7 @@ tags: ["JavaScript"]
 داخلها قيم جافاسكربت عادية، مثل النصوص `strings`، والكائنات `objects`، وغير ذلك...
 بل ستضع بيانات على هيئة بايت **"bytes"** أي ببساطة مجرد أرقام.
 
-![رسمة توضيحية تبين الفرق بين Array عادية وArrayBuffer, من رسم الفنانة Lin Clark](https://hacks.mozilla.org/files/2017/06/02_03-768x580.png)
+![رسمة توضيحية تبين الفرق بين Array عادية وArrayBuffer, من رسم الفنانة Lin Clark](https://hacks.mozilla.org/wp-content/uploads/2017/06/02_03-768x580.png)
 
 <div lang="en">
 
