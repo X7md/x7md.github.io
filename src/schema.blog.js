@@ -10,11 +10,11 @@ export function profilePage(){
               "name":[
                 {
                     "@value": "Hamad Binqali",
-                    "@language": "ar"
+                    "@language": "en"
                 },
                 {
                     "@value": "حمد بنقالي",
-                    "@language": "en"
+                    "@language": "ar"
                 },
                 ],
               "alternateName": [
