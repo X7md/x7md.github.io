@@ -124,7 +124,7 @@ export function blog(blogpost)
     "description": "مساحة شخصية، لتدويناتي الشخصية وأمور تقنية...",
     "creator": {
         "@type": "Person",
-        "@id": "https://blog.x7md.net/about",
+        "@id": "https://blog.x7md.net/about#me",
         "name": "حمد بنقالي",
         "url": "https://blog.x7md.net/about"
     },
