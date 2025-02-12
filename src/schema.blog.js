@@ -128,7 +128,11 @@ export function blog(blogpost)
         "name": "حمد بنقالي",
         "url": "https://blog.x7md.net/about"
     },
-    ...(Array.isArray(blogpost) ? {} : {"blogPost": blogpost}),
+    ...(Array.isArray(blogpost) ? JSON.stringify(blogpost) : {
+        "blogPost": blogpost,
+        "author": {"@id": "https://blog.x7md.net/about#me"},
+        "publisher": {"@id": "https://blog.x7md.net/about#me"}
+    }),
     "audience": [{
         "@type": "PeopleAudience",
         "name": "مصمم ويب",
