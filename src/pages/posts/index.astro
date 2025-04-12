@@ -27,7 +27,7 @@ const posts = await getCollection('posts', ({ data }) => {
 									<h3>{post.data.title}</h3>
 									<time><small>
 									{
-										new Date(post.data.pubDate).toLocaleString('ar-SA', {
+										new Date(post.data.pubDate).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
 											weekday: 'long',
 											year: 'numeric',
 											month: 'long',

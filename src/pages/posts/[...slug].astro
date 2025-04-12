@@ -23,7 +23,7 @@ const { Content } = await post.render();
 			<div class="p-2">
 				<h1>{post.data.title}</h1>
 				<time>{new Date(post.data.pubDate)
-				.toLocaleString('ar-SA', {
+				.toLocaleString('ar-SA-u-ca-islamic-umalqura', {
 					weekday: 'long',
 					year: 'numeric',
 					month: 'long',
