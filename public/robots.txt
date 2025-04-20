@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://git.x7md.net/sitemap.xml
+Sitemap: https://blog.x7md.net/sitemap-0.xml
