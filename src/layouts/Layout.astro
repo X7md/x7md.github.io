@@ -1,4 +1,5 @@
 ---
+import { blog } from '../schema.blog';
 interface Props {
 	title: string;
 	description?: string
@@ -23,6 +24,17 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script is:inline type="application/ld+json" set:html={
+			blog({
+				"@type": "BlogPosting",
+				"headline": title,
+				"description": description || "مدونة شخصية، محتوى تقني مكتوب باللغة العربية.",
+				"@id": `https://blog.x7md.net${Astro.url.pathname}`,
+				"mainEntityOfPage": `https://blog.x7md.net${Astro.url.pathname}`,
+				"inLanguage": "ar"
+			})
+		}>
+		</script>
 	</head>
 	<body>
 		<header class="navbar">
