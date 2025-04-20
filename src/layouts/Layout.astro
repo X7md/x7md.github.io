@@ -12,7 +12,7 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		{
-		(!(Astro.url.pathname == "/")) ? (
+		((Astro.url.pathname == "/")) ? (
 		<meta name="description" 
 		 content="مدونة شخصية، محتوى تقني مكتوب باللغة العربية." />
 		) : (
