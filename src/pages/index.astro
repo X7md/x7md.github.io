@@ -50,13 +50,13 @@ const posts = await getCollection('posts', ({ data }) => {
 			</ol>
 		</section>
 	</main>
-	<script type="application/ld+json" set:html={JSON.stringify(
+	<script is:inline type="application/ld+json" set:html={JSON.stringify(
 		{...JSON.parse(blog()),
 		...{"mainEntityOfPage": {
         "@type": "WebPage",
 		}
       }}
-	)} is:raw />
+	)} />
 </Layout>
 
 <style>

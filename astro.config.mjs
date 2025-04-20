@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 // import mdx from '@astrojs/mdx';
-// import sitemap from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeWrapAll from 'rehype-wrap-all';
 import rehypeRewrite from 'rehype-rewrite';
@@ -32,6 +32,16 @@ const prettyCodeOptions = {
 // https://astro.build/config
 export default defineConfig({
     site: 'https://blog.x7md.net',
+    integrations: [
+        sitemap({
+            i18n: {
+                defaultLocale: 'ar',
+                locales: {
+                    ar: 'ar'
+                }
+            }
+        })
+    ],
     redirects: {
         '/about-me': '/about',
         "/blog/[...slug]": "/posts/[...slug]"
