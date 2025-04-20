@@ -24,7 +24,7 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script is:inline type="application/ld+json" set:html={
+		{/^\/posts\/\w+\S+\/$/.test(Astro.url.pathname) && <script is:inline type="application/ld+json" set:html={
 			blog({
 				"@type": "BlogPosting",
 				"headline": title,
@@ -34,7 +34,7 @@ const { title, description } = Astro.props;
 				"inLanguage": "ar"
 			})
 		}>
-		</script>
+		</script>}
 	</head>
 	<body>
 		<header class="navbar">
