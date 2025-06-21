@@ -96,18 +96,48 @@ export function profilePage(){
                     "sameAs":  "https://www.wikidata.org/wiki/Q388",
                 },
                ],
-            //    "hasOccupation": [
-            //     {
-            //       "@type": "Role",
-            //       "hasOccupation": {
-            //       "@type": "Occupation",
-            //       "name": "فني مواقع إلكترونية",
-            //       "alternateName": "Web Technician",
-            //       },
-            //       "startDate": "2022-09",
-            //       "endDate": "2023-09"
-            //     },
-            //   ]
+               "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Umm Al-Qura University",
+                "sameAs": "https://www.wikidata.org/wiki/Q1779835"
+               },
+               "worksFor": [
+                {
+                    "@type": "Organization",
+                    "name": "منصة رواف العقارية",
+                    "url": "https://rawaf.ai"
+                },
+                {
+                    "@type": "Organization",
+                    "name": "إثراء الخير",
+                    "url": "https://ithraalkhair.com.sa"
+                }
+               ],
+               "hasOccupation": [
+                {
+                    "@type": "Role",
+                    "roleName": "Bachelor of Arts - BA, Graphic Design",
+                    "endDate": "2023-07"
+                },
+                {
+                  "@type": "EmployeeRole",
+                  "roleName": "فني مواقع إلكترونية",
+                  "startDate": "2022-09",
+                  "endDate": "2023-09"
+                },
+                {
+                    "@type": "EmployeeRole",
+                    "roleName": "مختص تقني",
+                    "startDate": "2024-06",
+                    "endDate": "2024-07"
+                  },
+                  {
+                    "@type": "EmployeeRole",
+                    "roleName": "مهندس بيانات",
+                    "startDate": "2025-04",
+                    "endDate": "2025-07"
+                  }
+               ]
             },
             "isPartOf": JSON.parse(blog())
           }
