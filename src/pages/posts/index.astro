@@ -8,8 +8,10 @@ function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
     // Defensive: handle both Date and string (in case of partial build or hydration)
     const aDate = a.data.pubDate instanceof Date ? a.data.pubDate : new Date(a.data.pubDate);
     const bDate = b.data.pubDate instanceof Date ? b.data.pubDate : new Date(b.data.pubDate);
-    return aDate.getTime() - bDate.getTime();
+    return bDate.getTime() - aDate.getTime(); // Changed to descending order (newest first)
 }
+
+const sortedPosts = posts.sort(sortPosts);
 ---
 
 <Layout title="مدونة x7md">
@@ -21,7 +23,7 @@ function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
 			<div class="d-flex flex-column justify-content-center">
 				<ol role="list" class="d-flex flex-column align-items-center justify-content-center">
 					{
-					posts.sort(sortPosts).reverse().map((post) => {
+					sortedPosts.map((post) => {
     return (
         <li>
 
