@@ -5,7 +5,10 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('posts', (post) => post.data.draft !== true);
 
 function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
-    return Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf());
+    // Defensive: handle both Date and string (in case of partial build or hydration)
+    const aDate = a.data.pubDate instanceof Date ? a.data.pubDate : new Date(a.data.pubDate);
+    const bDate = b.data.pubDate instanceof Date ? b.data.pubDate : new Date(b.data.pubDate);
+    return aDate.getTime() - bDate.getTime();
 }
 ---
 

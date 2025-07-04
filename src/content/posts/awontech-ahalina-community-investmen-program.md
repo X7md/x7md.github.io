@@ -4,7 +4,6 @@ image: /images/minimal-react-playground.jpg
 pubDate: '2025/01/21'
 draft: false
 description: 'البيانات وأهميتها...'
-# tags: ["Data"]
 ---
 > تنويه: هذه التدوينة انطباع مبدئي، حيث لم أنتهي من باقي جلسات البرنامج!
 

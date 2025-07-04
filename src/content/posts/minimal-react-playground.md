@@ -4,8 +4,6 @@ image: /images/minimal-react-playground.jpg
 pubDate: '2023/11/22'
 draft: false
 description: 'أسهل طريقة لتجهيز بيئة رياكت مبسطة، للتجارب'
-keyword: ["JavaScript", "React JS"]
-tags: ["React", "JavaScript"]
 ---
 > هذه التدوينة مستلهمة من تدوينة للدكتور (Axel Rauschmayer) **أكسل راوشماير** 
  [2ality - minimal-react](https://2ality.com/2020/08/minimal-react.html)

@@ -2,38 +2,8 @@
 title: "ما هي ويب أسمبلي؟"
 image: /images/webassembly.jpg
 pubDate: '2022/08/09'
-about: {
-    "@type": ["Thing", "SoftwareApplication"],
-    "applicationSubCategory": "https://www.wikidata.org/wiki/Q837330",
-    "applicationCategory": "DeveloperApplication",
-    "name": "WebAssembly",
-    alternateName: ["ويب أسمبلي", "تجميع الويب"], 
-    description: "شفرة بايت مفتوحة المصدر، تعمل على المتصفحات أو على بيئة تشغيل ويب اسمبلي",
-    url: "https://webassembly.org/",
-    "offers": {
-        "@type": "Offer",
-        "price": "0"
-    },
-    review: {
-        {
-      "@type": "Review",
-      "author": {
-        "@id": "https://x7md.net/about-me/#identity"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-        }
-      }
-    },
-    }
-}
 description: 'لطالما سمعنا مصطلح ويب أسمبلي، ولكن ما الفكرة من ويب أسمبلي بالضبط؟'
-keyword: ["wasm", "WebAssembly"]
 draft: false
-tags: ["WebAssembly"]
 ---
 
 # ويب أسمبلي

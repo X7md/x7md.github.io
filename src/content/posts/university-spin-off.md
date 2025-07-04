@@ -2,9 +2,7 @@
 title: "الشركات الجامعية المنبثقة (University Spin-Off)"
 pubDate: '2025/04/12'
 description: 'شرح مفهوم الشركات الجامعية المنبثقة، خصائصها، وكيفية تحويل الأبحاث والابتكارات إلى شركات تجارية.'
-keyword: ["Business", "University"]
 draft: false
-tags: ["Business", "Entrepreneurship", "Startups", "University"]
 ---
 يشير مصطلح University Spin-Off (وأحيانًا يُذكر كـ: University Spin-Out)
 إلى نوع من الشركات الناشئة، يُبنى عن طريق الجامعات 

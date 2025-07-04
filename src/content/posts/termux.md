@@ -1,41 +1,11 @@
 ---
 title: "تجربتي مع  ترمكس"
 image: /images/termux-thm.jpg
-about: {
-    "@type": ["Thing", "SoftwareApplication"],
-    "applicationSubCategory": "https://www.wikidata.org/wiki/Q1071233",
-    "applicationCategory": "UtilitiesApplication",
-    "name": "Termux",
-    alternateName: ["ترمكس", "برنامج ترمكس"], 
-    description: "محاكي طرفية لينكس، يعمل على أجهزة اندرويد",
-    url: "https://termux.dev/",
-    "offers": {
-        "@type": "Offer",
-        "price": "0"
-    },
-    review: {
-        {
-      "@type": "Review",
-      "author": {
-        "@id": "https://x7md.net/about-me/#identity"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-        }
-      }
-    },
-    }
-}
 pubDate: '2022/02/18'
 updatedDate: '2022/03/10'
 description: 'تجربتي الشخصية مع برنامج ترمكس'
 draft: false
 sameAs: "https://www.wikidata.org/wiki/Q60572759"
-keyword: ["Command Line", "Termux"]
-tags: ["Termux", "Android"]
 ---
 # تجربتي مع ترمكس
 ترمكس أحد التطبيقات الشهيرة في نظام أندرويد، ولطالما كان يُروج له أنه تطبيق يساعدك على عمليات الأختراق والتهكير... ولكن هل هذا استخدام ترمكس حقًا؟ والآن بعد تجربة شخصية دامت لأكثر من سنتين، سأحاول شرحه بشكل مبسط ومختصر.

@@ -1,8 +1,8 @@
 ---
 title: "أي إطار جافاسكربت؟"
 image: /images/powerpuff-frameworks.png
-pubDate: '2022/05/26'
-# updatedDate: '2022/05/26'
+pubDate: '2022-05-26'
+updatedDate: '2022-05-26'
 description: 'رحلتي مع أطر عمل جافاسكربت'
 keyword: []
 draft: false

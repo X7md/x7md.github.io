@@ -44,7 +44,9 @@ export default defineConfig({
     ],
     redirects: {
         '/about-me': '/about',
-        "/blog/[...slug]": "/posts/[...slug]"
+        "/blog/[...slug]": "/posts/[...slug]",
+        // Example:
+        // '/blog/awontech-ahalina-community-investmen-program': "/blog/post1",
     },
     markdown: {
         syntaxHighlight: false,

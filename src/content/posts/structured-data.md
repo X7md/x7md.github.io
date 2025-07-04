@@ -3,9 +3,6 @@ title: "البيانات المنظّمة، وأثرها على موقعك"
 image: /images/structured-data.jpg
 pubDate: '2022/12/24'
 description: 'ماهي البيانات المنظّمة، وكيف تستفيد منها لمساعدة موقعك'
-keyword: ["Content"]
-draft: false
-tags: ["Data", "Blogging"]
 ---
 
 في الفترة الأخيرة، ومع تعمقي في مجال الويب وتحسين محركات البحث، تعرفت على شيء يدعى

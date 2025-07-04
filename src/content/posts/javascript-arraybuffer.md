@@ -2,9 +2,7 @@
 title: "نظرة على Memory inspector في كروم و ArrayBuffer في جافاسكربت."
 pubDate: '2023/06/03'
 description: 'نظرة سريعة على نوع البيانات ArrayBuffer في جافاسكربت.'
-keyword: ["Content"]
 draft: false
-tags: ["JavaScript"]
 ---
 
 > هذه التدوينة دسمة، تحوي مفاهيم منخفضة المستوى لا يسهل فهمها أو رؤية الفائدة منها على المبدئين.

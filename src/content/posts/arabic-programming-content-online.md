@@ -3,7 +3,6 @@ title: "المحتوى العربي البرمجي على الانترنت"
 pubDate: '2022/05/01'
 updatedDate: '2022/05/02'
 description: 'المحتوى البرمجي العربي على الإنترنت... وماذا يحتاج...'
-keyword: ["Content"]
 draft: false
 tags: ["Blogging"]
 ---

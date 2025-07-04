@@ -25,7 +25,7 @@ const posts = await getCollection('posts', ({ data }) => {
 			<ol role="list">
 				{
 					posts.sort(
-						(a, b) => Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf())
+						(a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime()
 					).reverse().splice(0, 3).map((post) => {
 						return (
 						<li>

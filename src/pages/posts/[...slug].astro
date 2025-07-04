@@ -5,15 +5,14 @@ import { getCollection, getEntry } from 'astro:content';
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', (post) => post.data.draft !== true);
 	return posts.map((post) => ({
-		params: { slug: post.id }, // use post.id for params
+		params: { slug: post.slug }, // use post.slug instead of post.id
 	}));
 }
 
 const { slug } = Astro.params;
 const post = await getEntry('posts', slug);
 if (!post) throw new Error('Post not found');
-//@ts-expect-error
-const { Content } = await post.rendered();
+const { Content } = await post.render(); // This is the updated way to get the Content component
 ---
 
 <Layout title={post.data.title} description={post.data.description}>

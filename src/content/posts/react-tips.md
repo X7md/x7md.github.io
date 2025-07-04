@@ -4,21 +4,6 @@ image: /images/react-tips.jpg
 pubDate: '2023/03/13'
 draft: false
 description: 'مجموعة نصائح لمطوري رياكت جي أس الجدد'
-keyword: ["JavaScript", "React JS"]
-about: {
-    "@type": ["Thing", "SoftwareApplication"],
-    "applicationSubCategory": "https://www.wikidata.org/wiki/Q783866",
-    "applicationCategory": "DeveloperApplication",
-    "name": "React JS",
-    alternateName: ["React.JS", "رياكت", "رياكت جي اس"], 
-    description: "إطار عمل جافاسكربت، لبناء واجهات مستخدم تفاعلية",
-    url: "https://ar.reactjs.org/",
-    "offers": {
-        "@type": "Offer",
-        "price": "0"
-    }
-}
-tags: ["React", "JavaScript"]
 ---
 
 حظيتُ مؤخرًا بفرصة عمل كمطور واجهات أمامية في مشروع ناشئ، كان العمل عن بعد، أكملت
