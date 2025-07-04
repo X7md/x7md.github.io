@@ -29,7 +29,7 @@ const posts = await getCollection('posts', ({ data }) => {
 					).reverse().splice(0, 3).map((post) => {
 						return (
 						<li>
-							<a href={"/posts/" + post.id}>
+							<a href={"/posts/" + post.slug}>
 							<article>
 								<h3>{post.data.title}</h3>
 								<time><small>
