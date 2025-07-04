@@ -28,7 +28,7 @@ function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
 			<div class="d-flex flex-column">
 				<ol role="list" class="d-flex flex-column align-items-start">
 					{
-						posts.reverse().slice(0, 3).map((post) => (
+						posts.slice(0, 3).map((post) => (
 							<li>
 								<a href={"/posts/" + post.slug}>
 									<article>
