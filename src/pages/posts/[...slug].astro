@@ -3,11 +3,10 @@ import Layout from '@/layouts/Layout.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts', ({ data }) => {
-	return data.draft !== true;
+	const posts = await getCollection('posts', (post: CollectionEntry<'posts'>) => {
+		return post.data.draft !== true;
 	});
-	return posts.map((post) => ({
-		//@ts-expect-error
+	return posts.map((post: CollectionEntry<'posts'>) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
@@ -15,25 +14,34 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'posts'>;
 
 const post = Astro.props;
-// @ts-expect-error
 const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-    <main>
-        <article class="mx-lg-5 m-3">
+	<main>
+		<article class="mx-lg-5 m-3">
 			<div class="p-2">
 				<h1>{post.data.title}</h1>
 				<time>{new Date(post.data.pubDate)
-				.toLocaleString('ar-SA-u-ca-islamic-umalqura', {
-					weekday: 'long',
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
-				  })}</time>
+					.toLocaleString('ar-SA-u-ca-islamic-umalqura', {
+						weekday: 'long',
+						year: 'numeric',
+						month: 'long',
+						day: 'numeric',
+					})}</time>
+
+				<!-- Author Section -->
+			<hr class="author-hr">
+			<div class="author-box">
+				<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="author-avatar">
+				<div class="author-text">
+					<h6 class="author-name">حمد بنقالي</h6>
+					<small class="author-desc">تقني شغوف بتطوير البرمجيات وتقنيات الويب</small>
+				</div>
+			</div>
 			</div>
 			<hr>
-            <Content />
-        </article>
-    </main>
+			<Content />
+		</article>
+	</main>
 </Layout>

@@ -1,26 +1,29 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { blog } from '@/schema.blog';
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
-const posts = await getCollection('posts', ({ data }) => {
-	return data.draft !== true;
-	});
+type BlogPost = CollectionEntry<'posts'>;
+
+const posts: BlogPost[] = await getCollection('posts', (post: BlogPost) => {
+	return post.data.draft !== true;
+});
+
+function sortPosts(a: BlogPost, b: BlogPost) {
+	return Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf());
+}
 ---
 
 <Layout title="مدونة x7md">
 	<main>
-        <section class="container">
+		<section class="container">
 			<div class="text-center">
 				<h2>التدوينات</h2>
 			</div>
 			<div class="d-flex flex-column justify-content-center">
 				<ol role="list" class="d-flex flex-column align-items-center justify-content-center">
 					{
-						posts.sort(
-							(a, b) => Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf())
-						).reverse().map((post) => {
-							return (
+					posts.sort(sortPosts).reverse().map((post: BlogPost) => {
+						return (
 							<li>
 								<a href={"/posts/" + post.slug}>
 								<article>
@@ -37,19 +40,19 @@ const posts = await getCollection('posts', ({ data }) => {
 								</article>
 								</a>
 							</li>
-							);
-						})
+						);
+					})
 					}
 				</ol>
 			</div>
 		</section>
-    </main>
+	</main>
 </Layout>
 <style>
 	ol {
 		list-style-type: none;
 		margin-block-start: 0;
-    	margin-block-end: 0;
+		margin-block-end: 0;
 		padding-inline-start: 0;
 	}
 	ol a {

@@ -13,12 +13,17 @@ import { profilePage } from '@/schema.blog';
 >
 	<main>
 		<section class="container row text-rigth py-3">
-			<h2>حمد بنقالي</h2>
-			<p class="instructions">
-				طالب تصميم جرافيكي 👨🏽‍🎨 في جامعة أم القرى،
-				تقني شغوف بتطوير البرمجيات
-				وتقنيات الويب.
-			</p>
+			<div class="d-flex align-items-center gap-3 mb-3">
+				<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="rounded-circle avatar" style="width: 80px; height: 80px; object-fit: cover;">
+				<div>
+					<h2 class="mb-1">حمد بنقالي</h2>
+					<p class="instructions mb-0">
+						طالب تصميم جرافيكي 👨🏽‍🎨 في جامعة أم القرى،
+						تقني شغوف بتطوير البرمجيات
+						وتقنيات الويب.
+					</p>
+				</div>
+			</div>
 			<div class="d-flex py-3 gap-3 justify-content-start">
 				<a href="https://github.com/x7md">
 					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -94,5 +99,15 @@ import { profilePage } from '@/schema.blog';
 	.py-3{
 		padding-top: 1.75rem;
 		padding-bottom: 1.75rem;
+	}
+	
+	.avatar {
+		border: 2px solid var(--pico-primary-border);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		transition: transform 0.2s ease;
+	}
+	
+	.avatar:hover {
+		transform: scale(1.05);
 	}
 </style>
