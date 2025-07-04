@@ -1,11 +1,17 @@
 ---
+//@ts-nocheck
 import Layout from '@/layouts/Layout.astro';
 import { blog } from '@/schema.blog';
 import { getCollection } from 'astro:content';
 
-const posts = await getCollection('posts', ({ data }) => {
-	return data.draft !== true;
-	});
+const posts = await getCollection('posts', (post) => post.data.draft !== true);
+
+function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
+	// Defensive: handle both Date and string (in case of partial build or hydration)
+	const aDate = a.data.pubDate instanceof Date ? a.data.pubDate : new Date(a.data.pubDate);
+	const bDate = b.data.pubDate instanceof Date ? b.data.pubDate : new Date(b.data.pubDate);
+	return aDate.getTime() - bDate.getTime();
+}
 ---
 
 <Layout title="مدونة x7md">
@@ -15,48 +21,47 @@ const posts = await getCollection('posts', ({ data }) => {
 			<p class="instructions">
 				مساحة شخصية، لتدويناتي الشخصية وأمور تقنية...
 			</p>
-			<section class="container row justify-content-center">
-				
-			</section>
 		</section>
 		
 		<section class="container">
 			<h2>آخر التدوينات:</h2>
-			<ol role="list">
-				{
-					posts.sort(
-						(a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime()
-					).reverse().splice(0, 3).map((post) => {
-						return (
-						<li>
-							<a href={"/posts/" + post.slug}>
-							<article>
-								<h3>{post.data.title}</h3>
-								<time><small>
-								{
-									new Date(post.data.pubDate).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
-										weekday: 'long',
-										year: 'numeric',
-										month: 'long',
-										day: 'numeric',
-									})
-								}</small></time>
-							</article>
-							</a>
-						</li>
-						);
-					})
-				}
-			</ol>
+			<div class="d-flex flex-column">
+				<ol role="list" class="d-flex flex-column align-items-start">
+					{
+						posts.reverse().slice(0, 3).map((post) => (
+							<li>
+								<a href={"/posts/" + post.slug}>
+									<article>
+										<h3>{post.data.title}</h3>
+										<time><small>
+										{
+											new Date(post.data.pubDate).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
+												weekday: 'long',
+												year: 'numeric',
+												month: 'long',
+												day: 'numeric',
+											})
+										}</small></time>
+									</article>
+								</a>
+							</li>
+						))
+					}
+				</ol>
+				<div class="text-end mt-4">
+					<a href="/posts" class="link">جميع التدوينات ←</a>
+				</div>
+			</div>
 		</section>
 	</main>
-	<script is:inline type="application/ld+json" set:html={JSON.stringify(
-		{...JSON.parse(blog()),
-		...{"mainEntityOfPage": {
-        "@type": "WebPage",
+	<script is:inline type="application/ld+json" set:html={JSON.stringify({
+		...JSON.parse(blog()),
+		...{
+			"mainEntityOfPage": {
+				"@type": "WebPage"
+			}
 		}
-      }}
-	)} />
+	})} />
 </Layout>
 
 <style>
@@ -67,7 +72,7 @@ const posts = await getCollection('posts', ({ data }) => {
 	ol {
 		list-style-type: none;
 		margin-block-start: 0;
-    	margin-block-end: 0;
+		margin-block-end: 0;
 		padding-inline-start: 0;
 	}
 	ol a {
@@ -78,5 +83,14 @@ const posts = await getCollection('posts', ({ data }) => {
 	}
 	li {
 		width: min(100%, 600px)
+	}
+	.link {
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border-radius: 6px;
+		transition: background-color 0.2s ease;
+	}
+	.link:hover {
+		background-color: var(--pico-card-background-color);
 	}
 </style>

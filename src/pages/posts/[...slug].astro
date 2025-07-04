@@ -1,45 +1,47 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getCollection, getEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts', (post) => post.data.draft !== true);
+	const posts = await getCollection('posts', ({ data }) => {
+	return data.draft !== true;
+	});
 	return posts.map((post) => ({
-		params: { slug: post.slug }, // use post.slug instead of post.id
+		params: { slug: post.slug },
+		props: post,
 	}));
 }
+type Props = CollectionEntry<'posts'>;
 
-const { slug } = Astro.params;
-const post = await getEntry('posts', slug);
-if (!post) throw new Error('Post not found');
-const { Content } = await post.render(); // This is the updated way to get the Content component
+const post = Astro.props;
+const { Content } = await post.render();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
-	<main>
-		<article class="mx-lg-5 m-3">
+    <main>
+        <article class="mx-lg-5 m-3">
 			<div class="p-2">
 				<h1>{post.data.title}</h1>
 				<time>{new Date(post.data.pubDate)
-					.toLocaleString('ar-SA-u-ca-islamic-umalqura', {
-						weekday: 'long',
-						year: 'numeric',
-						month: 'long',
-						day: 'numeric',
-					})}</time>
-
-				<!-- Author Section -->
-			<hr class="author-hr">
-			<div class="author-box">
-				<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="author-avatar">
-				<div class="author-text">
-					<h6 class="author-name">حمد بنقالي</h6>
-					<small class="author-desc">تقني شغوف بتطوير البرمجيات وتقنيات الويب</small>
-				</div>
-			</div>
+				.toLocaleString('ar-SA-u-ca-islamic-umalqura', {
+					weekday: 'long',
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric',
+				  })}</time>
 			</div>
 			<hr>
-			<Content />
-		</article>
-	</main>
+            <Content />
+			
+			<!-- Author Section -->
+			<hr class="my-4">
+			<div class="d-flex align-items-center gap-3 p-3" style="background-color: var(--pico-card-background-color); border-radius: 8px;">
+				<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
+				<div>
+					<h6 class="mb-1">حمد بنقالي</h6>
+					<small class="text-muted">تقني شغوف بتطوير البرمجيات وتقنيات الويب</small>
+				</div>
+			</div>
+        </article>
+    </main>
 </Layout>
