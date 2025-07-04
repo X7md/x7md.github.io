@@ -1,15 +1,11 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-type BlogPost = CollectionEntry<'posts'>;
+const posts = await getCollection('posts', (post) => post.data.draft !== true);
 
-const posts: BlogPost[] = await getCollection('posts', (post: BlogPost) => {
-	return post.data.draft !== true;
-});
-
-function sortPosts(a: BlogPost, b: BlogPost) {
-	return Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf());
+function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
+    return Date.parse(a.data.pubDate.valueOf()) - Date.parse(b.data.pubDate.valueOf());
 }
 ---
 
@@ -22,26 +18,29 @@ function sortPosts(a: BlogPost, b: BlogPost) {
 			<div class="d-flex flex-column justify-content-center">
 				<ol role="list" class="d-flex flex-column align-items-center justify-content-center">
 					{
-					posts.sort(sortPosts).reverse().map((post: BlogPost) => {
-						return (
-							<li>
-								<a href={"/posts/" + post.slug}>
-								<article>
-									<h3>{post.data.title}</h3>
-									<time><small>
-									{
-										new Date(post.data.pubDate).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
-											weekday: 'long',
-											year: 'numeric',
-											month: 'long',
-											day: 'numeric',
-										})
-									}</small></time>
-								</article>
-								</a>
-							</li>
-						);
-					})
+					posts.sort(sortPosts).reverse().map((post) => {
+    return (
+        <li>
+
+			<a href={"/posts/" + 
+			post.id
+			}>
+            <article>
+                <h3>{post.data.title}</h3>
+                <time><small>
+                {
+                    new Date(post.data.pubDate).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    })
+                }</small></time>
+            </article>
+            </a>
+        </li>
+    );
+})
 					}
 				</ol>
 			</div>

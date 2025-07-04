@@ -1,20 +1,19 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts', (post: CollectionEntry<'posts'>) => {
-		return post.data.draft !== true;
-	});
-	return posts.map((post: CollectionEntry<'posts'>) => ({
-		params: { slug: post.slug },
-		props: post,
+	const posts = await getCollection('posts', (post) => post.data.draft !== true);
+	return posts.map((post) => ({
+		params: { slug: post.id }, // use post.id for params
 	}));
 }
-type Props = CollectionEntry<'posts'>;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const { slug } = Astro.params;
+const post = await getEntry('posts', slug);
+if (!post) throw new Error('Post not found');
+//@ts-expect-error
+const { Content } = await post.rendered();
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
