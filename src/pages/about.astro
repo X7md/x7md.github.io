@@ -14,9 +14,7 @@ import { profilePage } from '@/schema.blog';
 	<main>
 		<section class="container row text-rigth py-3">
 			<div class="d-flex align-items-center gap-3 mb-3">
-				<div style="width: 80px; height: 80px;">
-					<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="rounded-circle avatar ratio-1x1">
-				</div>
+				<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="avatar-lg">
 				<div>
 					<h2 class="mb-1">حمد بنقالي</h2>
 					<p class="instructions mb-0">
@@ -101,15 +99,5 @@ import { profilePage } from '@/schema.blog';
 	.py-3{
 		padding-top: 1.75rem;
 		padding-bottom: 1.75rem;
-	}
-	
-	.avatar {
-		border: 2px solid var(--pico-primary-border);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		transition: transform 0.2s ease;
-	}
-	
-	.avatar:hover {
-		transform: scale(1.05);
 	}
 </style>
