@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { blogPost } from '@/schema.blog';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('posts', ({ data }) => {
@@ -15,6 +16,60 @@ type Props = CollectionEntry<'posts'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+// Prepare data for JSON-LD
+const postUrl = `https://blog.x7md.net/posts/${post.slug}/`;
+const postContent = await post.render();
+
+// Extract article body text from markdown content
+// Remove markdown syntax and get clean text for schema.org
+function extractTextFromMarkdown(markdown) {
+	if (!markdown) return '';
+	
+	// Remove markdown headers, links, code blocks, etc.
+	let text = markdown
+		.replace(/^#{1,6}\s+/gm, '') // Remove headers
+		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Convert links to text
+		.replace(/```[\s\S]*?```/g, '') // Remove code blocks
+		.replace(/`([^`]+)`/g, '$1') // Remove inline code
+		.replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold
+		.replace(/\*([^*]+)\*/g, '$1') // Remove italic
+		.replace(/!\[([^\]]*)\]\([^)]+\)/g, '') // Remove images
+		.replace(/^\s*[-*+]\s+/gm, '') // Remove list markers
+		.replace(/^\s*\d+\.\s+/gm, '') // Remove numbered list markers
+		.replace(/^\s*>\s+/gm, '') // Remove blockquotes
+		.replace(/\n{3,}/g, '\n\n') // Normalize line breaks
+		.trim();
+	
+	// Truncate to reasonable length for schema.org (first 500 words)
+	const words = text.split(/\s+/).filter(word => word.length > 0);
+	if (words.length > 500) {
+		text = words.slice(0, 500).join(' ') + '...';
+	}
+	
+	return text;
+}
+
+const articleBodyText = extractTextFromMarkdown(post.body) || post.data.description;
+
+// Count words in the content (more accurate)
+const wordCount = post.body ? post.body.split(/\s+/).filter(word => word.trim().length > 0).length : 0;
+
+// Calculate reading time (average 200 words per minute)
+const readingTimeMinutes = Math.ceil(wordCount / 200);
+
+const jsonLdData = {
+	url: postUrl,
+	headline: post.data.title,
+	description: post.data.description,
+	articleBody: articleBodyText,
+	datePublished: post.data.pubDate.toISOString(),
+	dateModified: post.data.updatedDate ? post.data.updatedDate.toISOString() : post.data.pubDate.toISOString(),
+	image: post.data.image ? `https://blog.x7md.net${post.data.image}` : undefined,
+	keywords: [...(post.data.tags || []), ...(post.data.keyword || [])],
+	wordCount: wordCount,
+	timeRequired: `PT${readingTimeMinutes}M` // ISO 8601 duration format
+};
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
@@ -45,4 +100,7 @@ const { Content } = await post.render();
             <Content />
         </article>
     </main>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={blogPost(jsonLdData)}></script>
 </Layout>
