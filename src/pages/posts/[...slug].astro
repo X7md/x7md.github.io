@@ -23,7 +23,7 @@ const postContent = await post.render();
 
 // Extract article body text from markdown content
 // Remove markdown syntax and get clean text for schema.org
-function extractTextFromMarkdown(markdown) {
+function extractTextFromMarkdown(markdown: string) {
 	if (!markdown) return '';
 	
 	// Remove markdown headers, links, code blocks, etc.
