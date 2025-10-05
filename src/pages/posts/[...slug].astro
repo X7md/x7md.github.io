@@ -21,39 +21,28 @@ const { Content } = await post.render();
 const postUrl = `https://blog.x7md.net/posts/${post.slug}/`;
 const postContent = await post.render();
 
-// Extract article body text from markdown content
-// Remove markdown syntax and get clean text for schema.org
-function extractTextFromMarkdown(markdown: string) {
-	if (!markdown) return '';
+// Function to clean and escape text for JSON-LD
+function cleanTextForJsonLd(text: string) {
+	if (!text) return '';
 	
-	// Remove markdown headers, links, code blocks, etc.
-	let text = markdown
-		.replace(/^#{1,6}\s+/gm, '') // Remove headers
-		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Convert links to text
-		.replace(/```[\s\S]*?```/g, '') // Remove code blocks
-		.replace(/`([^`]+)`/g, '$1') // Remove inline code
-		.replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold
-		.replace(/\*([^*]+)\*/g, '$1') // Remove italic
-		.replace(/!\[([^\]]*)\]\([^)]+\)/g, '') // Remove images
-		.replace(/^\s*[-*+]\s+/gm, '') // Remove list markers
-		.replace(/^\s*\d+\.\s+/gm, '') // Remove numbered list markers
-		.replace(/^\s*>\s+/gm, '') // Remove blockquotes
-		.replace(/\n{3,}/g, '\n\n') // Normalize line breaks
+	return text
+		.replace(/<[^>]*>/g, '') // Remove HTML tags
+		.replace(/&[a-zA-Z0-9#]+;/g, ' ') // Remove HTML entities
+		.replace(/\s+/g, ' ') // Normalize whitespace
+		.replace(/\\/g, '\\\\') // Escape backslashes
+		.replace(/"/g, '\\"') // Escape quotes
+		.replace(/\n/g, ' ') // Replace newlines with spaces
+		.replace(/\r/g, '') // Remove carriage returns
+		.replace(/\t/g, ' ') // Replace tabs with spaces
 		.trim();
-	
-	// Truncate to reasonable length for schema.org (first 500 words)
-	const words = text.split(/\s+/).filter(word => word.length > 0);
-	if (words.length > 500) {
-		text = words.slice(0, 500).join(' ') + '...';
-	}
-	
-	return text;
 }
 
-const articleBodyText = extractTextFromMarkdown(post.body) || post.data.description;
+// Use description as articleBody for schema.org (clean and safe approach)
+// In the future, we could enhance this by rendering content server-side
+const articleBodyText = cleanTextForJsonLd(post.data.description);
 
-// Count words in the content (more accurate)
-const wordCount = post.body ? post.body.split(/\s+/).filter(word => word.trim().length > 0).length : 0;
+// Count words in the description (what we're using for articleBody)
+const wordCount = post.data.description ? post.data.description.split(/\s+/).filter(word => word.trim().length > 0).length : 0;
 
 // Calculate reading time (average 200 words per minute)
 const readingTimeMinutes = Math.ceil(wordCount / 200);
