@@ -314,6 +314,30 @@ const { title, description } = Astro.props;
 			margin-inline: calc((var(--measure) - var(--measure-chrome)) / 2);
 		}
 	}
+	/* ============================================================
+	   EXPERIENCE TABLE
+	   ============================================================ */
+	.exp { margin-block-end: 1.85rem; }
+	.exp th, .exp td { vertical-align: middle; }
+	.exp .role { text-align: start; }
+
+	/* Two columns do not fit an iPhone-width screen: the role cell was taking
+	   240px of 348px and crushing the employer column to 108px, and the nowrap
+	   season lines then overflowed it and collided with the role text.
+	   Below 640px each row becomes a stacked block instead. */
+	@media (max-width: 640px) {
+		.exp, .exp caption, .exp tbody, .exp tr, .exp th, .exp td { display: block; inline-size: auto; }
+		.exp caption { text-align: start; margin-block-end: 0.5rem; }
+		.exp tr {
+			padding-block: 1rem;
+			border-block-end: 1px solid var(--pico-muted-border-color);
+		}
+		.exp tr:last-child { border-block-end: 0; }
+		.exp th, .exp td { padding: 0; border: 0; }
+		.exp .role { margin-block-start: 0.5rem; font-size: 1.05em; }
+		.exp .place { display: block; }
+	}
+
 	/* experience table: location reads as metadata, not primary text */
 	.place { color: var(--pico-muted-color); }
 	/* two discrete Hajj seasons at one employer, rather than one long range */
