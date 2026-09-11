@@ -12,11 +12,11 @@ import { profilePage } from '@/schema.blog';
 	`}
 >
 	<main>
-		<section class="container row text-rigth py-3">
+		<section class="py-3">
 			<div class="d-flex align-items-center gap-3 mb-3">
 				<img src="/images/1x1/avatar.jpg" alt="حمد بنقالي" class="avatar-lg">
 				<div>
-					<h2 class="mb-1">حمد بنقالي</h2>
+					<h1 class="mb-1">حمد بنقالي</h1>
 					<p class="instructions mb-0">
 						طالب تصميم جرافيكي 👨🏽‍🎨 في جامعة أم القرى،
 						تقني شغوف بتطوير البرمجيات
@@ -54,45 +54,61 @@ import { profilePage } from '@/schema.blog';
 				<a href="https://www.wikidata.org/wiki/User:X7md">ونشط في ويكي بيانات</a>.
 				</p>
 			</section>
-			<section class="container row justify-content-center">
+			<section>
 				<table>
 					<caption class="fw-bold">
 					  خبرات العمل
 					</caption>
 					<tbody>
 					  <tr>
-						<th scope="col" class="fw-light">
+						<th scope="row" class="fw-light text-start">
+							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
+								<small dir="ltr" style="grid-row: 1"><a href="https://traccs.net/ar/">TRACCS</a></small>
+								<small style="grid-row: 2"><time datetime="2026-07">2026/07</time> - الآن</small>
+								<small style="grid-row: 3" class="place">جدة</small>
+							</div>
+						</th>
+						<td class="fw-light text-nowrap">متدرّب تصميم جرافيكي <small>(3 أشهر)</small></td>
+					  </tr>
+					  <tr>
+						<th scope="row" class="fw-light text-start">
+							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
+								<small style="grid-row: 1"><a href="https://rehabco.sa">رحاب لتشغيل خدمات الحجاج</a></small>
+								<small style="grid-row: 2"><time datetime="2025-09">2025/09</time> - الآن</small>
+								<small style="grid-row: 3" class="place">مكة</small>
+							</div>
+						</th>
+						<td class="fw-light text-nowrap">مختص تقنية معلومات <small>(سنة)</small></td>
+					  </tr>
+					  <tr>
+						<th scope="row" class="fw-light text-start">
+							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
+								<small style="grid-row: 1"><a href="https://ithraalkhair.com.sa">إثراء الخير</a></small>
+								<small style="grid-row: 2" class="seasons">
+									<span class="season"><b>موسم ١٤٤٥</b> <time datetime="2024-06">2024/06</time> – <time datetime="2024-07">2024/07</time></span>
+									<span class="season"><b>موسم ١٤٤٦</b> <time datetime="2025-04">2025/04</time> – <time datetime="2025-07">2025/07</time></span>
+								</small>
+								<small style="grid-row: 3" class="place">مكة</small>
+							</div>
+						</th>
+						<td class="fw-light text-nowrap">مهندس بيانات <small>(موسمان · 6 أشهر)</small></td>
+					  </tr>
+					  <tr>
+						<th scope="row" class="fw-light text-start">
 							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
 								<small style="grid-row: 1"><a href="https://rawaf.ai">منصة رواف العقارية</a></small>
-								<small style="grid-row: 2"><time>2022/09</time> - <time>2023/09</time></small>
+								<small style="grid-row: 2"><time datetime="2022-09">2022/09</time> - <time datetime="2023-09">2023/09</time></small>
+								<small style="grid-row: 3" class="place">الرياض · عن بُعد</small>
 							</div>
 						</th>
-						<th scope="col" class="fw-light text-nowrap">فني مواقع إلكترونية <small>(1 سنة)</small></th>
-					  </tr>
-					  <tr>
-						<th scope="col" class="fw-light text-start">
-							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
-								<small dir="ltr" style="grid-row: 1"><a href="https://ithraalkhair.com.sa">إثراء الخير</a></small>
-								<small style="grid-row: 2"><time>2024/06</time> - <time>2024/07</time></small>
-							</div>
-						</th>
-						<th scope="col" class="fw-light text-nowrap">مختص تقني <small>(شهرين)</small></th>
-					  </tr>
-					  <tr>
-						<th scope="col" class="fw-light text-start">
-							<div class="grid" style="--bs-rows: 3; --bs-columns: 3;">
-								<small dir="ltr" style="grid-row: 1"><a href="https://ithraalkhair.com.sa">إثراء الخير</a></small>
-								<small style="grid-row: 2"><time>2025/04</time> - <time>2025/07</time></small>
-							</div>
-						</th>
-						<th scope="col" class="fw-light text-nowrap">مهندس بيانات <small>(3 أشهر)</small></th>
+						<td class="fw-light text-nowrap">مطوّر واجهات ويب <small>(سنة)</small></td>
 					  </tr>
 					</tbody>
 				  </table>
 			</section>
 		</section>
 	</main>
-	<script is:inline type="application/ld+json" set:html={profilePage()} is:raw />
+	<script is:inline type="application/ld+json" set:html={profilePage()}></script>
 </Layout>
 
 <style>

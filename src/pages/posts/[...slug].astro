@@ -1,6 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from 'astro:content';
 import { blogPost } from '@/schema.blog';
 
 export async function getStaticPaths() {
@@ -8,18 +8,25 @@ export async function getStaticPaths() {
 	return data.draft !== true;
 	});
 	return posts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: post,
 	}));
 }
 type Props = CollectionEntry<'posts'>;
 
 const post = Astro.props;
-const { Content } = await post.render();
+
+const hijri = (d: Date) =>
+	new Date(d).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+const { Content } = await render(post);
 
 // Prepare data for JSON-LD
-const postUrl = `https://blog.x7md.net/posts/${post.slug}/`;
-const postContent = await post.render();
+const postUrl = `https://blog.x7md.net/posts/${post.id}/`;
 
 // Function to clean and escape text for JSON-LD
 function cleanTextForJsonLd(text: string) {
@@ -63,17 +70,19 @@ const jsonLdData = {
 
 <Layout title={post.data.title} description={post.data.description}>
     <main>
-        <article class="mx-lg-5 m-3">
-			<div class="p-2">
+        <article class="post">
+			<header class="post-header">
 				<h1>{post.data.title}</h1>
-				<time>{new Date(post.data.pubDate)
-				.toLocaleString('ar-SA-u-ca-islamic-umalqura', {
-					weekday: 'long',
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
-				  })}</time>
-			</div>
+				<p class="post-meta">
+					<time datetime={post.data.pubDate.toISOString()}>{hijri(post.data.pubDate)}</time>
+					{post.data.updatedDate && (
+						<>
+							{' \u00b7 \u0622\u062e\u0631 \u062a\u062d\u062f\u064a\u062b: '}
+							<time datetime={post.data.updatedDate.toISOString()}>{hijri(post.data.updatedDate)}</time>
+						</>
+					)}
+				</p>
+			</header>
 			
 			<!-- Author Section -->
 			<hr class="author-hr">
@@ -86,10 +95,12 @@ const jsonLdData = {
 			</div>
 			
 			<hr>
-            <Content />
+            <div class="post-body">
+                <Content />
+            </div>
         </article>
     </main>
     
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" set:html={blogPost(jsonLdData)}></script>
+    <script is:inline type="application/ld+json" set:html={blogPost(jsonLdData)}></script>
 </Layout>

@@ -14,45 +14,45 @@ function sortPosts(a: typeof posts[number], b: typeof posts[number]) {
 }
 
 const sortedPosts = posts.sort(sortPosts);
+
+const hijri = (d: Date) =>
+	new Date(d).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+
 ---
 
 <Layout title="مدونة x7md">
 	<main>
-		<section class="container row text-center py-3">
+		<section class="text-center py-3">
 			<h1>مدونة حمد</h1>
 			<p class="instructions">
 				مساحة شخصية، لتدويناتي الشخصية وأمور تقنية...
 			</p>
 		</section>
 		
-		<section class="container">
+		<section>
 			<h2>آخر التدوينات:</h2>
-			<div class="d-flex flex-column">
-				<ol role="list" class="d-flex flex-column align-items-start">
-					{
-						sortedPosts.slice(0, 3).map((post) => (
+			<ol role="list" class="post-list">
+				{
+					sortedPosts.slice(0, 3).map((post) => (
 							<li>
-								<a href={"/posts/" + post.slug}>
-									<article>
-										<h3>{post.data.title}</h3>
-										<time><small>
-										{
-											new Date(post.data.pubDate).toLocaleString('ar-SA-u-ca-islamic-umalqura', {
-												weekday: 'long',
-												year: 'numeric',
-												month: 'long',
-												day: 'numeric',
-											})
-										}</small></time>
-									</article>
+								<a class="post-link" href={"/posts/" + post.id}>
+									<h3>{post.data.title}</h3>
+									<p>{post.data.description}</p>
+									<time datetime={post.data.pubDate.toISOString()}>
+										{hijri(post.data.pubDate)}
+									</time>
 								</a>
 							</li>
-						))
-					}
-				</ol>
-				<div class="text-end mt-4">
-					<a href="/posts" class="link">جميع التدوينات ←</a>
-				</div>
+					))
+				}
+			</ol>
+			<div class="text-end mt-4">
+				<a href="/posts" class="link">جميع التدوينات ←</a>
 			</div>
 		</section>
 	</main>
@@ -63,28 +63,13 @@ const sortedPosts = posts.sort(sortPosts);
 				"@type": "WebPage"
 			}
 		}
-	})} />
+	})}></script>
 </Layout>
 
 <style>
-	.py-3{
+	.py-3 {
 		padding-top: 1.75rem;
 		padding-bottom: 1.75rem;
-	}
-	ol {
-		list-style-type: none;
-		margin-block-start: 0;
-		margin-block-end: 0;
-		padding-inline-start: 0;
-	}
-	ol a {
-		text-decoration: none;
-	}
-	li h3:hover {
-		text-decoration: underline;
-	}
-	li {
-		width: min(100%, 600px)
 	}
 	.link {
 		text-decoration: none;
@@ -93,6 +78,6 @@ const sortedPosts = posts.sort(sortPosts);
 		transition: background-color 0.2s ease;
 	}
 	.link:hover {
-		background-color: var(--pico-card-background-color);
+		background-color: #FFFFFF0F;
 	}
 </style>

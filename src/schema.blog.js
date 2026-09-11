@@ -97,16 +97,18 @@ export const authorPerson = {
         "name": "Umm Al-Qura University",
         "sameAs": "https://www.wikidata.org/wiki/Q1779835"
     },
+    // worksFor is present-tense in schema.org: current employers only.
+    // Past roles are carried by hasOccupation below.
     "worksFor": [
         {
             "@type": "Organization",
-            "name": "منصة رواف العقارية",
-            "url": "https://rawaf.ai"
+            "name": "TRACCS",
+            "url": "https://traccs.net/ar/"
         },
         {
             "@type": "Organization",
-            "name": "إثراء الخير",
-            "url": "https://ithraalkhair.com.sa"
+            "name": "رحاب لتشغيل خدمات الحجاج",
+            "url": "https://rehabco.sa"
         }
     ],
     "hasOccupation": [
@@ -117,21 +119,32 @@ export const authorPerson = {
         },
         {
             "@type": "EmployeeRole",
-            "roleName": "فني مواقع إلكترونية",
-            "startDate": "2022-09",
-            "endDate": "2023-09"
+            "roleName": "متدرّب تصميم جرافيكي",
+            "startDate": "2026-07"
         },
         {
             "@type": "EmployeeRole",
-            "roleName": "مختص تقني",
+            "roleName": "مختص تقنية معلومات",
+            "startDate": "2025-09"
+        },
+        {
+            // two discrete Hajj seasons, not one continuous stint
+            "@type": "EmployeeRole",
+            "roleName": "مهندس بيانات",
+            "startDate": "2025-04",
+            "endDate": "2025-07"
+        },
+        {
+            "@type": "EmployeeRole",
+            "roleName": "مهندس بيانات",
             "startDate": "2024-06",
             "endDate": "2024-07"
         },
         {
             "@type": "EmployeeRole",
-            "roleName": "مهندس بيانات",
-            "startDate": "2025-04",
-            "endDate": "2025-07"
+            "roleName": "مطوّر واجهات ويب",
+            "startDate": "2022-09",
+            "endDate": "2023-09"
         }
     ]
 };
